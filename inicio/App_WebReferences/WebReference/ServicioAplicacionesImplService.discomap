@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.31.224.16/gestorIncidencias/ws/aplicaciones?wsdl" filename="ServicioAplicacionesImplService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.31.224.16/gestorIncidencias/ws/aplicaciones?wsdl=ServicioAplicaciones.wsdl" filename="ServicioAplicaciones.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://impl.servicios.gestorIncidencias.chs.es/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://servicios.gestorIncidencias.chs.es/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://cxf.apache.org/bindings/xformat" name="ServicioAplicacionesImplService" targetNamespace="http://impl.servicios.gestorIncidencias.chs.es/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://servicios.gestorIncidencias.chs.es/" location="http://10.31.224.16/gestorIncidencias/ws/aplicaciones?wsdl=ServicioAplicaciones.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="ServicioAplicacionesImplServiceSoapBinding" type="ns1:ServicioAplicaciones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerRolesUsuario">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerRolesUsuario">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerRolesUsuarioResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesPublicas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerListaAplicacionesPublicas">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerListaAplicacionesPublicasResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicaciones">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerListaAplicaciones">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerListaAplicacionesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUsuario">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerUsuario">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerUsuarioResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaUsuarios">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerListaUsuarios">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerListaUsuariosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerIconoAplicacion">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerIconoAplicacion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerIconoAplicacionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesActivas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerListaAplicacionesActivas">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerListaAplicacionesActivasResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesActivasUsuario">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerListaAplicacionesActivasUsuario">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerListaAplicacionesActivasUsuarioResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorAccesoADatosException">
+        <soap:fault use="literal" name="ErrorAccesoADatosException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioAplicacionesImplService">
+    <wsdl:port name="ServicioAplicacionesImplPort" binding="tns:ServicioAplicacionesImplServiceSoapBinding">
+      <soap:address location="http://10.31.224.16/gestorIncidencias/ws/aplicaciones" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

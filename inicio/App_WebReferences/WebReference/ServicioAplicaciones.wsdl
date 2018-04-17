@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns1="http://servicios.gestorIncidencias.chs.es/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioAplicaciones" targetNamespace="http://servicios.gestorIncidencias.chs.es/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://servicios.gestorIncidencias.chs.es/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://servicios.gestorIncidencias.chs.es/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="rol">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="aplicacion">
+        <xs:sequence>
+          <xs:element name="activa" type="xs:boolean" />
+          <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="nombreDescriptivo" type="xs:string" />
+          <xs:element name="publica" type="xs:boolean" />
+          <xs:element minOccurs="0" name="URL" type="xs:string" />
+          <xs:element minOccurs="0" name="unidadResponsable" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="login" type="xs:string" />
+          <xs:element minOccurs="0" name="nif" type="xs:string" />
+          <xs:element minOccurs="0" name="nip" type="xs:string" />
+          <xs:element minOccurs="0" name="nipDup" type="xs:string" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorAccesoADatosException" type="ns1:ErrorAccesoADatosException" />
+      <xs:complexType name="ErrorAccesoADatosException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="obtenerRolesUsuario" type="ns1:obtenerRolesUsuario" />
+      <xs:complexType name="obtenerRolesUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerRolesUsuarioResponse" type="ns1:obtenerRolesUsuarioResponse" />
+      <xs:complexType name="obtenerRolesUsuarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:rol" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesPublicas" type="ns1:obtenerListaAplicacionesPublicas" />
+      <xs:complexType name="obtenerListaAplicacionesPublicas">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesPublicasResponse" type="ns1:obtenerListaAplicacionesPublicasResponse" />
+      <xs:complexType name="obtenerListaAplicacionesPublicasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:aplicacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicaciones" type="ns1:obtenerListaAplicaciones" />
+      <xs:complexType name="obtenerListaAplicaciones">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesResponse" type="ns1:obtenerListaAplicacionesResponse" />
+      <xs:complexType name="obtenerListaAplicacionesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:aplicacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerUsuario" type="ns1:obtenerUsuario" />
+      <xs:complexType name="obtenerUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerUsuarioResponse" type="ns1:obtenerUsuarioResponse" />
+      <xs:complexType name="obtenerUsuarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="ns1:usuario" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaUsuarios" type="ns1:obtenerListaUsuarios" />
+      <xs:complexType name="obtenerListaUsuarios">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="obtenerListaUsuariosResponse" type="ns1:obtenerListaUsuariosResponse" />
+      <xs:complexType name="obtenerListaUsuariosResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:usuario" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerIconoAplicacion" type="ns1:obtenerIconoAplicacion" />
+      <xs:complexType name="obtenerIconoAplicacion">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerIconoAplicacionResponse" type="ns1:obtenerIconoAplicacionResponse" />
+      <xs:complexType name="obtenerIconoAplicacionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesActivas" type="ns1:obtenerListaAplicacionesActivas" />
+      <xs:complexType name="obtenerListaAplicacionesActivas">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesActivasResponse" type="ns1:obtenerListaAplicacionesActivasResponse" />
+      <xs:complexType name="obtenerListaAplicacionesActivasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:aplicacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesActivasUsuario" type="ns1:obtenerListaAplicacionesActivasUsuario" />
+      <xs:complexType name="obtenerListaAplicacionesActivasUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="obtenerListaAplicacionesActivasUsuarioResponse" type="ns1:obtenerListaAplicacionesActivasUsuarioResponse" />
+      <xs:complexType name="obtenerListaAplicacionesActivasUsuarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:aplicacion" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerIconoAplicacionResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerIconoAplicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerUsuario">
+    <wsdl:part name="parameters" element="ns1:obtenerUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesActivas">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesActivas" />
+  </wsdl:message>
+  <wsdl:message name="obtenerRolesUsuarioResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerRolesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesActivasUsuario">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesActivasUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtenerIconoAplicacion">
+    <wsdl:part name="parameters" element="ns1:obtenerIconoAplicacion" />
+  </wsdl:message>
+  <wsdl:message name="ErrorAccesoADatosException">
+    <wsdl:part name="ErrorAccesoADatosException" element="ns1:ErrorAccesoADatosException" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaUsuariosResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerListaUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerUsuarioResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesPublicasResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesPublicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesPublicas">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesPublicas" />
+  </wsdl:message>
+  <wsdl:message name="obtenerRolesUsuario">
+    <wsdl:part name="parameters" element="ns1:obtenerRolesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesActivasResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicaciones">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicaciones" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaAplicacionesActivasUsuarioResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerListaAplicacionesActivasUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerListaUsuarios">
+    <wsdl:part name="parameters" element="ns1:obtenerListaUsuarios" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioAplicaciones">
+    <wsdl:operation name="obtenerRolesUsuario">
+      <wsdl:input name="obtenerRolesUsuario" message="ns1:obtenerRolesUsuario" />
+      <wsdl:output name="obtenerRolesUsuarioResponse" message="ns1:obtenerRolesUsuarioResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesPublicas">
+      <wsdl:input name="obtenerListaAplicacionesPublicas" message="ns1:obtenerListaAplicacionesPublicas" />
+      <wsdl:output name="obtenerListaAplicacionesPublicasResponse" message="ns1:obtenerListaAplicacionesPublicasResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicaciones">
+      <wsdl:input name="obtenerListaAplicaciones" message="ns1:obtenerListaAplicaciones" />
+      <wsdl:output name="obtenerListaAplicacionesResponse" message="ns1:obtenerListaAplicacionesResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUsuario">
+      <wsdl:input name="obtenerUsuario" message="ns1:obtenerUsuario" />
+      <wsdl:output name="obtenerUsuarioResponse" message="ns1:obtenerUsuarioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaUsuarios">
+      <wsdl:input name="obtenerListaUsuarios" message="ns1:obtenerListaUsuarios" />
+      <wsdl:output name="obtenerListaUsuariosResponse" message="ns1:obtenerListaUsuariosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerIconoAplicacion">
+      <wsdl:input name="obtenerIconoAplicacion" message="ns1:obtenerIconoAplicacion" />
+      <wsdl:output name="obtenerIconoAplicacionResponse" message="ns1:obtenerIconoAplicacionResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesActivas">
+      <wsdl:input name="obtenerListaAplicacionesActivas" message="ns1:obtenerListaAplicacionesActivas" />
+      <wsdl:output name="obtenerListaAplicacionesActivasResponse" message="ns1:obtenerListaAplicacionesActivasResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaAplicacionesActivasUsuario">
+      <wsdl:input name="obtenerListaAplicacionesActivasUsuario" message="ns1:obtenerListaAplicacionesActivasUsuario" />
+      <wsdl:output name="obtenerListaAplicacionesActivasUsuarioResponse" message="ns1:obtenerListaAplicacionesActivasUsuarioResponse" />
+      <wsdl:fault name="ErrorAccesoADatosException" message="ns1:ErrorAccesoADatosException" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
