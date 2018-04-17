@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Conexiones SQL">
+</Property><Property Name="Archivo de la solución" Value="D:\Proyectos\Mis DLL\Conexiones SQL\Conexiones SQL.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="D:\Proyectos\Mis DLL\Conexiones SQL\Conexiones SQL.suo">
+</Property><Property Name="Date" Value="viernes, 05 de marzo de 2010">
+</Property><Property Name="Time" Value="12:17">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Conexiones SQL.sln" Description="La copia D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Conexiones SQL.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="Conexiones SQL.suo" Description="La copia D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Conexiones SQL.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="Conexiones SQL" Source="Conexiones SQL\Conexiones SQL.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Conexiones SQL\Conexiones SQL.csproj">
+</Event><Event ErrorLevel="0" Project="Conexiones SQL" Source="Conexiones SQL\Class1.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Conexiones SQL\Class1.cs">
+</Event><Event ErrorLevel="0" Project="Conexiones SQL" Source="Conexiones SQL\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Conexiones SQL\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Conexiones SQL" Source="Conexiones SQL\Conexiones SQL.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="Conexiones SQL" Source="Conexiones SQL\Conexiones SQL.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Prueba_dlls.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Prueba_dlls.csproj">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Form1.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Form1.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Form1.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Program.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Program.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Properties\Resources.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Properties\Settings.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Resource1.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Resource1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Properties\Settings.settings" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\resources\informe.png" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\resources\informe.png">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Form1.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Form1.resx">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Properties\Resources.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Resource1.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\Prueba_dlls\Resource1.resx">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Prueba_dlls.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="Prueba_dlls" Source="Prueba_dlls\Prueba_dlls.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\InformaciónColumna.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto D:\Proyectos\Mis DLL\Conexiones SQL\Backup\InformaciónColumna\InformaciónColumna.csproj">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\UserControl1.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\InformaciónColumna\UserControl1.cs">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\UserControl1.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\InformaciónColumna\UserControl1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\InformaciónColumna\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\UserControl1.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\Proyectos\Mis DLL\Conexiones SQL\Backup\InformaciónColumna\UserControl1.resx">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\InformaciónColumna.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="InformaciónColumna" Source="InformaciónColumna\InformaciónColumna.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Conexiones SQL.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="Conexiones SQL.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Conexiones SQL" Source="Conexiones SQL\Conexiones SQL.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event><Event ErrorLevel="0" Project="Prueba_dlls" Source="Prueba_dlls\Prueba_dlls.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event><Event ErrorLevel="0" Project="InformaciónColumna" Source="InformaciónColumna\InformaciónColumna.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

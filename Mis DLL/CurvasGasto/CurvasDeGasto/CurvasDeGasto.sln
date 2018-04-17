@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvasDeGasto", "CurvasDeGasto\CurvasDeGasto.csproj", "{3BD65344-B588-496A-A402-4822B77B6BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{692976FB-4A7B-4BB9-B8F4-1315F0C2DDF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BD65344-B588-496A-A402-4822B77B6BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD65344-B588-496A-A402-4822B77B6BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD65344-B588-496A-A402-4822B77B6BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD65344-B588-496A-A402-4822B77B6BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692976FB-4A7B-4BB9-B8F4-1315F0C2DDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692976FB-4A7B-4BB9-B8F4-1315F0C2DDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692976FB-4A7B-4BB9-B8F4-1315F0C2DDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692976FB-4A7B-4BB9-B8F4-1315F0C2DDF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

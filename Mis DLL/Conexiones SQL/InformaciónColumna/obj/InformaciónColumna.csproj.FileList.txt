@@ -1,0 +1,7 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\InformaciónColumna.UserControl1.resources
+obj\Debug\InformaciónColumna.csproj.GenerateResource.Cache
+bin\Debug\InformaciónColumna.dll
+bin\Debug\InformaciónColumna.pdb
+obj\Debug\InformaciónColumna.dll
+obj\Debug\InformaciónColumna.pdb

@@ -1,0 +1,10 @@
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\bin\Debug\pruebaDLL.exe
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\bin\Debug\pruebaDLL.pdb
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\bin\Debug\DBConnections.dll
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\bin\Debug\DBConnections.pdb
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\ResolveAssemblyReference.cache
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\pruebaDLL.Form1.resources
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\pruebaDLL.Properties.Resources.resources
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\pruebaDLL.csproj.GenerateResource.Cache
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\pruebaDLL.exe
+D:\Proyectos\Mis DLL\DBConnections\pruebaDLL\obj\Debug\pruebaDLL.pdb

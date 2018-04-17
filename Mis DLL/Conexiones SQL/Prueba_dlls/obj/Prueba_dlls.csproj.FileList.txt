@@ -1,0 +1,13 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Prueba_dlls.Form1.resources
+obj\Debug\Prueba_dlls.Properties.Resources.resources
+obj\Debug\Prueba_dlls.csproj.GenerateResource.Cache
+bin\Debug\Prueba_dlls.exe
+bin\Debug\Prueba_dlls.pdb
+bin\Debug\Conexiones SQL.dll
+bin\Debug\Conexiones SQL.pdb
+obj\Debug\Prueba_dlls.exe
+obj\Debug\Prueba_dlls.pdb
+bin\Debug\InformaciónColumna.dll
+bin\Debug\InformaciónColumna.pdb
+obj\Debug\Prueba_dlls.Resource1.resources

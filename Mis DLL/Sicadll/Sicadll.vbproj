@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E3CBAD0-F6DD-4EED-8A07-9725DD4A74CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sicadll</RootNamespace>
+    <AssemblyName>Sicadll</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Sicadll.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Sicadll.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NineRays.Basics, Version=1.9.5.1, Culture=neutral, PublicKeyToken=fb6e5401546081a2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Basics.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting, Version=1.9.5.1, Culture=neutral, PublicKeyToken=42b2737534ef6cc7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.CSV, Version=1.9.5.1, Culture=neutral, PublicKeyToken=2cbde0b794dc4d15">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.CSV.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.Excel, Version=1.9.5.1, Culture=neutral, PublicKeyToken=9b07d7010a20428a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.ExcelXML, Version=1.9.5.1, Culture=neutral, PublicKeyToken=9b07d7010a20428a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.ExcelXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.Html, Version=1.9.5.1, Culture=neutral, PublicKeyToken=c8361ce6a7fa8f62">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.PDF, Version=1.9.5.1, Culture=neutral, PublicKeyToken=910b419979423e32">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Export.RTF, Version=1.9.5.1, Culture=neutral, PublicKeyToken=df7fae9e17e50cce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Export.RTF.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Import.CrystalReports, Version=1.9.5.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Import.CrystalReports.dll</HintPath>
+    </Reference>
+    <Reference Include="NineRays.Reporting.Web, Version=1.9.5.1, Culture=neutral, PublicKeyToken=141666b437f8f7da">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\9Rays.Net\Report Sharp-Shooter\bin\NineRays.Reporting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Tragsatec, Version=1.0.2614.35753, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sicasegura\Bin\Tragsatec.dll</HintPath>
+    </Reference>
+    <Reference Include="Tragsatec.Data, Version=1.0.2628.34388, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sicasegura\Bin\Tragsatec.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="utiles.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

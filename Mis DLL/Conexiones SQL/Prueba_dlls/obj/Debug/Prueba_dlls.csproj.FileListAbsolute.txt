@@ -1,0 +1,2 @@
+D:\Proyectos\Mis DLL\Conexiones SQL\Prueba_dlls\obj\Debug\Prueba_dlls.exe
+D:\Proyectos\Mis DLL\Conexiones SQL\Prueba_dlls\obj\Debug\Prueba_dlls.pdb

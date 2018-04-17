@@ -1,0 +1,10 @@
+D:\Programas\IsValido\IsValido\obj\Debug\ResolveAssemblyReference.cache
+D:\Programas\IsValido\IsValido\bin\Debug\IsValido.dll.config
+D:\Programas\IsValido\IsValido\bin\Debug\IsValido.pdb
+D:\Programas\IsValido\IsValido\obj\Debug\IsValido.dll
+D:\Programas\IsValido\IsValido\obj\Debug\IsValido.pdb
+D:\Proyectos\Mis DLL\IsValido\IsValido\bin\Debug\IsValido.dll.config
+D:\Proyectos\Mis DLL\IsValido\IsValido\bin\Debug\IsValido.pdb
+D:\Proyectos\Mis DLL\IsValido\IsValido\obj\Debug\ResolveAssemblyReference.cache
+D:\Proyectos\Mis DLL\IsValido\IsValido\obj\Debug\IsValido.dll
+D:\Proyectos\Mis DLL\IsValido\IsValido\obj\Debug\IsValido.pdb

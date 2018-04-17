@@ -1,0 +1,10 @@
+D:\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\ResolveAssemblyReference.cache
+D:\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\bin\Debug\CurvasDeGasto.dll
+D:\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\bin\Debug\CurvasDeGasto.pdb
+D:\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\CurvasDeGasto.dll
+D:\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\CurvasDeGasto.pdb
+\\192.168.194.47\d$\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\bin\Debug\CurvasDeGasto.dll
+\\192.168.194.47\d$\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\bin\Debug\CurvasDeGasto.pdb
+\\192.168.194.47\d$\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\ResolveAssemblyReference.cache
+\\192.168.194.47\d$\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\CurvasDeGasto.dll
+\\192.168.194.47\d$\Proyectos\Mis DLL\CurvasGasto\CurvasDeGasto\CurvasDeGasto\obj\Debug\CurvasDeGasto.pdb
