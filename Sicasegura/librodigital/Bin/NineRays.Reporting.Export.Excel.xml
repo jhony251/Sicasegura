@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>~ineRays.Reporting.Export.Excel</name>
+  </assembly>
+  <members>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.AdvancedTextExcelAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Returns text contained in an AdvancedText control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.ShapeExcelAdapter.#ctor"><summary>Creates a new instance of ShapeExcelAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.TextControlExcelAdapter.#ctor"><summary>Creates a new instance of TextControlExcelAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory.#ctor"><summary>Creates a new instance of ExcelExportFilterFactory class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Adapters.AdvancedTextExcelAdapter"><summary>Adapter for AdvancedText control.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Adapters.TextControlExcelAdapter"><summary>Base class for TextControls.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.AdvancedTextExcelAdapter.#ctor"><summary>Creates a new instance of AdvancedTextExcelAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.ShowDialog"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.ShowDialog" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.Export(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports the given doument to the specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.String)"><summary>Exports the given document to the specified file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory.GetFilterFileExtension"><summary>Overrided. See  <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFileExtension" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory"><summary>Represents the ExcelFilter factory.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Internal.ExcelDocument"><exclude></exclude></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory.GetFilterFormat"><summary>Overiided. See  <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFormat" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.#ctor"><summary>Initializes a new instance of the ExcelExportFilter class.</summary></member>
+    <member name="P:NineRays.Reporting.Export.Excel.ExcelExportFilter.Accuracy"><summary>Gets or sets the fault of the export.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.TextBoxExcelAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Returns text contained in the TextBox control.</summary></member>
+    <member name="F:NineRays.Reporting.Export.Excel.ExportMode.PagePerSheet"><summary>Each page in report corresponds each page in Excel.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.RegisterAdapter(System.Type,NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter)"><summary>Registers a new adapter for new controls.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.TextBoxExcelAdapter.#ctor"><summary>Creates a new instance of TextBoxExcelAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.#ctor(System.ComponentModel.IContainer)"><summary>Initializes a new instance of the ExcelExportFilter class with the specified container.</summary></member>
+    <member name="F:NineRays.Reporting.Export.Excel.ExportMode.DocumentOnSheet"><summary>The whole document on the single page.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.FindAdapter(System.Type)"><summary>Returns an existing adapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.GetFactory"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.GetFactory" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.ExcelExportFilter"><summary>Exports Report Sharp-Shooter document to MS Excel.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.TextControlExcelAdapter.Render(NineRays.Reporting.Export.Excel.Internal.ExcelSheet,System.Int32,System.Int32,System.Int32,System.Int32,NineRays.Reporting.DOM.ReportControl)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter.Render(NineRays.Reporting.Export.Excel.Internal.ExcelSheet,System.Int32,System.Int32,System.Int32,System.Int32,NineRays.Reporting.DOM.ReportControl)" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter"><summary>Incapsulates conversion methods for different types of report controls.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Internal.ExcelSheet"><exclude></exclude></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter.#ctor"><summary>Creates a new instance of ExcelAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter.Render(NineRays.Reporting.Export.Excel.Internal.ExcelSheet,System.Int32,System.Int32,System.Int32,System.Int32,NineRays.Reporting.DOM.ReportControl)"><summary>Renders ReportControl into ExcelDocument.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.ShapeExcelAdapter.Render(NineRays.Reporting.Export.Excel.Internal.ExcelSheet,System.Int32,System.Int32,System.Int32,System.Int32,NineRays.Reporting.DOM.ReportControl)"><summary>Overrided. See  <see cref="M:NineRays.Reporting.Export.Excel.Adapters.ExcelAdapter.Render(NineRays.Reporting.Export.Excel.Internal.ExcelSheet,System.Int32,System.Int32,System.Int32,System.Int32,NineRays.Reporting.DOM.ReportControl)" />..</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.ExportMode"><summary>Set behaviour of exporting.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Adapters.ShapeExcelAdapter"><summary>Adapter for Shape control.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Adapters.TextBoxExcelAdapter"><summary>Adapter for TextBox control.</summary></member>
+    <member name="P:NineRays.Reporting.Export.Excel.ExcelExportFilter.ExportMode"><summary>Gets or sets the behaviour of exporting.</summary></member>
+    <member name="T:NineRays.Reporting.Export.Excel.Internal.CellStyle"><exclude></exclude></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports the given document to the specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory.CreateFilter"><summary>Overrided. See  <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.CreateFilter" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.Excel.Adapters.TextControlExcelAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Returns text if an object is TextControl.</summary></member>
+    <member name="P:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory.Factory"><summary>Gets the default instance of the <see cref="T:NineRays.Reporting.Export.Excel.ExcelExportFilterFactory" /> class.</summary></member>
+  </members>
+</doc>

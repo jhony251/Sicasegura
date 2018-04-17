@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetXMLDataSetFILE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRutaDestinoXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLDataSetFILEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLDataSetFILEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRutaDestinoXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Formato">
+        <s:complexType />
+      </s:element>
+      <s:element name="FormatoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FormatoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Normalizacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="NormalizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NormalizacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Inicializacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="InicializacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InicializacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_PVYCRArbol">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_PVYCRArbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_PVYCRArbolResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetXMLDataSetFILESoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLDataSetFILE" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDataSetFILESoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLDataSetFILEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarXML" />
+  </wsdl:message>
+  <wsdl:message name="GenerarXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="FormatoSoapIn">
+    <wsdl:part name="parameters" element="tns:Formato" />
+  </wsdl:message>
+  <wsdl:message name="FormatoSoapOut">
+    <wsdl:part name="parameters" element="tns:FormatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="NormalizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Normalizacion" />
+  </wsdl:message>
+  <wsdl:message name="NormalizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:NormalizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InicializacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Inicializacion" />
+  </wsdl:message>
+  <wsdl:message name="InicializacionSoapOut">
+    <wsdl:part name="parameters" element="tns:InicializacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_PVYCRArbolSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_PVYCRArbol" />
+  </wsdl:message>
+  <wsdl:message name="Update_PVYCRArbolSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_PVYCRArbolResponse" />
+  </wsdl:message>
+  <wsdl:portType name="XMLDataSetMakerSoap">
+    <wsdl:operation name="GetXMLDataSetFILE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna el XML con la estructuta de cauces actualizada desde PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLDataSetFILESoapIn" />
+      <wsdl:output message="tns:GetXMLDataSetFILESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creación fichero XML a partir de los datos en PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:GenerarXMLSoapIn" />
+      <wsdl:output message="tns:GenerarXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Formato">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Formato de nodos de la tabla PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:FormatoSoapIn" />
+      <wsdl:output message="tns:FormatoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Normalizacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Normalización de la tabla PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:NormalizacionSoapIn" />
+      <wsdl:output message="tns:NormalizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Inicializacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pretratamiento de la tabla PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:InicializacionSoapIn" />
+      <wsdl:output message="tns:InicializacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_PVYCRArbol">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Proceso de Normalización Actualización de tabla PVYCR_Arbol (v.13.11.08)</wsdl:documentation>
+      <wsdl:input message="tns:Update_PVYCRArbolSoapIn" />
+      <wsdl:output message="tns:Update_PVYCRArbolSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XMLDataSetMakerSoap" type="tns:XMLDataSetMakerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXMLDataSetFILE">
+      <soap:operation soapAction="http://tempuri.org/GetXMLDataSetFILE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML">
+      <soap:operation soapAction="http://tempuri.org/GenerarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Formato">
+      <soap:operation soapAction="http://tempuri.org/Formato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Normalizacion">
+      <soap:operation soapAction="http://tempuri.org/Normalizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inicializacion">
+      <soap:operation soapAction="http://tempuri.org/Inicializacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_PVYCRArbol">
+      <soap:operation soapAction="http://tempuri.org/Update_PVYCRArbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XMLDataSetMakerSoap12" type="tns:XMLDataSetMakerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXMLDataSetFILE">
+      <soap12:operation soapAction="http://tempuri.org/GetXMLDataSetFILE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML">
+      <soap12:operation soapAction="http://tempuri.org/GenerarXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Formato">
+      <soap12:operation soapAction="http://tempuri.org/Formato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Normalizacion">
+      <soap12:operation soapAction="http://tempuri.org/Normalizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inicializacion">
+      <soap12:operation soapAction="http://tempuri.org/Inicializacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_PVYCRArbol">
+      <soap12:operation soapAction="http://tempuri.org/Update_PVYCRArbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XMLDataSetMaker">
+    <wsdl:port name="XMLDataSetMakerSoap" binding="tns:XMLDataSetMakerSoap">
+      <soap:address location="http://sicasegura.tragsatec.es/XMLDATASET/XMLDataSetMaker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XMLDataSetMakerSoap12" binding="tns:XMLDataSetMakerSoap12">
+      <soap12:address location="http://sicasegura.tragsatec.es/XMLDATASET/XMLDataSetMaker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

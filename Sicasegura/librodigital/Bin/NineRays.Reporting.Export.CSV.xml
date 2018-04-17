@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>NineRays.Reporting.Export.CSV</name>
+  </assembly>
+  <members>
+    <member name="P:NineRays.Reporting.Export.CSV.CSVExportFilter.Separator"><summary>Gets or sets separator char.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.AdvancedTextCSVAdapter.#ctor"><summary>Create a new instance of AdvancedTextCSVAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to the specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.Export(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.#ctor"><summary>Create a new instance of TXTExportFilterFactory class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.#ctor(System.ComponentModel.IContainer)"><summary>Initializes a new instance of the TextExportFilter class with the specified container.</summary></member>
+    <member name="F:NineRays.Reporting.Export.CSV.ExportMode.WholeDocument"><summary>Export whole document as single table.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.GetFilterFormat"><summary>Returns format name.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.ExportMode"><summary>Enumerates export modes for csv filter.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.TXTExportFilterFactory"><summary>Represents factory for the text format export filters.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilterFactory.GetFilterFormat"><summary>Returns filter format name.</summary></member>
+    <member name="P:NineRays.Reporting.Export.CSV.CSVExportFilterFactory.Factory"><summary>Gets static instance of the CSVExportFilterFactory.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.Adapters.TextBoxCSVAdapter"><summary>Summary description for TextBoxCSVAdapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.GetFilterName"><summary>Returns filter name.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.CreateFilter"><summary>Creates new instance of the text export filter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilterFactory.#ctor"><summary>Create a new instance of CSVExportFilterFactory class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.FindAdapter(System.Type)"><summary>Finds existing adapter for given control type.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilterFactory.CreateFilter"><summary>Creates new instance of the Export filter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.RegisterAdapter(System.Type,NineRays.Reporting.Export.CSV.Adapters.CSVAdapter)"><summary>Registers a new adapter for the CSVExportFilter.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter"><summary>Incapsulates conversion methods for different types of report controls.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.AdvancedTextCSVAdapter.GetText(NineRays.Reporting.DOM.ReportControl)"><summary>Overridden. See <see cref="M:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter.GetText(NineRays.Reporting.DOM.ReportControl)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter.GetText(NineRays.Reporting.DOM.ReportControl)"><summary>Returns text containing in a control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.GetFactory"><summary>Returns filters factory.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.#ctor"><summary>Initializes a new instance of the TextExportFilter class.</summary></member>
+    <member name="F:NineRays.Reporting.Export.CSV.ExportMode.PageByPage"><summary>Create table structure for each page.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.CSVExportFilter"><summary>CSV Format export filter.</summary></member>
+    <member name="P:NineRays.Reporting.Export.CSV.CSVExportFilter.ExportMode"><summary>Gets or sets export mode.</summary></member>
+    <member name="P:NineRays.Reporting.Export.CSV.CSVExportFilter.Encoding"><summary>Gets or sets filter encoding.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.Adapters.AdvancedTextCSVAdapter"><summary>Summary description for AdvancedTextCSVAdapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.GetFilterFileExtension"><summary>Returns default file extension.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.String)"><summary>Exports given document to the specified file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilter.ShowDialog"><summary>Shows dialog with export filter params.</summary></member>
+    <member name="P:NineRays.Reporting.Export.CSV.TXTExportFilterFactory.Factory"><summary>Gets static instance of the TXTExportFilterFactory.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter.GetAlignment(NineRays.Reporting.DOM.ReportControl)"><summary>Returns text alignment for a control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.TextBoxCSVAdapter.#ctor"><summary>Create a new instance of TextBoxCSVAdapter class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.CSV.CSVExportFilterFactory"><summary>Represents factory for CSV Filter instances.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.TextBoxCSVAdapter.GetText(NineRays.Reporting.DOM.ReportControl)"><summary>Overridden. See <see cref="M:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter.GetText(NineRays.Reporting.DOM.ReportControl)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.Adapters.CSVAdapter.#ctor"><summary>Create a new instance of CSVAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.CSV.CSVExportFilterFactory.GetFilterFileExtension"><summary>Returns default file extension.</summary></member>
+  </members>
+</doc>

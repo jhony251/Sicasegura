@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://sicasegura.tragsatec.es/XMLDATASET/XMLDataSetMaker.asmx?wsdl" filename="XMLDataSetMaker.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://sicasegura.tragsatec.es/XMLDATASET/XMLDataSetMaker.asmx?disco" filename="XMLDataSetMaker.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

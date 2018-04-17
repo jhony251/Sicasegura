@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Obtener_datos.aspx.cs" Inherits="Obtener_datos" %>

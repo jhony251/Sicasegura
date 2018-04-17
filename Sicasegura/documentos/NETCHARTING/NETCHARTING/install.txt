@@ -1,0 +1,47 @@
+In 3 simple steps you can add .netCHARTING to the Global
+Assembly Cache and use it anywhere in your server:
+
+Step 1:
+- create a "dotnetcharting" directory under your CommonApplicationData
+directory (e.g. "C:\Documents and Settings\All Users\Application Data\dotnetcharting")
+-move dotnetcharting.dll and your purchase key (.lic file) into this directory. 
+The "dotnetcharting" directory must be created in the CommonApplicationData directory and 
+ensure that read permissions are granted on the key file.
+
+Step 2:
+-Note: "Microsoft .NET framework 2.0 Configuration" does not install by 
+default with .NET Framework
+2.0 Redistributable Package (it is part of the SDK which can be downloaded
+from http://msdn.microsoft.com/netframework/downloads/updates/default.aspx)
+
+-Open "Microsoft .NET framework Configuration" from
+Start > Settings > Control Panel > Administrative Tools
+-Choose "Assembly Cache" Node.
+-Click on "Add an Assembly to the Assembly Cache".
+-Select dotnetcharting.dll from the directory created in step 1.
+
+Alternatively you can drag / drop the assembly to the c:\windows\assembly 
+directory using windows explorer to add it to the GAC.  This does not require 
+the SDK.  The path may differ on your system as it is based on the windows 
+system directory.
+
+
+step 3:
+-Open your machine.config or web.config file and add the following
+entry in the <compilation> <assemblies> section. Because in ASP.NET 2.0 these elements don't exist in the config files by default, you must add them in <system.web> section:
+<system.web>
+......
+	<compilation>
+ 		<assemblies>
+
+		<add assembly="dotnetcharting, Version=4.4.2848.18442, Culture=neutral, PublicKeyToken=af2cd47db69d93bd"/>
+		
+		</assemblies>
+	</compilation>
+......
+
+<system.web>
+
+Note: If you have a newer version of dotnetcharting dll, please
+check the dll version by right clicking on dotnetcharting.dll and
+use the version number reported by the version tab instead.

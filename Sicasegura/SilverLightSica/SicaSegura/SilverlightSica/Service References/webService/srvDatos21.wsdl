@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="srvDatos_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="DoWork" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_listadoPuntos_InputMessage">
+    <wsdl:part name="parameters" element="listadoPuntos" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_listadoPuntos_OutputMessage">
+    <wsdl:part name="parameters" element="listadoPuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficos_InputMessage">
+    <wsdl:part name="parameters" element="graficos" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficos_OutputMessage">
+    <wsdl:part name="parameters" element="graficosResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficoCaudal_InputMessage">
+    <wsdl:part name="parameters" element="graficoCaudal" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficoCaudal_OutputMessage">
+    <wsdl:part name="parameters" element="graficoCaudalResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficoVelocidad_InputMessage">
+    <wsdl:part name="parameters" element="graficoVelocidad" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_graficoVelocidad_OutputMessage">
+    <wsdl:part name="parameters" element="graficoVelocidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaObtencionCaudal_InputMessage">
+    <wsdl:part name="parameters" element="lineaObtencionCaudal" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaObtencionCaudal_OutputMessage">
+    <wsdl:part name="parameters" element="lineaObtencionCaudalResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaCodFuenteDato_InputMessage">
+    <wsdl:part name="parameters" element="lineaCodFuenteDato" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaCodFuenteDato_OutputMessage">
+    <wsdl:part name="parameters" element="lineaCodFuenteDatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaRegimenCurva_InputMessage">
+    <wsdl:part name="parameters" element="lineaRegimenCurva" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaRegimenCurva_OutputMessage">
+    <wsdl:part name="parameters" element="lineaRegimenCurvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_tiposDeVariables_InputMessage">
+    <wsdl:part name="parameters" element="tiposDeVariables" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_tiposDeVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tiposDeVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_ListaDeVariables_InputMessage">
+    <wsdl:part name="parameters" element="ListaDeVariables" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_ListaDeVariables_OutputMessage">
+    <wsdl:part name="parameters" element="ListaDeVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaGrafico_InputMessage">
+    <wsdl:part name="parameters" element="lineaGrafico" />
+  </wsdl:message>
+  <wsdl:message name="srvDatos_lineaGrafico_OutputMessage">
+    <wsdl:part name="parameters" element="lineaGraficoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="srvDatos">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="urn:srvDatos/DoWork" message="srvDatos_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/DoWorkResponse" message="srvDatos_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoPuntos">
+      <wsdl:input wsaw:Action="urn:srvDatos/listadoPuntos" message="srvDatos_listadoPuntos_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/listadoPuntosResponse" message="srvDatos_listadoPuntos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="graficos">
+      <wsdl:input wsaw:Action="urn:srvDatos/graficos" message="srvDatos_graficos_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/graficosResponse" message="srvDatos_graficos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="graficoCaudal">
+      <wsdl:input wsaw:Action="urn:srvDatos/graficoCaudal" message="srvDatos_graficoCaudal_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/graficoCaudalResponse" message="srvDatos_graficoCaudal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="graficoVelocidad">
+      <wsdl:input wsaw:Action="urn:srvDatos/graficoVelocidad" message="srvDatos_graficoVelocidad_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/graficoVelocidadResponse" message="srvDatos_graficoVelocidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lineaObtencionCaudal">
+      <wsdl:input wsaw:Action="urn:srvDatos/lineaObtencionCaudal" message="srvDatos_lineaObtencionCaudal_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/lineaObtencionCaudalResponse" message="srvDatos_lineaObtencionCaudal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lineaCodFuenteDato">
+      <wsdl:input wsaw:Action="urn:srvDatos/lineaCodFuenteDato" message="srvDatos_lineaCodFuenteDato_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/lineaCodFuenteDatoResponse" message="srvDatos_lineaCodFuenteDato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lineaRegimenCurva">
+      <wsdl:input wsaw:Action="urn:srvDatos/lineaRegimenCurva" message="srvDatos_lineaRegimenCurva_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/lineaRegimenCurvaResponse" message="srvDatos_lineaRegimenCurva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tiposDeVariables">
+      <wsdl:input wsaw:Action="urn:srvDatos/tiposDeVariables" message="srvDatos_tiposDeVariables_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/tiposDeVariablesResponse" message="srvDatos_tiposDeVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeVariables">
+      <wsdl:input wsaw:Action="urn:srvDatos/ListaDeVariables" message="srvDatos_ListaDeVariables_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/ListaDeVariablesResponse" message="srvDatos_ListaDeVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lineaGrafico">
+      <wsdl:input wsaw:Action="urn:srvDatos/lineaGrafico" message="srvDatos_lineaGrafico_InputMessage" />
+      <wsdl:output wsaw:Action="urn:srvDatos/lineaGraficoResponse" message="srvDatos_lineaGrafico_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

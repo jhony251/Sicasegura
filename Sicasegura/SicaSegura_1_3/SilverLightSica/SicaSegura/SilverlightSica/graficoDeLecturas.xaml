@@ -1,0 +1,116 @@
+﻿<UserControl xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"  
+    x:Class="SilverlightSica.graficoDeLecturas"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+    ScrollViewer.VerticalScrollBarVisibility="Visible" Loaded="UserControl_Loaded"
+    >
+    
+     <Grid x:Name="LayoutRoot" Background="White" Width="1000" Height="1450" >                       
+        <Canvas x:Name="cnv" Width="auto" Height="auto"  ScrollViewer.VerticalScrollBarVisibility="Visible" >
+            <Image Source="images/cabeceraSicaSegura.jpg" Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="10"></Image>
+            <dataInput:Label Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="80" FontWeight="Bold" FontSize="20" x:Name="Cauce" />
+            <dataInput:Label Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="120" FontWeight="Bold" FontSize="14" x:Name="Punto" />
+            <dataInput:Label Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="160"  Content="Intervalo de datos:" x:Name="ID" />
+            <dataInput:Label Canvas.ZIndex="50"   Canvas.Left="10" Canvas.Top="170" Content="Total lecturas cargadas:" x:Name="NL" />
+            <dataInput:Label  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="180" Content="Total lecturas existentes:"  x:Name="TNL" />
+            <dataInput:Label  Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="190" Content="Total acumulado (m3):" x:Name="TA" />
+
+                       
+            <!-- TIPO OBTENCION CAUDAL -->
+            <Rectangle   Canvas.ZIndex="50"  Canvas.Left="10" Canvas.Top="210" Fill="LightGray"  Stroke="Black" Height="20" Width="600" ></Rectangle>            
+            <HyperlinkButton x:Name="lnk_ampliar_obtencionCaudal" Content="Ampliar"  Canvas.ZIndex="50" Canvas.Left="550" Canvas.Top="212" Click="HyperlinkButton_Click" />
+             
+            <controls:BusyIndicator Canvas.Top="310" Canvas.ZIndex="100" Canvas.Left="350"
+                    x:Name="CargaGrafico1"
+                    IsBusy="{Binding}" />
+            <controls:BusyIndicator Canvas.Top="310" Canvas.ZIndex="100" Canvas.Left="700"
+                    x:Name="CargaGrafico2"
+                    IsBusy="{Binding}" />
+            
+            <chartingToolkit:Chart x:Name="graficoObtencionCaudal" Title="" Width="600" Height="400" Background="#f2f2f2"  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="235" >
+                <chartingToolkit:Chart.Axes>
+                    <chartingToolkit:LinearAxis Orientation="Y" ></chartingToolkit:LinearAxis>
+                    
+                    <chartingToolkit:DateTimeAxis Background="DarkGray" Foreground="White" Orientation="X" ShowGridLines="True" Location="Bottom">
+                        <chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartingToolkit:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:dd MMM t}"/>
+                            </Style>
+                        </chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                    </chartingToolkit:DateTimeAxis>
+                </chartingToolkit:Chart.Axes>                 
+            </chartingToolkit:Chart>
+
+            <!--FIN TIPO OBTENCION CAUDAL -->
+
+            <!-- Caudales por Cod_Fuente_Dato -->            
+            <Rectangle  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="670" Fill="LightGray"  Stroke="Black"   Height="20" Width="600" ></Rectangle>            
+            <HyperlinkButton x:Name="lnk_codFuenteDato" Content="Ampliar"  Canvas.ZIndex="50" Canvas.Left="550" Canvas.Top="672" Click="HyperlinkButton_Click" />
+            <controls:BusyIndicator Canvas.Top="770" Canvas.ZIndex="100" Canvas.Left="350"
+                                x:Name="CargaGrafico3"
+                                IsBusy="{Binding}" />
+                        <controls:BusyIndicator Canvas.Top="770" Canvas.ZIndex="100" Canvas.Left="700"
+                                x:Name="CargaGrafico4"
+                                IsBusy="{Binding}" />
+            
+            <chartingToolkit:Chart  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="695" x:Name="graficoCaudalCodFuenteDato" Title="" Width="600" Height="400"  >
+                <chartingToolkit:Chart.Axes>
+                    <chartingToolkit:LinearAxis Orientation="Y"></chartingToolkit:LinearAxis>
+                    <chartingToolkit:DateTimeAxis Background="DarkGray" Foreground="White" Orientation="X" ShowGridLines="True" Location="Bottom">
+                        <chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartingToolkit:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:dd MMM t}"/>
+                            </Style>
+                        </chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                    </chartingToolkit:DateTimeAxis>
+                </chartingToolkit:Chart.Axes>
+            </chartingToolkit:Chart>
+          <!--FIN TIPO OBTENCION CAUDAL -->
+            
+         <!-- Caudales por régimen de curva -->
+                <Rectangle  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="1120" Fill="LightGray"  Stroke="Black"   Height="20" Width="600" ></Rectangle>
+                <HyperlinkButton x:Name="lnk_regimenCurva" Content="Ampliar"  Canvas.ZIndex="50" Canvas.Left="550" Canvas.Top="1122" Click="HyperlinkButton_Click" />
+            <controls:BusyIndicator Canvas.Top="1120" Canvas.ZIndex="100" Canvas.Left="350"
+                                x:Name="CargaGrafico5"
+                                IsBusy="{Binding}" />
+            <controls:BusyIndicator Canvas.Top="1120" Canvas.ZIndex="100" Canvas.Left="700"
+                                x:Name="CargaGrafico6"
+                                IsBusy="{Binding}" />
+
+            <chartingToolkit:Chart  Canvas.ZIndex="50" Canvas.Left="10" Canvas.Top="1145" x:Name="graficoRegimenDeCurva" Title="" Width="600" Height="400">
+                    <chartingToolkit:Chart.Axes>
+                        <chartingToolkit:LinearAxis Orientation="Y"></chartingToolkit:LinearAxis>
+                        <chartingToolkit:DateTimeAxis Background="DarkGray" Foreground="White" Orientation="X" ShowGridLines="True" Location="Bottom">
+                            <chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                                <Style TargetType="chartingToolkit:DateTimeAxisLabel">
+                                    <Setter Property="StringFormat" Value="{}{0:dd MMM t}"/>
+                                </Style>
+                            </chartingToolkit:DateTimeAxis.AxisLabelStyle>
+                        </chartingToolkit:DateTimeAxis>
+                    </chartingToolkit:Chart.Axes>
+                </chartingToolkit:Chart>
+
+            
+            <!-- GRAFICOS PIE -->
+            <chartingToolkit:Chart x:Name="graficoPieObtencionCaudal" Title="% de lecturas por TipoObtencionCaudal"   BorderBrush="Gray" Margin="0" Canvas.ZIndex="50" Canvas.Left="620" Canvas.Top="235" Width="300" Height="300"  />
+            <chartingToolkit:Chart x:Name="graficoPieCaudalCodFuenteDato" Title="% de lecturas por cod_fuente_dato" FontSize="10" BorderBrush="Gray" Margin="0" Canvas.ZIndex="50" Canvas.Left="620" Canvas.Top="695" Width="300" Height="300" />
+            <chartingToolkit:Chart x:Name="graficoPieRegimenDeCurva" Title="% de lecturas por RegimenCurva" BorderBrush="Gray" Margin="0" Canvas.ZIndex="50" Canvas.Left="620" Canvas.Top="1145" Width="300" Height="300" />           
+            <!-- FIN GRAFICOS PIE -->  
+            
+            <!-- -->
+                <Rectangle Canvas.ZIndex="0" Canvas.Left="0" Canvas.Top="160" Fill="LightGray"  Stroke="Black" Height="20" Width="1000" x:Name="fondo" Visibility="Collapsed"/>
+                <HyperlinkButton Content="Ocultar"  x:Name="lnk_ocultar" Canvas.ZIndex="0" Canvas.Left="950" Canvas.Top="162" Visibility="Collapsed" Click="lnk_ocultar_Click" />
+            
+            
+            
+            
+        </Canvas>
+         <!--
+        </ScrollViewer>
+         -->        
+
+    </Grid>
+
+</UserControl>

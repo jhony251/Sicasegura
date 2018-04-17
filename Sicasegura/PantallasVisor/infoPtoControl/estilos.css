@@ -1,0 +1,31 @@
+﻿body {font:10px Verdana; background-color:#cccc99}
+TD {font:10px Verdana}
+TD.celdacontenido {padding:5px}
+TD.titulo {background-color:#BABA74;font:bold 13px Tahoma; color:#444444;padding:6px}
+TD.titListado {/*color:White;*/font:bold 11px Tahoma;border-bottom:1px solid #76763A}
+TR.titListado {font-weight:bold; color:black; font-size:12px}
+TD.subtitListado {border-bottom:0px solid #76763A}
+TD.L {background-color:white}
+TD.contador {background-color:#eAeAb4;}
+TR.subtitListado {}
+TR.fila0 {}
+TR.fila1 {background-color:white}
+TH {font:bold 9px Verdana}
+
+
+A {text-decoration:none; color:Maroon}
+A:hover {text-decoration:underline}
+A.menusup {color:#4A4A04}
+A.menuinf {color:white}
+
+DIV.nuevaLectura {border:1px solid #666666;background-color:#cccccc;padding:10px;width:760px}
+
+FORM {margin:0px}
+
+INPUT.texto {font:10px Verdana}
+INPUT.boton {font:10px Verdana}
+SELECT.texto {font:10px Verdana}
+TEXTAREA.texto {font:10px Verdana}
+
+.filaPaginacion {background-color:#BABA74}
+.subtitulo {background-color:#BABA74;font:bold 12px Tahoma; color:#444444;padding:3px}

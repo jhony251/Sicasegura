@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://vushtt053.tragsa.es/sicasegura/srvDatos.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listadoPuntos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listadoPuntosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="listadoPuntosResult" nillable="true" type="q1:ArrayOfPVYCR_DatosAcequias_NIVUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="punto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="graficosResult" nillable="true" type="q2:ArrayOfPVYCR_DatosAcequias_NIVUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficoCaudal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="punto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficoCaudalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="graficoCaudalResult" nillable="true" type="q3:ArrayOfPVYCR_DatosAcequias_NIVUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficoVelocidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="punto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="graficoVelocidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="graficoVelocidadResult" nillable="true" type="q4:ArrayOfPVYCR_DatosAcequias_NIVUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaObtencionCaudal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoObtencionCaudal" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaObtencionCaudalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="lineaObtencionCaudalResult" nillable="true" type="q5:ArrayOfTablaAcequias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaCodFuenteDato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodFuenteDato" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaCodFuenteDatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="lineaCodFuenteDatoResult" nillable="true" type="q6:ArrayOfTablaAcequias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaRegimenCurva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegimenCurva" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaRegimenCurvaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="lineaRegimenCurvaResult" nillable="true" type="q7:ArrayOfTablaAcequias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tiposDeVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoVariable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tiposDeVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tiposDeVariablesResult" nillable="true" type="q8:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoVariable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListaDeVariablesResult" nillable="true" type="q9:ArrayOfTiposVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaGrafico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlFile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lineaGraficoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="lineaGraficoResult" nillable="true" type="q10:ArrayOfTablaListado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

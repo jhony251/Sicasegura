@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[SicaSegura_1_3.sln]
+SCC_Aux_Path = "\\sitsql2005\vss"
+SCC_Project_Name = "$/SicaSegura/Version 1.3", PHWCAAAA
+
+[Sicasegura.sln]
+SCC_Aux_Path = "Z:\VisualStudioSource"
+SCC_Project_Name = "$/SicaSegura", GFAAAAAA

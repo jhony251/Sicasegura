@@ -1,0 +1,99 @@
+﻿body {
+      /*padding-left:20px;            */      
+	  font-family: Trebuchet MS;
+	  scrollbar-face-color:#105A7B;
+	  scrollbar-highlight-color:grey;
+	  scrollbar-3dlight-color:#105A7B;
+	  scrollbar-darkshadow-color:#105A7B;
+	  scrollbar-shadow-color:grey;
+	  scrollbar-arrow-color:grey;
+	  scrollbar-track-color:#105A7B; 	  
+      }            
+input
+{
+	  font-size:9pt;
+	  font-family: Trebuchet MS;	  
+	  height: 9pt;
+}
+
+/*td
+{
+	font-size:9pt;
+	font-family: Trebuchet MS;
+	}*/
+.boton
+{
+	font-size:8pt;
+	font-family: Trebuchet MS;	  
+	height: 15pt;	
+	border: 1px solid #105A7B;
+}
+.grid0
+{
+	font-size:8pt;
+	font-family: Trebuchet MS;
+	border: 1px solid #105A7B;
+}
+.grid1
+{
+	font-size:8pt;
+	font-family: Trebuchet MS;
+	border: 1px solid #105A7B;
+	background-color: #9E819E;	
+}	
+.gridCabecera
+{
+	font-size:8pt;
+	font-weight:bold;
+	font-family: Trebuchet MS;
+	border: 1px solid #105A7B;
+}
+th
+{	
+	font-weight:bold;
+	border: 1px solid #105A7B;
+}
+.paginador
+{
+	font-size:8pt;	
+	font-family: Trebuchet MS;
+}
+.caja
+{
+	font-size:8pt;
+	font-family: Trebuchet MS;
+	border: 1px solid #105A7B;
+	height:19px;
+	width:65px;
+}
+.alertas
+{
+	font-size:7pt;
+	font-family: Trebuchet MS;
+	color: Red;		
+	}
+
+.calendar
+{
+	font-size:7pt;
+	font-family: Trebuchet MS;	    
+}	  
+.tabla
+{
+	font-size:9pt;			
+}
+.celdaCentral
+{
+	font-size:8pt;	
+}
+.despPaginas
+{
+	font-size:8pt;	
+}
+.botCambioPag
+{
+	font-size:8pt;		
+	text-decoration:none;
+	color:Black;
+}
+			

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPVYCR_DatosAcequias_NIVUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PVYCR_DatosAcequias_NIVUS" nillable="true" type="tns:PVYCR_DatosAcequias_NIVUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPVYCR_DatosAcequias_NIVUS" nillable="true" type="tns:ArrayOfPVYCR_DatosAcequias_NIVUS" />
+  <xs:complexType name="PVYCR_DatosAcequias_NIVUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calado_M" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Caudal_M3S" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CodigoPVYCR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Hora" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Velocidad_MS" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PVYCR_DatosAcequias_NIVUS" nillable="true" type="tns:PVYCR_DatosAcequias_NIVUS" />
+  <xs:complexType name="ArrayOfTablaAcequias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaAcequias" nillable="true" type="tns:TablaAcequias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaAcequias" nillable="true" type="tns:ArrayOfTablaAcequias" />
+  <xs:complexType name="TablaAcequias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calado_M" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Caudal_M3S" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cod_Fuente_Dato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPVYCR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DUDA_CALIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescFuenteDato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diferencial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diferencial_acum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Escala_M" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha_Medida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegimenCurva" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoObtencionCaudal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idElementoMedida" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaAcequias" nillable="true" type="tns:TablaAcequias" />
+  <xs:complexType name="ArrayOfTiposVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TiposVariables" nillable="true" type="tns:TiposVariables" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTiposVariables" nillable="true" type="tns:ArrayOfTiposVariables" />
+  <xs:complexType name="TiposVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoVariable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+      <xs:element minOccurs="0" name="Variable" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TiposVariables" nillable="true" type="tns:TiposVariables" />
+  <xs:complexType name="ArrayOfTablaListado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaListado" nillable="true" type="tns:TablaListado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaListado" nillable="true" type="tns:ArrayOfTablaListado" />
+  <xs:complexType name="TablaListado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescTipoElem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementoMedida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha_Medida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha_MedidaF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filtro1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filtro2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Punto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rama" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var1Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var1Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var2Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var2Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var3Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var3Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var4Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var4Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var4Visible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var5Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var5Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Var5Visible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numLecturas" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaListado" nillable="true" type="tns:TablaListado" />
+</xs:schema>

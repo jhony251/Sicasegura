@@ -1,0 +1,7 @@
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\ResolveAssemblyReference.cache
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\App.g.vb
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\graficoDeConsumos.g.vb
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\graficoDeLecturas.g.vb
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\Page.g.vb
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\telegestion.g.vb
+D:\Proyectos\Sicasegura\SilverLightSica\SicaSegura\SilverlightSica\obj\Debug\SilverlightSica.g.resources

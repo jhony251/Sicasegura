@@ -1,0 +1,825 @@
+﻿/*Estilos para controlar el árbol hecho con json*/
+
+/*PARA QUE SALGA EL CIRCULITO COMO QUE ESTÁ BUSCANDO LOS HIJOS*/
+.x-tree-node-loading .x-tree-node-icon{
+	background-image:url(SICAH/images/default/tree/loading.gif) !important;
+		background-image: none;
+}
+.PuntoGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoAcequia2.gif);  
+}
+.PuntoCuaYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_Y32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCuaOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_O32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCuaGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_32.png);
+    /*background-image:http://localhost/sicasegura/SICAH/images/iconosBuenos/icocua_aaa32.png;*/
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCuaBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_B32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCirYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_Y32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCirOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_O32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCirGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_G32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoCirBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_B32.png);
+	width: 30px;
+	height: 25px;        
+}
+.PuntoPTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoPeaje.ico);
+}
+.PuntoTTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoTrasvase.ico);
+}
+.PuntoTeleGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaG.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoTeleMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaM.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/puntoAcequia2.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCuaYTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_Y32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCuaOTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_O32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCuaGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_G32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCuaBTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_B32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/puntoMotor.ico);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCirYTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_Y32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCirOTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_O32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCirGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_G32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavCirBTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_B32.ico);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavPTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoPeaje.ico);
+}
+.PuntoFavTTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoTrasvase.ico);
+}
+.PuntoFavTeleGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaG.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoFavTeleMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaM.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoAcequia2.gif);  
+}
+.PuntoCadCuaYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_Y32.png);
+	width: 30px;
+	height: 25px;    
+}
+.PuntoCadCuaOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_O32.png);
+    width: 30px;
+	height: 25px;    
+}
+.PuntoCadCuaGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_G32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadCuaBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocua_B32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadMTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoMotor.ico);
+}
+.PuntoCadCirYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_Y32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadCirOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_O32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadCirGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_G32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadCirBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocir_B32.png);
+   	width: 30px;
+	height: 25px;    
+}
+.PuntoCadPTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoPeaje.ico);
+}
+.PuntoCadTTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoTrasvase.ico);
+}
+.PuntoCadTeleGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaG.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadTeleMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaM.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/puntoAcequia2.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCuaYTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_Y32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCuaOTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_O32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCuaGTree .x-tree-node-icon
+{  	/*background-image:url(SICAH/images/iconosBuenos/icocua_G32.png);	*/
+   	background-image:url(http://localhost/sicasegura/SICAH/images/iconosBuenos/icocua_G32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCuaBTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocua_B32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/puntoMotor.ico);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCirYTree .x-tree-node-icon
+{   background-image:url(SICAH/images/iconosBuenos/icocir_Y32.png);
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCirOTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_O32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCirGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_G32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavCirBTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/iconosBuenos/icocir_B32.png);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavPTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoPeaje.ico);
+}
+.PuntoCadFavTTree .x-tree-node-icon{
+    background-image:url(SICAH/images/puntoTrasvase.ico);
+}
+.PuntoCadFavTeleGTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaG.gif);	
+	width: 30px;
+	height: 25px;
+}
+.PuntoCadFavTeleMTree .x-tree-node-icon
+{  	background-image:url(SICAH/images/telemedidaM.gif);	
+	width: 30px;
+	height: 25px;
+}
+
+.ElementoMedidaTree .x-tree-node-icon{
+    background-image:url(SICAH/images/distancias.gif);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCuaQYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocuaQY32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCuaQOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocuaQO32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCuaQGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocuaQG32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCuaQBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocuaQB32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirQYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirQY32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirQOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirQO32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirQGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirQG32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirQBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirQB32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirVYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirVY32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirVOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirVO32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirVGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirVG32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirVBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirVB32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirEYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirEY32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirEOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirEO32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirEGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirEG32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirEBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirEB32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirHYTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirHY32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirHOTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirHO32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirHGTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirHG32.png);
+	width: 30px;
+	height: 25px;    
+}
+.ElementoCirHBTree .x-tree-node-icon{
+    background-image:url(SICAH/images/iconosBuenos/icocirHB32.png);
+	width: 30px;
+	height: 25px;    
+}
+
+.CauceNivel0Tree .x-tree-node-anchor span
+{
+	color:#000;
+	font: bold 11px tahoma;
+}
+.CauceNivel1Tree .x-tree-node-anchor span
+{
+	color:#00008B;
+	font: bold 11px tahoma;
+}
+.CauceNivel2Tree .x-tree-node-anchor span
+{
+	color:#0000CD;
+	font: bold 11px tahoma;
+}
+.CauceNivel3Tree .x-tree-node-anchor span
+{
+	color:#4169E6;
+	font: bold 11px tahoma;
+}
+.CaucesSinHijosTree .x-tree-node-anchor span
+{
+	color:#B5B4AA;
+	font: bold 11px tahoma;
+}
+
+.PuntoMTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCirYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCirOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCirGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCirBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCuaYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCuaOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCuaGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoCuaBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoTTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoPTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoTeleGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.PuntoTeleMTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+}
+.ElementoMedidaTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCuaQYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCuaQOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCuaQGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCuaQBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirQYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirQOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirQGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirQBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirVYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirVOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirVGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirVBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirEYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirEOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirEGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirEBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirHYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirHOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirHGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+.ElementoCirHBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: normal 11px tahoma;
+}
+
+.PuntoFavGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCuaYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCuaOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCuaGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCuaBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavMTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCirYTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCirOTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCirGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavCirBTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavPTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavTTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavTeleGTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoFavTeleMTree .x-tree-node-anchor span
+{
+	color:#008500;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCuaYTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCuaOTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCuaGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCuaBTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadMTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCirYTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCirOTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCirGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadCirBTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadTTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadPTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadTeleGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadTeleMTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+}
+.PuntoCadFavMTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCirYTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCirOTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCirGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCirBTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCuaYTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCuaOTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCuaGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavCuaBTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavTTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavPTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavTeleMTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.PuntoCadFavTeleGTree .x-tree-node-anchor span
+{
+	color:#8A8A8A;
+	font: bold 11px tahoma;
+	background-color:#FABCBC;
+}
+.textoB
+{
+	color: #ADA8A8;
+	font: bold 11px tahoma;
+	text-transform: uppercase;
+}
+.imagenB
+{
+	color: red;
+	background-image: url(SICAH/images/iconos/icoBtnSistemasBuscar2.gif);
+	background-repeat: no-repeat;
+}
+
+
+
+

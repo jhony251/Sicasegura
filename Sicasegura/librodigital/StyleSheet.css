@@ -1,0 +1,40 @@
+﻿
+
+body {background:#666768;       
+      padding:0px;
+      margin:0px;      
+      scrollbar-face-color:#105A7B;
+	  scrollbar-highlight-color:grey;
+	  scrollbar-3dlight-color:#105A7B;
+	  scrollbar-darkshadow-color:#105A7B;
+	  scrollbar-shadow-color:grey;
+	  scrollbar-arrow-color:grey;
+	  scrollbar-track-color:#105A7B; 
+	  font-size:10pt;
+	  font-family: Trebuchet MS;
+      }
+.cabecera
+{
+	font-size:10pt;
+	font-family:Arial;
+	color:gray;
+	background-color:#333333;
+	border-bottom:solid 1px black; 
+	}
+.contenedor
+{
+	background-color:White;
+	/*position:absolute;*/
+	width:900px;
+	height:700px;
+	/*left:50%;
+	margin-left: -350px;
+	height:700px;*/	
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+		
+}
+.cabeceraInformacion
+{
+	border:1px solid #105A7B; background-color:#93B7C7;
+	}

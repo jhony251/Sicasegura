@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SicaSegura_1_3", "http://localhost/SicaSegura_1_3", "{C8BF5B38-4F13-444F-A027-5805A78FE130}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/SicaSegura/Version 1.3", PHWCAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/SicaSegura_1_3"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\SicaSegura_1_3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SicaSegura_1_3\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SicaSegura_1_3"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\SicaSegura_1_3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SicaSegura_1_3\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\SicaSegura_1_3\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/SicaSegura_1_3
+		SccLocalPath1 = c:\\inetpub\\wwwroot\\SicaSegura_1_3
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8BF5B38-4F13-444F-A027-5805A78FE130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BF5B38-4F13-444F-A027-5805A78FE130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

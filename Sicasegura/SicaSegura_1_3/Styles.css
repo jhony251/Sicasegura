@@ -1,0 +1,217 @@
+/* Default CSS Stylesheet for a new Web Application project */
+
+BODY
+{
+}
+
+
+TD {font:11px Tahoma; padding-left:2px}
+TD.cabeceraAplicacion 
+{
+	width:100%;
+	height:100px;
+	background-image:url(images/cabecera.jpg);
+	background-repeat:no-repeat;
+	border-bottom:1px solid #797047;
+	padding:0px;
+	background-color:#6D6B48;
+}
+
+TD.cabeceraAplicacion2 
+{
+	width:100%;
+	height:100px;
+	background-image:url(images/cabecera2.jpg);
+	background-repeat:no-repeat;
+	border-bottom:1px solid #797047;
+	padding:0px;
+	background-color:#6D6B48;		
+}
+
+TD.cabeceraSicaSegura 
+{
+	width:100%;
+	height:60px;
+	background-image:url(images/cabeceraSicaSegura.jpg);
+	background-repeat:no-repeat;
+	border-bottom:1px solid #797047;
+	padding:0px;
+	background-color:#FFFFFF;
+}
+TD.pestOn1 {width:17px;height:17px;background-image:url(images/pestOn1.gif);padding-left:0px;}
+TD.pestOn2 {background-image:url(images/pestOn2.gif); padding-right:4px;padding-left:0px;}
+TD.pestOn3 {width:2px;background-image:url(images/pestOn3.gif);font-size:1px;padding-left:0px;}
+TD.pestOff1 {width:8px;height:17px;background-image:url(images/pestOff1.gif);padding-left:0px;}
+TD.pestOff1Grande {width:17px;height:17px;background-image:url(images/pestOff1Grande.gif);padding-left:0px;}
+TD.pestOff2 {background-image:url(images/pestOff2.gif); padding-right:4px;padding-left:0px;}
+TD.pestOff3 {width:2px;background-image:url(images/pestOff3.gif);font-size:1px;padding-left:0px;}
+TD.enlaceLecturas {font:12px Trebuchet MS,Georgia,Tahoma; color:blue;text-decoration:underline}
+.tituloSec {font:15px Trebuchet MS,Georgia,Tahoma;  color:#222266; padding-bottom:10px;}
+.titulolec {font:17px  Trebuchet MS,Georgia,Tahoma; color:#222266; padding-bottom:10px;}
+.tituloLecturas {font:20px Trebuchet MS,Georgia,Tahoma; background-color:#FEFCC1; font-weight:bold}
+.AnyoHidrologico {font:12px Trebuchet MS,Georgia,Tahoma; color:#222266; padding-bottom:10px;}
+.displayClave{font:12px Trebuchet MS,Georgia,Tahoma bold; background-color:#D7DDBB}
+.nodeSelected
+{
+    text-decoration: underline overline;
+    background-color:#eee8aa;
+}
+.nodeSelectedBusqueda
+{
+    text-decoration: underline overline;
+    background-color: #ccffff;
+}
+.enlaceLecturas {font:12px Trebuchet MS,Georgia,Tahoma; color:blue;text-decoration:underline}
+TD.seccionEdicion {font-family: Tahoma; font-weight:bold;border-bottom:1px dotted #888888}
+TD.encabListado {background-color:#E8DB9F; padding:3px; font: 11px Arial,Georgia,Tahoma,Verdana;border:1px solid #C8BB7F}
+TD.textoEncabListado {font: 11px Georgia,Arial,Tahoma,Verdana;}
+TD.encabListado2{background-color:#E8DB9F; padding:3px; font: 9px Georgia,Arial,Tahoma,Verdana;border:1px solid #C8BB7F}
+TD.encabListadoValEstimados { padding:3px; font:bold 11px Arial,Georgia,Tahoma,Verdana;border:1px solid #C8BB7F;color:Maroon}
+
+
+TD.encabBandeja {padding:3px; font: 11px Tahoma;color: #888888}
+TD.f {font:9px Arial}
+fdsaf
+{
+	visibility:hidden;
+	}
+TD.TipoCaudal{font:9px Verdana; border:0px; background-color:#D7DDBB}
+TD.L {background-color:white}
+TD.formula
+{
+	background-color: white;
+	font: 9px Verdana;
+	color: maroon;
+}
+TD.titulo {background-color:#BABA74;font:bold 13px Tahoma; color:#444444;padding:6px}
+TD.titListado {/*color:White;*/font:bold 11px Tahoma;border-bottom:1px solid #76763A}
+TD.titListadoCalculos
+{
+	font: bold 11px Tahoma;
+	border-bottom: 1px solid #76763A;
+	color: #000099;
+	font-style: normal;
+	vertical-align: bottom;
+}
+TD.filtrosCabecera
+{
+	background-color:#BFBDC0
+}
+TD.cabeceraMTO
+{
+	background-color:#8AD3DB; border:1px solid #666666
+}
+TD.cabeceraRelacion
+{
+	background-color:#F5F5F5; border:1px solid #666666
+}
+
+TD.DiferencialPre {font:9px Verdana; border:0px; background-color:#D7DDBB; color:Red; cursor:pointer;}
+TD.LeyendaV {font-family:Arial Black; font-size:9px;color:White;border:solid 1px white}
+
+TR.fila0 {background-color:#EFEFEF; cursor:pointer;}
+TR.fila1 {background-color:#F9F6E7; cursor:pointer;}
+TR.filaDiferencial {background-color:red; cursor:pointer;}
+TR.filaSel0 {background-color:#bbbbee; cursor:pointer;}
+TR.filaSel1 {background-color:#bbbbee; cursor:pointer;}
+TR.filaUsuario {background-color:#E8DB9F; cursor:default;}
+TR.TipoCaudal{font:9px Verdana; border:0px; background-color:#D7DDBB}
+TR.Ordenar {background-color:#800B00}
+
+TH{display:table-header-group;}
+TH.encabListado {background-color:#E8DB9F; padding:3px; font: 11px Georgia,Arial,Tahoma,Verdana;border:1px solid #C8BB7F}
+TH.preproduccion {font:bold 9px Verdana}
+THEAD{display:table-header-group;}
+
+
+A{font:11px Tahoma; text-decoration:none; color: #4a4a4a;}
+A.filtro  {font:12px Trebuchet MS,Georgia,Tahoma; color:blue;text-decoration:underline}
+A.enlaces:hover{text-decoration: underline; color:Black;}
+A.enlacesMenuArbol {font:12px Trebuchet MS,Georgia,Tahoma; text-decoration:underline}
+A.barraHerramientas {padding:2px; border:1px solid #dddddd}
+A.barraHerramientas:hover {background-color:#B6BBC8; border:1px solid #0A246A}
+a.cerrar
+{
+	color:#A9A363;}
+a.cerrar:hover
+{
+	color: #E1DA93;
+	text-decoration: underline;}
+
+A.Ordenar{font:10px Verdana; font-weight:bold; color: White}
+
+A.E0{color: Green; text-indent: 40px;}
+A.P0{color:Green; font-weight: bold;text-indent:20px}
+A.C0{color:#191970;font-weight: bold;}
+A.E1{color: Green; text-indent: 40px; background-color: lightgrey;}
+A.P1{color:Green; font-weight: bold; text-indent:20px; background-color: lightgrey}
+A.C1{color:#191970;font-weight: bold; background-color: lightgrey}
+
+INPUT.boton {font:10px Verdana}
+INPUT.colorV {font:9px Verdana; border:0px; background-color: Green}
+INPUT.colorR {font:9px Verdana; border:0px; background-color: Red}
+INPUT.colorA {font:9px Verdana; border:0px; background-color: #FFCC00}
+INPUT.colorB {font:9px Verdana; border:0px; background-color: White}
+
+INPUT.texto{font:11px Verdana;border:1px solid #666666;}
+INPUT.textoNumerico{font:11px Verdana;border:1px solid #666666; text-align:right}
+INPUT.textonegrita{font:bold 11px Verdana;border:1px solid #666666)
+TEXTAREA.texto{font:11px Verdana;border:1px solid #666666}
+.filaPaginacion {background-color:#D4D0C8}
+
+TABLE.tablaEdicion {border: 1px solid #4a4a4a;background-image:url(images/fondoform.jpg);background-position:left bottom; background-repeat:repeat-x}
+
+SELECT.texto{font:11px Verdana;}
+SELECT.textoSICA{font:11px Verdana;border:1px solid red}
+SELECT.combo{font:9px Verdana; text-align: right}
+DIV.capa
+{
+	/*left: 350px; top: 200px; width: 400px; height:250px;*/
+	position:absolute; 
+	border: 1px solid gray; visibility:hidden;	
+	font-family:Verdana;
+	font-size:10px;
+	background-color:#EFEFEF;	
+}
+
+
+
+
+.textoFiltros{font:11px Tahoma; padding-left:2px; color:#444444}
+
+/*Estilos del paginador v2*/
+.botCambioPag {text-decoration:none}
+.despPaginas {font:11px Verdana}
+.tablaPaginacion {background-color:#D4D0C8}
+/*.panelPaginacion: clase de estilo del panel contenedor global (que se traducirá en un div o un span)*/
+
+.Negrita{font-weight: bold;}
+.Norma{ font-weight: normal;}
+
+/*Estilos para controlar el menú contextual del arbol de cauces*/
+.skin0
+{
+    position: absolute;
+    width: 240px;
+    background-color: white;
+    font-family: Verdana;
+    line-height: normal;
+    cursor: hand;
+    font-size: 10px;
+    visibility: hidden;
+    z-index: 100;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.menuitems{
+padding-top:1px;
+padding-bottom:1px;
+padding-left:1px;
+padding-right:1px;
+font-family:Verdana;
+font-size:10px;
+color:black;
+
+ 
+}

@@ -1,0 +1,21 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_srvDatos" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_srvDatos1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="https://localhost/SicaSegura/srvDatos.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_srvDatos"
+                contract="webService.srvDatos" name="BasicHttpBinding_srvDatos" />
+        </client>
+    </system.serviceModel>
+</configuration>

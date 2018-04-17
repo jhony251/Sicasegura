@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>NineRays.Reporting.Export.PDF</name>
+  </assembly>
+  <members>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetLineWidth(System.Single)"><summary>Set line width.</summary><param name="width">Width of line.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.RestoreState"><summary>Restore graphic state.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.ShowDialog"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.ShowDialog" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.PicturePDFAdapter"><summary>Represents adapter for the Picture class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter"><summary>Represents adapter for the Box class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter.Render(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render control to PDF.</summary><param name="file">PDFFile.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.String)"><summary>Exports given document to the specified file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.#ctor"><summary>Initializes a new instance of the PDFExportFilter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.Export(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to the specified stream.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PdfFile.ImageResolution"><summary>Gets or sets image resolution in the result pdf file if needed.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.RichTextPDFAdapter"><summary>Represents adapter for the RichText class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.TextBoxPDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor for TextBoxPDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.#ctor(System.String)"><summary>Creates a new instance of PdfFile class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter"><summary>Incapsulates conversion methods for different types of report controls.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter.Size"><summary>Control size.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.TextBoxPDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render TextBox to PDF.</summary><param name="file">PDFFile.</param></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PDFExportFilter.EmbedFonts"><summary>Gets and sets whether fonts will be embedded in result pdf file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.PicturePDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor fo PicturePDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.ShapePDFAdapter"><summary>Represents adapter for the Shape class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.Save(System.String)"><summary>Save PDFFile to file.</summary><param name="fileName">Name file for save.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SaveState"><summary>Save garphic state.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.DrawFillRectangle(System.Drawing.PointF,System.Drawing.SizeF,System.Drawing.Color)"><summary>Draw fill rectangle.</summary><param name="location">Location.</param><param name="size">Size.</param><param name="color">Color.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilterFactory.GetFilterFormat"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFormat" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.PicturePDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render Picture to PDF.</summary><param name="file">PDFFile.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.DrawLine(System.Drawing.PointF,System.Drawing.PointF)"><summary>Draw line from point to point.</summary><param name="from">From point.</param><param name="to">To point.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor for PDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PdfFile.DPI"><summary>DPI in source objects.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.ShapePDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor for ShapePDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.RichTextPDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render TextBox to PDF.</summary><param name="file">PDFFile.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Renders content of Box control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.ReportControlPDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor for ReportControlPDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter.Render(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render Box to PDF.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.RichTextPDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Default constructor for TextBoxPDFAdapter.</summary><param name="control">base control.</param></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.AdvancedTextPDFAdapter"><summary>Represents adapter for the AdvancedText class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to the specified stream.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PdfFile.KeepOriginalImageResolutionAndQuality"><summary>Gets and sets whether image resolution and quality will be stored in the result pdf file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.#ctor(System.ComponentModel.IContainer)"><summary>Initializes a new instance of the PDFExportFilter class with the specified container.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.MoveTo(System.Drawing.PointF)"><summary>Move to …</summary><param name="location">Point to locating.</param></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PdfFile.ImageQuality"><summary>Gets or sets image quality in the result pdf file if needed.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PDFExportFilter.KeepOriginalImageResolutionAndQuality"><summary>Gets and sets whether image resolution and quality will be stored in the result pdf file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.LineTo(System.Drawing.PointF)"><summary>Draw line to location.</summary><param name="location">Point to locating.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.RegisterAdapter(System.Type,System.Type)"><summary>Registers a new adapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.NewPage(System.Drawing.SizeF)"><summary>Begin new page.</summary><param name="size">Size of page.</param></member>
+    <member name="T:NineRays.Reporting.Export.PDF.PdfFile"><summary>Represents pdf file image in the buffer.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.WriteLine(System.String)"><summary>Writes string with line break.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PDFExportFilter.ImageResolution"><summary>Gets and sets image resolution if needed.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetTextColor(System.Drawing.Color)"><summary>Set Text Color.</summary></member>
+    <member name="F:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter.control"><summary>Base ReportControl.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.DrawImage(System.Drawing.Image,System.Drawing.PointF,System.Drawing.SizeF)"><summary>Draw Image.</summary><param name="image">Image.</param><param name="location">Location.</param><param name="size">Size.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetLineStyle(NineRays.Basics.Drawing.BorderLine)"><summary>Set line style.</summary><param name="line">BorderLine.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.AdvancedTextPDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates a new instance of AdvancedTextPDFAdapter class.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PDFExportFilterFactory.Factory"><summary>Gets default instance of the PDFExportFilterFactory class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.CreateAdapter(NineRays.Reporting.DOM.ReportControl)"><summary>Registers new adapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.OutText(System.String,NineRays.Basics.Drawing.VectorRect,NineRays.Basics.Drawing.VectorRect,System.Drawing.Font,System.Drawing.Color,System.Int32)"><summary>Writes text using given parameters.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilterFactory.GetFilterFileExtension"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFileExtension" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.TextBoxPDFAdapter"><summary>Represents adapter for the TextBox class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetLineParams(System.Single,System.String)"><summary>Set line params.</summary><param name="width">Width of line.</param><param name="pattern">Pattern.</param></member>
+    <member name="T:NineRays.Reporting.Export.PDF.Adapters.ReportControlPDFAdapter"><summary>Represents adapter for the ReportControl class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.DrawPath"><summary>Draw path.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.FindAdapterType(System.Type)"><summary>Returns PDFAdapter instance corresponding to the given control type.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.DrawRectangle(System.Drawing.PointF,System.Drawing.SizeF)"><summary>Draw rectangle.</summary><param name="location">Location.</param><param name="size">Size.</param></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetPathColor(System.Drawing.Color)"><summary>Set Path Color.</summary></member>
+    <member name="T:NineRays.Reporting.Export.PDF.PDFExportFilterFactory"><summary>Creates PDFExportFilter instaces.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilterFactory.CreateFilter"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.CreateFilter" />.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PdfFile.EmbeddedFonts"><summary>Gets and sets whether fonts will be embedded in the result pdf file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates a new instance for BoxPDFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.ShapePDFAdapter.Render(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render Shape to PDF.</summary><param name="file">PDFFile.</param></member>
+    <member name="T:NineRays.Reporting.Export.PDF.PDFExportFilter"><summary>Represents the instance of the pdf filter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.AdvancedTextPDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter.RenderContent(NineRays.Reporting.Export.PDF.PdfFile)" />.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.Adapters.BoxPDFAdapter.ContentRectangle"><summary>Gets the content rectangle of a Box control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.SetClip(System.Drawing.RectangleF)"><summary>Set Clip rectangle.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PDFExportFilter.GetFactory"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.GetFactory" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.PdfFile.Save(System.IO.Stream)"><summary>Save PDFFile to stream.</summary><param name="stream">Output stream.</param></member>
+    <member name="P:NineRays.Reporting.Export.PDF.PDFExportFilter.ImageQuality"><summary>Gets and sets image quality if needed.</summary></member>
+    <member name="P:NineRays.Reporting.Export.PDF.Adapters.PDFAdapter.Location"><summary>Control location.</summary></member>
+    <member name="M:NineRays.Reporting.Export.PDF.Adapters.ReportControlPDFAdapter.Render(NineRays.Reporting.Export.PDF.PdfFile)"><summary>Render ReportControl to PDF.</summary><param name="file">PDFFile.</param></member>
+  </members>
+</doc>

@@ -1,0 +1,2246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <references>
+    <ref>
+      <key>[dataService]</key>		
+      <!--<value>http://localhost/guarderiafluvialdev/visor/dataguarderia/dataguarderia.asmx</value>-->
+      <value>http://guarderiafluvialpro.tragsatec.es/visor/dataguarderia/dataguarderia.asmx</value>
+		<!--<value>http://guarderiafluvialpre.tragsatec.es/visor/dataguarderia/dataguarderia.asmx</value>-->
+    </ref>
+    <ref>
+      <key>[proxyUrl]</key>
+      <value></value>
+    </ref>
+    <ref>
+      <key>[movilesAdminService]</key>
+      <value>http://guarderiafluvialpro.tragsatec.es/visor/dataguarderia/PDF/</value>
+    </ref>
+    <ref>
+      <key>[controlService]</key>
+		<!--<value>http://visorguarderiafl2.tragsatec.es/infoPtoControl/?codigoPVYCR=</value>-->
+		<value>http://sicasegura.tragsatec.es/PantallasVisor/infoPtoControl/?codigoPVYCR=</value>
+		<!--<value>http://localhost/PVYCR-puntosControl/infoPtoCrol.aspx?codigoPVYCR=</value>-->
+    </ref>
+    <ref>
+      <key>[tareaService]</key>
+      <value>http://guarderiafluvialpro.tragsatec.es/tareas/tareas.aspx?editarBT=yes&amp;idTarea=</value>
+    </ref>
+    <ref>
+      <key>[imageServer]</key>
+      <value>http://imgpro.tragsatec.es/imageserver/aspimagedispatcher.aspx</value>
+    </ref>
+    <ref>
+      <key>[pantallaService]</key>
+      <value>http://sicasegura.tragsatec.es/PantallasVisor/</value>
+    </ref>
+	<ref>
+	  <key>[pantallaServiceG]</key>
+	  <value>http://guarderiafluvialpro.tragsatec.es/PantallasVisor/</value>
+	</ref>	  
+  </references>
+  <TTec.DnDataProvider.DataProvider>
+    <maxBytes>400000</maxBytes>
+    <timeOutSeconds>20</timeOutSeconds>
+    <content-type>text/xml</content-type>
+    <user>user</user>
+    <soapDnDataServer>
+      <baseUrl>[dataService]</baseUrl>
+      <proxyUrl>[proxyUrl]</proxyUrl>
+      <sockets>40</sockets>
+    </soapDnDataServer>
+    <responseFormat layerAlias="MEDIOS_MOVILES" methodName="Data">
+      <table name="POSICION_ACTUAL">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="CODIGO + &quot;\n&quot; + ULTIMA_ACT" alias="toolTip" />
+        <column name="ID" alias="id" />
+        <column name="icono" alias="icono" />
+        <column name="estado" alias="estado" />
+        <column type="mixed" name="&quot;[movilesAdminService]&quot; +  CODIGO + &quot;.pdf&quot;" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="MEDIOS_MOVILES" methodName="Tracking" internalMethod="DataByAttributes">
+      <table name="POSICION" maxRows="2000">
+        <param name="CODIGO" alias="codigo" />
+        <filter type="distance" column="DN_X;DN_Y" value="15m"></filter>
+        <filter type="distance" column="DN_X;DN_Y" value="40px"></filter>
+        <conditionNO>DN_X &lt;= @xMax AND DN_Y &lt;= @yMax AND DN_X &gt;= @xMin AND DN_Y &gt;= @yMin</conditionNO>
+        <condition>(ULTIMA_ACT BETWEEN '@initDate' AND '@endDate') ORDER BY ULTIMA_ACT</condition>
+        <addBox>true</addBox>
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="ULTIMA_ACT" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="MEDIOS_MOVILES" methodName="CodeList" internalMethod="DataByAttributes">
+      <table name="VUSUARIOS" maxRows="2000">
+        <orderBy>LOGIN</orderBy>
+        <column name="LOGIN" alias="key" />
+        <column name="ID" alias="value" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="MEDIOS_MOVILES" methodName="Find" internalMethod="DataByAttributes">
+      <table name="POSICION_ACTUAL" maxRows="2000">
+        <param name="CODIGO" alias="codigo" />
+        <orderBy>CODIGO</orderBy>
+        <column name="CODIGO" alias="alias" />
+        <column type="utmBox" name="DN_X;DN_Y;DN_X;DN_Y" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CONTROL" methodName="Data">
+      <table name="VPUNTOS_PVY" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="TIPOPUNTO" alias="tipo" />
+		  <column name="TIPOICONO" alias="TIPOICONO" />
+        <column type="mixed" name="CodigoPVYCR + &quot; - &quot; + DenominacionPunto" alias="toolTip" />
+        <column type="mixed" name="&quot;[controlService]&quot; + CodigoPVYCR" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="APORTACIONES" methodName="Data">
+      <table name="MU_APORTACIONES" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="CODIGO" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]aportacion.aspx?codigo=&quot; + CODIGO" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CAUCES" methodName="Data">
+      <table name="VCAUCES_PVY" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="codigocauce + &quot; - &quot; + DenominacionCauce" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]cauce.aspx?codigo=&quot; + CodigoCauce" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_TOMAS" methodName="Data">
+      <table name="MU_TOMA60" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="TEXTO + &quot; - &quot; + NOMBRE" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_TOMAS76" methodName="Data">
+      <table name="MU_TOMA70" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="TEXTO + &quot; - &quot; + NOMBRE" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_TOMAS90" methodName="Data">
+      <table name="MU_TOMA80" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="TEXTO + &quot; - &quot; + NOMBRE" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CAPTACIONES" methodName="Data">
+      <table name="MU_CAPTACIONES" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="CAPTACION" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]captacion.aspx?pk=&quot; + DN_PK" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="AFOROS" methodName="Data">
+      <table name="MU_AFOROS" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="COD_CHS" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]Aforos.aspx?pk=&quot; + DN_PK" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="USOPUNTUAL" methodName="Data">
+      <table name="MU_USOPUNTUAL" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="NUMERO_EXP + &quot;/&quot; + ANIO_EXPED + &quot; - &quot; + TIPO_USO_G&#xD;&#xA;" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]usopuntual.aspx?pk=&quot; + DN_PK" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CROQUIS_PUNTUAL" methodName="Data">
+      <table name="CROQUIS_PUNTUAL" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="EXPEDIENTE" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="GRAVEDAD" methodName="Data">
+      <table name="MU_GRAVEDAD" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="CODIGO" alias="toolTip" />
+        <column type="mixed" name="&quot;[pantallaService]Gravedad.aspx?codigo=&quot; + CODIGO" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="VERTIDOS" methodName="Data">
+      <table name="VERTIDOS" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column type="mixed" name="descripcionBreve + &quot;\n&quot; + fecharealizacion + &quot; - Error: &quot; + Error + &quot; Hora: &quot; + Hora"  alias="toolTip" />
+        <column type="mixed" name="&quot;[tareaService]&quot; + id + &quot;&amp;idPDA=&quot; + IdPda" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="TAREAS" methodName="Data">
+      <table name="TAREAS" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="idEstado" alias="tipo" />
+        <column type="mixed" name="descripcionBreve + &quot;\n&quot; + fecharealizacion" alias="toolTip" />
+        <column type="mixed" name="&quot;[tareaService]&quot; + id + &quot;&amp;idPDA=&quot; + IdPda" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FICHAJES" methodName="Data">
+      <table name="FICHAJES" maxRows="2000">
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="TipoFichaje" alias="tipo" />
+        <column type="mixed" name="IDPDA + &quot;\n&quot;Fecha Fichaje: &quot; + FECHAFICHAJE + &quot;\n&quot;Fecha Posición:  &quot; + ULTIMA_ACT"  alias="toolTip" />
+      </table>
+    </responseFormat>
+
+    <responseFormat layerAlias="PESCA" methodName="Data">
+		  <table name="PESCA" maxRows="2000">
+			  <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+			  <column type="mixed" name="Razon" alias="toolTip" />
+			  <column type="mixed" name="&quot;[pantallaServiceG]pesca.aspx?pk=&quot; + DN_PK" alias="urlInfo" />
+		  </table>
+	  </responseFormat>
+	  <responseFormat layerAlias="TAREAS" methodName="Date" internalMethod="DataByAttributes">
+      <table name="TAREAS" maxRows="2000">
+        <param name="IDUSUARIO" alias="selValue" />
+        <filterNO type="distance" column="DN_X;DN_Y" value="150000m" />
+        <condition>DN_X &lt;= @xMax AND DN_Y &lt;= @yMax AND DN_X &gt;= @xMin AND DN_Y &gt;= @yMin</condition>
+        <condition>(FECHAREALIZACION BETWEEN '@initDate' AND '@endDate')</condition>
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="idEstado" alias="tipo" />
+        <column type="mixed" name="descripcionBreve + &quot;\n&quot; + fecharealizacion" alias="toolTip" />
+        <column type="mixed" name="&quot;[tareaService]&quot; + id + &quot;&amp;idPDA=&quot; + IdPda" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="VERTIDOS" methodName="Date" internalMethod="DataByAttributes">
+      <table name="VERTIDOS" maxRows="2000">
+        <param name="IDUSUARIO" alias="selValue" />
+        <filterNO type="distance" column="DN_X;DN_Y" value="150000m" />
+        <condition>DN_X &lt;= @xMax AND DN_Y &lt;= @yMax AND DN_X &gt;= @xMin AND DN_Y &gt;= @yMin</condition>
+        <condition>(FECHAREALIZACION BETWEEN '@initDate' AND '@endDate')</condition>
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="idEstado" alias="tipo" />
+        <column type="mixed" name="descripcionBreve + &quot;\n&quot; + fecharealizacion + &quot; - Error: &quot; + Error + &quot; Hora: &quot; + Hora"  alias="toolTip" />
+        <column type="mixed" name="&quot;[tareaService]&quot; + id + &quot;&amp;idPDA=&quot; + IdPda" alias="urlInfo" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FICHAJES" methodName="Date" internalMethod="DataByAttributes">
+      <table name="FICHAJES" maxRows="2000">
+        <param name="IDUSUARIO" alias="selValue" />
+        <filterNO type="distance" column="DN_X;DN_Y" value="150000m" />
+        <condition>DN_X &lt;= @xMax AND DN_Y &lt;= @yMax AND DN_X &gt;= @xMin AND DN_Y &gt;= @yMin</condition>
+        <condition>(FECHAFICHAJE BETWEEN '@initDate' AND '@endDate')</condition>
+        <column type="geometry" name="DN_X;DN_Y" alias="dn_geom" />
+        <column name="TipoFichaje" alias="tipo" />
+        <column type="mixed" name="IDPDA + &quot;\n&quot;Fecha Fichaje: &quot; + FECHAFICHAJE + &quot;\n&quot;Fecha Posición:  &quot; + ULTIMA_ACT"  alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDUHIDROG" methodName="CodeList" internalMethod="DataByAttributes">
+      <table name="CARTO_UHIDROG" maxRows="2000">
+        <orderBy>DENOMINAC</orderBy>
+        <column name="DENOMINAC" alias="key" />
+        <column name="DENOMINAC" alias="value" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDUHIDROG" methodName="Find" internalMethod="DataByAttributes">
+      <table name="CARTO_UHIDROG" maxRows="1">
+        <param name="DENOMINAC" alias="codigo" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDACUIFEROS" methodName="CodeList" internalMethod="DataByAttributes">
+      <table name="CARTO_ACUIFERO" maxRows="2000">
+        <orderBy>CODIGO</orderBy>
+        <column name="CODIGO" alias="key" />
+        <column name="CODIGO" alias="value" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDACUIFEROS" methodName="Find" internalMethod="DataByAttributes">
+      <table name="CARTO_ACUIFERO" maxRows="1">
+        <param name="CODIGO" alias="codigo" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDACUIFEROS_MU" methodName="CodeList" internalMethod="DataByAttributes">
+      <table name="MU_ACUIFERO" maxRows="2000">
+        <orderBy>COD_ACU</orderBy>
+        <column name="COD_ACU" alias="key" />
+        <column name="COD_ACU" alias="value" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDACUIFEROS_MU" methodName="Find" internalMethod="DataByAttributes">
+      <table name="MU_ACUIFERO" maxRows="1">
+        <param name="COD_ACU" alias="COD_ACU" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDZGUARD" methodName="Find" internalMethod="DataByAttributes">
+      <table name="CARTO_ZGUARD" maxRows="1">
+        <param name="NOMBRE" alias="codigo" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="FINDCUENCAS" methodName="CodeList" internalMethod="DataByAttributes">
+      <table name="CARTO_CUENCAS" maxRows="2000">
+        <orderBy>ETIQUETA</orderBy>
+        <column name="ETIQUETA" alias="key" />
+        <column name="ETIQUETA" alias="value" />
+      </table>
+    </responseFormat>
+	  <responseFormat layerAlias="FINDPESCA" methodName="CodeList" internalMethod="DataByAttributes">
+		  <table name="PESCA" maxRows="2000">
+			  <orderBy>RAZON</orderBy>
+			  <column name="RAZON" alias="key" />
+			  <column name="RAZON" alias="value" />
+		  </table>
+	  </responseFormat>
+	  <responseFormat layerAlias="FINDPESCA" methodName="Find" internalMethod="DataByAttributes">
+		  <table name="PESCA" maxRows="1">
+			  <param name="RAZON" alias="codigo" />
+			  <column type="utmBox" name="DN_X;DN_Y;DN_X;DN_Y" alias="utmRange" />
+		  </table>
+	  </responseFormat>	  
+	  <responseFormat layerAlias="FINDBANTEGAL" methodName="Find" internalMethod="DataByAttributes">
+		  <table name="BANTEGAL" maxRows="1">
+			  <param name="EXPED" alias="codigo" />
+			  <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+		  </table>
+	  </responseFormat>
+	  <responseFormat layerAlias="FINDCUENCAS" methodName="Find" internalMethod="DataByAttributes">
+      <table name="CARTO_CUENCAS" maxRows="1">
+        <param name="ETIQUETA" alias="codigo" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="PROVINCIAS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>30</validity>
+      </cache>
+      <table name="PROVINCIA_SP_FEGA" maxRows="2000">
+        <param name="CARGADO_SP" alias="codigo" value="1" />
+        <column name="PROVINCIA" alias="value" />
+        <column type="mixed" name="PROVINCIA + &quot; - &quot; + NOMBRE" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="MUNICIPIOS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>30</validity>
+      </cache>
+      <table name="MUNICIPIO_SP_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <condition>CARGADO_SP = 1 ORDER BY MUNICIPIO</condition>
+        <column name="MUNICIPIO" alias="value" />
+        <column type="mixed" name="MUNICIPIO + &quot; - &quot; + NOMBRE" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="MUNICIPIOS" methodName="Box" internalMethod="DataByAttributes">
+      <table name="MUNICIPIO_SP_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="AGREGADOS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>30</validity>
+      </cache>
+      <table name="POLIGONO_SP_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <filter type="distinct" column="AGREGADO">
+          <column name="DN_X1" value="Min(DN_X1)"></column>
+          <column name="DN_Y1" value="Min(DN_Y1)"></column>
+          <column name="DN_X2" value="Max(DN_X2)"></column>
+          <column name="DN_Y2" value="Max(DN_Y2)"></column>
+        </filter>
+        <orderBy>AGREGADO</orderBy>
+        <column name="AGREGADO" alias="value" />
+        <column name="AGREGADO" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ZONAS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>5</validity>
+      </cache>
+      <table name="POLIGONO_SP_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <param name="AGREGADO" alias="ag" />
+        <filter type="distinct" column="ZONA">
+          <column name="DN_X1" value="Min(DN_X1)"></column>
+          <column name="DN_Y1" value="Min(DN_Y1)"></column>
+          <column name="DN_X2" value="Max(DN_X2)"></column>
+          <column name="DN_Y2" value="Max(DN_Y2)"></column>
+        </filter>
+        <orderBy>ZONA</orderBy>
+        <column name="ZONA" alias="value" />
+        <column name="ZONA" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="POLIGONOS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>5</validity>
+      </cache>
+      <table name="POLIGONO_SP_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <param name="AGREGADO" alias="ag" />
+        <param name="ZONA" alias="zn" />
+        <orderBy>POLIGONO</orderBy>
+        <column name="POLIGONO" alias="value" />
+        <column name="POLIGONO" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="PARCELAS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="PARCELA_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <param name="AGREGADO" alias="ag" />
+        <param name="ZONA" alias="zn" />
+        <param name="POLIGONO" alias="pl" />
+        <orderBy>PARCELA</orderBy>
+        <column name="PARCELA" alias="value" />
+        <column name="PARCELA" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="RECINTOS" methodName="Data" internalMethod="DataByAttributes">
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="RECINTO_FEGA" maxRows="2000">
+        <param name="PROVINCIA" alias="pr" />
+        <param name="MUNICIPIO" alias="mn" />
+        <param name="AGREGADO" alias="ag" />
+        <param name="ZONA" alias="zn" />
+        <param name="POLIGONO" alias="pl" />
+        <param name="PARCELA" alias="pc"></param>
+        <orderBy>RECINTO</orderBy>
+        <column name="RECINTO" alias="value" />
+        <column name="RECINTO" alias="key" />
+        <column type="utmBox" name="DN_X1;DN_Y1;DN_X2;DN_Y2" alias="utmRange" />
+      </table>
+    </responseFormat>
+    <responseFormatQuery methodName="PointQuery" internalMethod="Data">
+      <table name="CAS_POLIGONO" alias="POLIGONOS_CAS">
+        <column name="CODIGO" alias="CODIGO" />
+        <column name="SELECTION" alias="SELECTION" />
+        <column name="TIPO" alias="TIPO" />
+        <column name="COOPERATIV" alias="COOPERATIV" />
+        <column name="SUPERFICIE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_CUENCAS" alias="CUENCA">
+        <column name="ETIQUETA" alias="CUENCA" />
+        <column name="FIRST_CONF" alias="FIRST_CONF" />
+        <column name="CODNUM" alias="NÚMERO CUENCA" />
+        <column name="DN_SURFACE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_EMBALSES" alias="EMBALSES">
+        <column name="NOMBRE" alias="NOMBRE" />
+        <column name="COD" alias="COD" />
+        <column name="RIO" alias="RIO" />
+        <column name="CONFEDE" alias="CONFEDE" />
+        <column name="CAUCECOD" alias="CAUCECOD" />
+        <column name="CORTARIO" alias="CORTARIO" />
+        <column name="COTA_AGUA" alias="COTA_AGUA" />
+        <column name="COTA_PRESA" alias="COTA_PRESA" />
+        <column name="PKI" alias="PKI" />
+        <column name="EMBXI" alias="EMBXI" />
+        <column name="EMBYI" alias="EMBYI" />
+        <column name="PKF" alias="PKF" />
+        <column name="EMBXF" alias="EMBXF" />
+        <column name="EMBYF" alias="EMBYF" />
+        <column name="CODPROV" alias="CODPROV" />
+        <column name="CODCCAA" alias="CODCCAA" />
+      </table>
+      <table name="CARTO_ZGUARD" alias="ZONA GUARD.">
+        <column name="GUARDERIA" alias="GUARDERIA" />
+        <column name="ZONA" alias="ZONA" />
+        <column name="NOMBRE" alias="GUARDA" />
+        <column name="SHAPE_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CAUCES_CANTABRICO" alias="CAUCES_CANTABRICO">
+        <column name="LABEL_" alias="LABEL" />
+        <column name="SHAPE_LEN" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+        <column name="CODDECIMAL" alias="CODIGO DECIMAL" />
+        <column name="IDCUENCA" alias="CUENCA" />
+      </table>
+      <table name="CARTO_ACUIFERO" alias="ACUIFERO">
+        <column name="CODIGO" alias="CODIGO ACUIFER." />
+        <column name="MATERIAL" alias="MATERIAL" />
+        <column name="SHAPE_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="MU_ACUIFERO" alias="ACUIFEROS MURCIA">
+        <column name="COD_ACU" alias="CODIGO ACUIFER." />
+        <column name="NOMACU" alias="NOMBRE" />
+        <column name="_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_UHIDROG" alias="UNIDAD HIDR.">
+        <column name="DENOMINAC" alias="UNIDAD HIDROG." />
+        <column name="ZONACOD" alias="CÓDIGO U.H." />
+        <column name="NUM" alias="NÚMERO U.H." />
+        <column name="DN_SURFACE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_RIOS" alias="RIO">
+        <column name="TIPO" alias="TIPO" />
+        <column name="CORRIENTE" alias="RIO" />
+        <column name="LENGTH" factor="0.001" format="F4" alias="LONGITUD (Km)" />
+        <column name="DESDE" alias="DESDE" />
+        <column name="HASTA" alias="HASTA" />
+      </table>
+      <table name="CROQUIS_LINEAL" alias="CROQUIS_LINEAL">
+        <column name="ID" alias="ID" />
+        <column name="IDPDA" alias="IDPDA" />
+        <column name="FECHA" alias="FECHA" />
+        <column name="IDUSUARIO" alias="IDUSUARIO" />
+        <column type="mixed" name="EXPEDIENTE" alias="toolTip" />
+      </table>
+      <table name="CROQUIS_AREA" alias="CROQUIS_AREA">
+        <column name="ID" alias="ID" />
+        <column name="IDPDA" alias="IDPDA" />
+        <column name="FECHA" alias="FECHA" />
+        <column name="IDUSUARIO" alias="IDUSUARIO" />
+        <column type="mixed" name="EXPEDIENTE" alias="toolTip" />
+      </table>
+      <table name="CARTO_MUNICIPIO" alias="MUNICIPIO">
+        <column name="COMUNIDAD" alias="COM. AUTÓNOMA" />
+        <column name="COD_CCAA" alias="CÓDIGO COM. AUTÓNOMA" />
+        <column name="PROVMUN" alias="CÓDIGO PROVINCIA" />
+        <column name="NOMBRE" alias="MUNICIPIO" />
+        <column name="PROMUNFAC" alias="CÓDIGO PROV. MU." />
+      </table>
+      <table name="PARCELA_FEGA" alias="PARCELA">
+        <column name="PROVINCIA" alias="Provincia" />
+        <column name="MUNICIPIO" alias="Municipio" />
+        <column name="AGREGADO" alias="Agregado" />
+        <column name="ZONA" alias="Zona" />
+        <column name="POLIGONO" alias="Polígono" />
+        <column name="PARCELA" alias="Parcela" />
+      </table>
+      <table name="RECINTO_FEGA" alias="RECINTO">
+        <column name="PARCELA" alias="Parcela" />
+        <column name="RECINTO" alias="Recinto" />
+      </table>
+      <table name="VERTIDOS" alias="VERTIDOS">
+        <column name="idVertido" alias="idVertido" />
+        <column name="id" alias="id" />
+        <column name="idPDA" alias="idPDA" />
+        <column name="descripcionBreve" alias="descripcionBreve" />
+        <column name="locX" alias="locX" />
+        <column name="locY" alias="locY" />
+        <column name="locHuso" alias="locHuso" />
+        <column name="Error" alias="Error" />
+        <column name="Hora" alias="Hora" />
+        <column name="MedioReceptor" alias="MedioReceptor" />
+        <column name="actualizar" alias="actualizar" />
+      </table>
+		<table name="BANTEGAL" alias="BANTEGAL">
+			<column name="EXPED" alias="Expediente" />
+			<column name="INIARR" alias="Inicio Arrendamiento" />
+			<column name="FINARR" alias="Fin Arrendamiento" />
+			<column name="NOMPROP" alias="Nombre Propietario" />
+			<column name="NOMARR" alias="Nombre Arrendatario" />
+			<column name="OBSERV" alias="Observaciones" />
+		</table>
+		<table name="PAC_MUR_ED50" alias="PAC_MUR_ED50">
+			<column name="PROV" alias="Provincia" />
+			<column name="MUNI" alias="Municipio" />
+		</table>		
+	</responseFormatQuery>
+    <responseFormatQuery methodName="PointQueryC" internalMethod="Data">
+      <table name="CARTO_CUENCAS" alias="CUENCA">
+        <column name="ETIQUETA" alias="CUENCA" />
+        <column name="FIRST_CONF" alias="FIRST_CONF" />
+        <column name="CODNUM" alias="NÚMERO CUENCA" />
+        <column name="DN_SURFACE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_EMBALSES" alias="EMBALSES">
+        <column name="NOMBRE" alias="NOMBRE" />
+        <column name="COD" alias="COD" />
+        <column name="RIO" alias="RIO" />
+        <column name="CONFEDE" alias="CONFEDE" />
+        <column name="CAUCECOD" alias="CAUCECOD" />
+        <column name="CORTARIO" alias="CORTARIO" />
+        <column name="COTA_AGUA" alias="COTA_AGUA" />
+        <column name="COTA_PRESA" alias="COTA_PRESA" />
+        <column name="PKI" alias="PKI" />
+        <column name="EMBXI" alias="EMBXI" />
+        <column name="EMBYI" alias="EMBYI" />
+        <column name="PKF" alias="PKF" />
+        <column name="EMBXF" alias="EMBXF" />
+        <column name="EMBYF" alias="EMBYF" />
+        <column name="CODPROV" alias="CODPROV" />
+        <column name="CODCCAA" alias="CODCCAA" />
+      </table>
+      <table name="CARTO_ZGUARD" alias="ZONA GUARD.">
+        <column name="GUARDERIA" alias="GUARDERIA" />
+        <column name="ZONA" alias="ZONA" />
+        <column name="NOMBRE" alias="GUARDA" />
+        <column name="SHAPE_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_ACUIFERO" alias="ACUIFERO">
+        <column name="CODIGO" alias="CODIGO ACUIFER." />
+        <column name="MATERIAL" alias="MATERIAL" />
+        <column name="SHAPE_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="MU_ACUIFERO" alias="ACUIFERO MURCIA">
+        <column name="COD_ACU" alias="CODIGO ACUIFER." />
+        <column name="NOMACU" alias="NOMBRE" />
+        <column name="_AREA" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_UHIDROG" alias="UNIDAD HIDR.">
+        <column name="DENOMINAC" alias="UNIDAD HIDROG." />
+        <column name="ZONACOD" alias="CÓDIGO U.H." />
+        <column name="NUM" alias="NÚMERO U.H." />
+        <column name="DN_SURFACE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="CARTO_RIOS" alias="RIO">
+        <column name="TIPO" alias="TIPO" />
+        <column name="CORRIENTE" alias="RIO" />
+        <column name="LENGTH" factor="0.001" format="F4" alias="LONGITUD (Km)" />
+        <column name="DESDE" alias="DESDE" />
+        <column name="HASTA" alias="HASTA" />
+      </table>
+      <table name="CROQUIS_LINEAL" alias="CROQUIS_LINEAL">
+        <column name="ID" alias="ID" />
+        <column name="IDPDA" alias="IDPDA" />
+        <column name="FECHA" alias="FECHA" />
+        <column name="IDUSUARIO" alias="IDUSUARIO" />
+        <column type="mixed" name="EXPEDIENTE" alias="toolTip" />
+      </table>
+      <table name="CROQUIS_AREA" alias="CROQUIS_AREA">
+        <column name="ID" alias="ID" />
+        <column name="IDPDA" alias="IDPDA" />
+        <column name="FECHA" alias="FECHA" />
+        <column name="IDUSUARIO" alias="IDUSUARIO" />
+        <column type="mixed" name="EXPEDIENTE" alias="toolTip" />
+      </table>
+      <table name="CARTO_MUNICIPIO" alias="MUNICIPIO">
+        <column name="COMUNIDAD" alias="COM. AUTÓNOMA" />
+        <column name="COD_CCAA" alias="CÓDIGO COM. AUTÓNOMA" />
+        <column name="PROVMUN" alias="CÓDIGO PROVINCIA" />
+        <column name="NOMBRE" alias="MUNICIPIO" />
+        <column name="PROMUNFAC" alias="CÓDIGO PROV. MU." />
+      </table>
+      <table name="CAS_POLIGONO" alias="POLIGONOS_CAS">
+        <column name="CODIGO" alias="CODIGO" />
+        <column name="SELECTION" alias="SELECTION" />
+        <column name="TIPO" alias="TIPO" />
+        <column name="COOPERATIV" alias="COOPERATIV" />
+        <column name="SUPERFICIE" factor="0.000001" format="F4" alias="SUPERFICIE (Km2)" />
+      </table>
+      <table name="PARCELA_FEGA" alias="PARCELA">
+        <column name="PROVINCIA" alias="Provincia" />
+        <column name="MUNICIPIO" alias="Municipio" />
+        <column name="AGREGADO" alias="Agregado" />
+        <column name="ZONA" alias="Zona" />
+        <column name="POLIGONO" alias="Polígono" />
+        <column name="PARCELA" alias="Parcela" />
+      </table>
+      <table name="RECINTO_FEGA" alias="RECINTO">
+        <column name="PARCELA" alias="Parcela" />
+        <column name="RECINTO" alias="Recinto" />
+      </table>
+      <table name="MU_ACEQUIA_SINTESIS" alias="ACEQUIAS SINTESIS">
+        <column name="ACEQUIA" alias="Acequia" />
+        <column name="NOMBRE" alias="Nombre" />
+        <column name="LENGTH" alias="Longitud" />
+      </table>
+      <table name="MU_ACEQUIAS" alias="ACEQUIAS">
+        <column name="ACEQUIA" alias="Acequia" />
+        <column name="NOMBRE" alias="Nombre" />
+        <column name="LENGHT" alias="Longitud" />
+      </table>
+      <table name="MU_APORTACIONES" alias="APORTACIONES">
+        <column name="CODIGO" alias="Codigo" />
+        <column name="X" alias="X" />
+        <column name="Y" alias="Y" />
+        <column name="INVENT90" alias="INVENT90" />
+      </table>
+      <table name="MU_CANALES" alias="CANALES">
+        <column name="ACEQUIA" alias="Acequia" />
+        <column name="NOMBRE" alias="Nombre" />
+        <column name="LENGTH" alias="Longitud" />
+      </table>
+      <table name="MU_CAPTACIONES" alias="CAPTACIONES">
+        <column name="X_CAPT" alias="X_CAPT" />
+        <column name="Y_CAPT" alias="Y_CAPT" />
+        <column name="CARTOGRAFO" alias="CARTOGRAFO" />
+        <column name="NUMERO_EXP" alias="NUMERO_EXP" />
+        <column name="ANIO_EXPED" alias="ANIO_EXPED" />
+        <column name="N_CAPTACIO" alias="N_CAPTACIO" />
+        <column name="MUNICIPIO_" alias="MUNICIPIO_" />
+        <column name="PROVINCIA_" alias="PROVINCIA_" />
+        <column name="ESTADO_CAR" alias="ESTADO_CAR" />
+        <column name="FIAB_PRECI" alias="FIAB_PRECI" />
+        <column name="FIAB_ASOC_" alias="FIAB_ASOC_" />
+        <column name="PROCEDENCI" alias="PROCEDENCI" />
+        <column name="TIPO_CAPTA" alias="TIPO_CAPTA" />
+        <column name="TIPO_CATAS" alias="TIPO_CATAS" />
+        <column name="CAPTACION" alias="CAPTACION" />
+        <column name="SITUACION_" alias="SITUACION_" />
+        <column name="ESTADO_ADM" alias="ESTADO_ADM" />
+        <column name="CAUDAL_MAX" alias="CAUDAL_MAX" />
+        <column name="VOL_MAX_IN" alias="VOL_MAX_IN" />
+        <column name="DIAMETRO_C" alias="DIAMETRO_C" />
+        <column name="PROFUNDIDA" alias="PROFUNDIDA" />
+        <column name="INSTALA_EL" alias="INSTALA_EL" />
+        <column name="POTENCIA" alias="POTENCIA" />
+        <column name="FECHA_MOME" alias="FECHA_MOME" />
+        <column name="TIPO_CAP_1" alias="TIPO_CAP_1" />
+        <column name="CIF" alias="CIF" />
+        <column name="NOMBRE" alias="Nombre" />
+        <column name="APELLIDO1" alias="Apellido1" />
+        <column name="APELLIDO2" alias="Apellido2" />
+      </table>
+      <table name="MU_AFOROS" alias="AFOROS">
+        <column name="COD_CHS" alias="COD_CHS" />
+        <column name="COD_PROPIO" alias="COD_PROPIO" />
+        <column name="X_UTM_OF" alias="X_UTM_OF" />
+        <column name="Y_UTM_OF" alias="Y_UTM_OF" />
+        <column name="Z_UTM_OF" alias="Z_UTM_OF" />
+        <column name="NOMBRE" alias="NOMBRE" />
+        <column name="PARAJE" alias="PARAJE" />
+        <column name="MUNICIPIO_" alias="MUNICIPIO_" />
+        <column name="CAUCE" alias="CAUCE" />
+        <column name="ACUIFERO_C" alias="ACUIFERO_C" />
+        <column name="COMENTARIO" alias="COMENTARIO" />
+        <column name="RESENA" alias="RESENA" />
+        <column name="PROPIETARI" alias="PROPIETARI" />
+        <column name="INICIO_USO" alias="INICIO_USO" />
+        <column name="FIN_USO" alias="FIN_USO" />
+        <column name="CODIGO_BD_" alias="CODIGO_BD_" />
+      </table>
+      <table name="MU_USOPUNTUAL" alias="USOS PUNTUALES">
+        <column name="X_PUNTUAL" alias="X_PUNTUAL" />
+        <column name="Y_PUNTUAL" alias="Y_PUNTUAL" />
+        <column name="CARTOGRAFO" alias="CARTOGRAFO" />
+        <column name="NUMERO_EXP" alias="NUMERO_EXP" />
+        <column name="ANIO_EXPED" alias="ANIO_EXPED" />
+        <column name="N_PUNTUAL" alias="N_PUNTUAL" />
+        <column name="MUNICIPIO_" alias="MUNICIPIO_" />
+        <column name="PROVINCIA_" alias="PROVINCIA_" />
+        <column name="ESTADO_CAR" alias="ESTADO_CAR" />
+        <column name="FIAB_PRECI" alias="FIAB_PRECI" />
+        <column name="FIAB_ASOC_" alias="FIAB_ASOC_" />
+        <column name="TIPO_USO_G" alias="TIPO_USO_G" />
+        <column name="NIVEL_USO_" alias="NIVEL_USO_" />
+        <column name="NIVEL_USO1" alias="NIVEL_USO1" />
+        <column name="NIVEL_US_1" alias="NIVEL_US_1" />
+        <column name="CAUDAL_MAX" alias="CAUDAL_MAX" />
+        <column name="VOL_MAX_AN" alias="VOL_MAX_AN" />
+        <column name="NUMERO_HAB" alias="NUMERO_HAB" />
+        <column name="NUMERO_CAB" alias="NUMERO_CAB" />
+        <column name="USO_CONSUN" alias="USO_CONSUN" />
+        <column name="MOMENTO_VI" alias="MOMENTO_VI" />
+        <column name="FECHA_MOME" alias="FECHA_MOME" />
+        <column name="BW_PUNTUAL" alias="BW_PUNTUAL" />
+        <column name="TIPO_USO_D" alias="TIPO_USO_D" />
+        <column name="CIF" alias="CIF" />
+        <column name="NOMBRE" alias="Nombre" />
+        <column name="APELLIDO1" alias="Apellido1" />
+        <column name="APELLIDO2" alias="Apellido2" />
+      </table>    
+      <table name="ALBERCA_USOS" alias="ALBERCA_USOS">
+        <column name="OBJECTID" alias="OBJECTID" />
+        <column name="NUMERO_DE_" alias="NUMERO_DE_" />
+        <column name="NOMBRE_DEL" alias="NOMBRE_DEL" />
+        <column name="REFERENCIA" alias="REFERENCIA" />
+        <column name="REFERENC_1" alias="REFERENC_1" />
+        <column name="PROCEDENCI" alias="PROCEDENCI" />
+        <column name="VEGA" alias="VEGA" />
+        <column name="ESTADO" alias="ESTADO" />
+        <column name="INSCRIPCIO" alias="INSCRIPCIO" />
+        <column name="SECCION" alias="SECCION" />
+        <column name="RESOLUCION" alias="RESOLUCION" />
+        <column name="FICHA_DE_I" alias="FICHA_DE_I" />
+        <column name="REVISION" alias="REVISION" />
+        <column name="INSCRIPC_1" alias="INSCRIPC_1" />
+        <column name="CIF" alias="CIF" />
+        <column name="TITULAR" alias="TITULAR" />
+        <column name="VOLUMEN_DE" alias="VOLUMEN_DE" />
+        <column name="DOTACION" alias="DOTACION" />
+        <column name="EXPEDIENTE" alias="EXPEDIENTE" />
+        <column name="REBASTANTE" alias="REBASTANTE" />
+        <column name="CARTOGRAFI" alias="CARTOGRAFI" />
+        <column name="SHAPE_LENG" alias="SHAPE_LENG" />
+        <column name="SHAPE_AREA" alias="SHAPE_AREA" />
+      </table>
+      <table name="MU_COLECTIVOS" alias="COLECTIVOS">
+        <column name="AREA_" alias="AREA_" />
+        <column name="PERIMETRO" alias="PERIMETRO" />
+        <column name="TEXTO" alias="TEXTO" />
+        <column name="METODO" alias="METODO" />
+        <column name="ORIGEN" alias="ORIGEN" />
+        <column name="GESTION" alias="GESTION" />
+        <column name="NOMBRE" alias="NOMBRE" />
+      </table>
+      <table name="MU_DES" alias="DES">
+        <column name="ACEQUIA" alias="ACEQUIA" />
+        <column name="TEXTO" alias="TEXTO" />
+        <column name="NOMBRE" alias="NOMBRE" />
+        <column name="SUPERF" alias="SUPERF" />
+        <column name="SUPERFACEQ" alias="SUPERFACEQ" />
+        <column name="NUMRECINTO" alias="NUMRECINTO" />
+      </table>
+      <table name="MU_GRAVEDAD" alias="GRAVEDAD">
+        <column name="CODIGO" alias="CODIGO" />
+        <column name="X" alias="X" />
+        <column name="Y" alias="Y" />
+        <column name="INVENT90" alias="INVENT90" />
+      </table>
+      <table name="MU_TABALA" alias="TABALA">
+        <column name="AREA_" alias="AREA_" />
+        <column name="PERIMETRO" alias="PERIMETRO" />
+        <column name="NOMBRE" alias="NOMBRE" />
+      </table>
+      <table name="MU_UDAS" alias="UDAS">
+        <column name="AREA_" alias="AREA_" />
+        <column name="PERIMETRO" alias="PERIMETRO" />
+        <column name="UDA" alias="UDA" />
+        <column name="NOMBRE" alias="NOMBRE" />
+      </table>
+    </responseFormatQuery>
+  </TTec.DnDataProvider.DataProvider>
+  <TTec.SwfDataProvider.SwfProvider>
+    <maxBytes>400000</maxBytes>
+    <timeOutSeconds>20</timeOutSeconds>
+    <user>user</user>
+    <content-type>application/x-shockwave-flash</content-type>
+    <soapDnDataServer>
+      <baseUrl>[dataService]</baseUrl>
+      <proxyUrl>[proxyUrl]</proxyUrl>
+      <sockets>40</sockets>
+    </soapDnDataServer>
+    <responseFormat layerAlias="MUNICIPIO" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_MUNICIPIO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>3</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>Yellow</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>3</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>Yellow</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="PROVINCIA" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>1</validity>
+      </cache>
+      <table name="PROVINCIA_GEO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CCAA" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CCAA_GEO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Red</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Red</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="EMBALSES" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_EMBALSES" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Red</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Red</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ACUIFEROS" methodName="Data">
+      <swfType>T</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_ACUIFERO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Magenta</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Magenta</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CAUCES_CANTABRICO" methodName="Data">
+      <swfType>T</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CAUCES_CANTABRICO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ACUIFEROS_MU" methodName="Data">
+      <swfType>T</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_ACUIFERO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>Greeen</color>
+              <opacity>10</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Green</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>Green</color>
+                <opacity>10</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CUENCAS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_CUENCAS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Lime</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Lime</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="RIOS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_RIOS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Aqua</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Aqua</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CROQUIS_LINEAL" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CROQUIS_LINEAL" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="CROQUIS_AREA" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CROQUIS_AREA" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ACEQUIA_SINTESIS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_ACEQUIA_SINTESIS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#FF00FFFF</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Aqua</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ALBERCA_USOS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="ALBERCA_USOS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>Blue</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>Blue</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ACEQUIAS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_ACEQUIAS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Orange</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Aqua</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="ZGUARD" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_ZGUARD_NORTE" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Green</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Green</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="UHIDROG" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CARTO_UHIDROG" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Crimson</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Crimson</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="COLECTIVOS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_COLECTIVOS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#FF333300</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>#d3d3d3</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Crimson</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>d3d3d3</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="DES" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_DES" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>fuchsia</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>fuchsia</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>fuchsia</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>fuchsia</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="TABALA" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_TABALA" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#FF999900</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Crimson</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_DES" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_DES60" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>DarkViolet</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>DarkViolet</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>DarkViolet</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>DarkViolet</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_DES76" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_DES70" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#FFA07A</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>#FFA07A</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>#FFA07A</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>#FFA07A</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="INVENTARIO_DES90" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_DES80" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#7B68EE</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>#7B68EE</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>#7B68EE</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>#7B68EE</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="UDAS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="MU_UDAS" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>#FFCC66</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>true</visible>
+              <color>#FFCC66</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>false</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>#FFCC66</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>true</visible>
+                <color>#FFCC66</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>false</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="PARCELA" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="PARCELA_FEGA" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Green</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Green</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>true</visible>
+              <color>White</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Green</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Green</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>true</visible>
+                <color>White</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+        <column type="mixed" name="PROVINCIA + &quot;:&quot; + MUNICIPIO + &quot;:&quot; + AGREGADO + &quot;:&quot; + ZONA + &quot;:&quot; + POLIGONO + &quot;:&quot; + PARCELA" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="POLIGONOS_CAS" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="CAS_POLIGONO" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Orange</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Orange</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>true</visible>
+              <color>Orange</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Orange</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Orange</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>true</visible>
+                <color>Orange</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+        <column type="mixed" name="CODIGO" alias="toolTip" />
+      </table>
+    </responseFormat>
+    <responseFormat layerAlias="RECINTO" methodName="Data">
+      <swfType>SL</swfType>
+      <cache>
+        <validity>0</validity>
+      </cache>
+      <table name="RECINTO_FEGA" maxRows="2000">
+        <drawingInfo>
+          <fixed>
+            <lineTool>
+              <visible>true</visible>
+              <color>Yellow</color>
+              <width>2</width>
+            </lineTool>
+            <brushTool>
+              <visible>false</visible>
+              <color>Yellow</color>
+              <opacity>70</opacity>
+            </brushTool>
+            <textTool>
+              <visible>true</visible>
+              <color>Blue</color>
+              <size>12</size>
+            </textTool>
+          </fixed>
+          <byValue>
+            <column>DN_OID</column>
+            <case value="*">
+              <lineTool>
+                <visible>true</visible>
+                <color>Yellow</color>
+                <width>2</width>
+              </lineTool>
+              <brushTool>
+                <visible>false</visible>
+                <color>Yellow</color>
+                <opacity>70</opacity>
+              </brushTool>
+              <textTool>
+                <visible>true</visible>
+                <color>Blue</color>
+                <size>12</size>
+              </textTool>
+            </case>
+          </byValue>
+        </drawingInfo>
+        <column type="mixed" name="PARCELA + &quot;:&quot; + RECINTO" alias="toolTip" />
+      </table>
+    </responseFormat>
+	<responseFormat layerAlias="RED_FLUVIAL" methodName="Data">
+		  <swfType>SL</swfType>
+		  <cache>
+			  <validity>0</validity>
+		  </cache>
+		  <table name="MU_REDFLUVIAL" maxRows="2000">
+			  <drawingInfo>
+				  <fixed>
+					  <lineTool>
+						  <visible>true</visible>
+						  <color>DarkBlue</color>
+						  <width>2</width>
+					  </lineTool>
+					  <brushTool>
+						  <visible>false</visible>
+						  <color>Green</color>
+						  <opacity>70</opacity>
+					  </brushTool>
+					  <textTool>
+						  <visible>false</visible>
+						  <color>White</color>
+						  <size>12</size>
+					  </textTool>
+				  </fixed>
+				  <byValue>
+					  <column>DN_OID</column>
+					  <case value="*">
+						  <lineTool>
+							  <visible>true</visible>
+							  <color>Aqua</color>
+							  <width>2</width>
+						  </lineTool>
+						  <brushTool>
+							  <visible>false</visible>
+							  <color>Green</color>
+							  <opacity>70</opacity>
+						  </brushTool>
+						  <textTool>
+							  <visible>false</visible>
+							  <color>White</color>
+							  <size>12</size>
+						  </textTool>
+					  </case>
+				  </byValue>
+			  </drawingInfo>
+		  </table>
+	</responseFormat>
+	<responseFormat layerAlias="BANTEGAL" methodName="Data">
+		  <swfType>SL</swfType>
+		  <cache>
+			  <validity>0</validity>
+		  </cache>
+		  <table name="BANTEGAL" maxRows="2000">
+			  <drawingInfo>
+				  <fixed>
+					  <lineTool>
+						  <visible>true</visible>
+						  <color>Red</color>
+						  <width>2</width>
+					  </lineTool>
+					  <brushTool>
+						  <visible>false</visible>
+						  <color>Green</color>
+						  <opacity>70</opacity>
+					  </brushTool>
+					  <textTool>
+						  <visible>false</visible>
+						  <color>White</color>
+						  <size>12</size>
+					  </textTool>
+				  </fixed>
+				  <byValue>
+					  <column>DN_OID</column>
+					  <case value="*">
+						  <lineTool>
+							  <visible>true</visible>
+							  <color>Red</color>
+							  <width>2</width>
+						  </lineTool>
+						  <brushTool>
+							  <visible>false</visible>
+							  <color>Green</color>
+							  <opacity>70</opacity>
+						  </brushTool>
+						  <textTool>
+							  <visible>false</visible>
+							  <color>White</color>
+							  <size>12</size>
+						  </textTool>
+					  </case>
+				  </byValue>
+			  </drawingInfo>
+		  </table>
+	  </responseFormat>
+	  <responseFormat layerAlias="PAC_MUR_ED50" methodName="Data">
+		  <swfType>SL</swfType>
+		  <cache>
+			  <validity>0</validity>
+		  </cache>
+		  <table name="PAC_MUR_ED50" maxRows="2000">
+			  <drawingInfo>
+				  <fixed>
+					  <lineTool>
+						  <visible>true</visible>
+						  <color>Fuchsia</color>
+						  <width>2</width>
+					  </lineTool>
+					  <brushTool>
+						  <visible>False</visible>
+						  <color>Fuchsia</color>
+						  <opacity>70</opacity>
+					  </brushTool>
+					  <textTool>
+						  <visible>true</visible>
+						  <color>White</color>
+						  <size>12</size>
+					  </textTool>
+				  </fixed>
+				  <byValue>
+					  <column>DN_OID</column>
+					  <case value="*">
+						  <lineTool>
+							  <visible>true</visible>
+							  <color>Fuchsia</color>
+							  <width>2</width>
+						  </lineTool>
+						  <brushTool>
+							  <visible>False</visible>
+							  <color>Fuchsia</color>
+							  <opacity>70</opacity>
+						  </brushTool>
+						  <textTool>
+							  <visible>true</visible>
+							  <color>White</color>
+							  <size>12</size>
+						  </textTool>
+					  </case>
+				  </byValue>
+			  </drawingInfo>
+		  </table>
+	  </responseFormat>	  
+  </TTec.SwfDataProvider.SwfProvider>
+  <!--[pantallaService]-->
+  <TTec.FileProvider.FileProvider>
+    <file extension=".pdf">
+      <responseFormat>
+        <contentType>application/pdf</contentType>
+        <cache>
+          <validity>0</validity>
+        </cache>
+      </responseFormat>
+      <directory>D:\repos_visores_Datos\PDFs\Fijos</directory>
+      <directory>D:\repos_visores_Datos\PDFs\Moviles</directory>
+      <defaultFile>D:\repos_visores_Datos\PDFs\noinfo.pdf</defaultFile>
+    </file>
+    <file requestedFileName="EmerCarto.swf" fileName="EmerCarto.zswf">
+      <baseDirectory>[directoryEmercarto]</baseDirectory>
+      <responseFormat>
+        <contentType>application/x-shockwave-flash</contentType>
+        <gzipEncoding>true</gzipEncoding>
+        <cache>
+          <validity>2</validity>
+        </cache>
+      </responseFormat>
+    </file>
+  </TTec.FileProvider.FileProvider>
+  <!--TTec-->
+  <TTec.GeoRefImageServer.GeoRefImageProvider>
+    <proxyUrl>[proxyUrl]</proxyUrl>
+    <sockets>40</sockets>
+    <timeOutSeconds>20</timeOutSeconds>
+    <image>
+      <url>[imageServer]</url>
+      <name>ORTOFOTOS</name>
+      <alias>ORTOFOTOS</alias>
+      <quality>70</quality>
+    </image>
+    <image>
+      <url>[imageServer]</url>
+      <name>TOPOGRAFICO:MTN_25</name>
+      <alias>TOPOGRAFICO:MTN_25</alias>
+      <quality>70</quality>
+    </image>
+    <image>
+      <url>[imageServer]</url>
+      <name>TOPOGRAFICO:MTN_200</name>
+      <alias>TOPOGRAFICO:MTN_200</alias>
+      <quality>70</quality>
+    </image>
+    <image>
+      <url>[imageServer]</url>
+      <name>TOPOGRAFICO:MTN_1250</name>
+      <alias>TOPOGRAFICO:MTN_1250</alias>
+      <quality>70</quality>
+    </image>
+    <image>
+      <url>[imageServer]</url>
+      <name>TOPOGRAFICO:MTN_2000</name>
+      <alias>TOPOGRAFICO:MTN_2000</alias>
+      <quality>70</quality>
+    </image>
+    <image>
+      <url>[imageServer]</url>
+      <name>TOPOGRAFICO:MTN_SIGPAC</name>
+      <alias>TOPOGRAFICO:MTN_SIGPAC</alias>
+      <quality>70</quality>
+    </image>
+  </TTec.GeoRefImageServer.GeoRefImageProvider>
+</configuration>

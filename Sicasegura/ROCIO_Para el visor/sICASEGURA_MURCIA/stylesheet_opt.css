@@ -1,0 +1,114 @@
+﻿
+/************************************/
+ /*ESTILOS DE NAVEGACION GLOBAL*/
+/************************************/
+
+.contenedorMenu{
+	background: url("images/chs/fondomenu.gif") repeat-x;
+	display: block; 
+	position: relative; 
+	float: left; 
+	width: 100%;
+	padding: 0 0 0px 0; 
+	border-bottom: 3px solid #ececec;	
+	}
+#globalNav{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	height:43px!important;
+	margin: 0;		
+	text-align: center;	
+	display: inline;
+	padding: 0 0 3px 0!important; 
+	border-bottom: 1px solid #ccc!important;
+	float: left;width: 100%;
+	}
+* html #globalNav{}
+#globalLink{
+	padding: 0 0 0 2px!important;
+	margin:0; 
+	height:43px!important;
+	vertical-align: middle;	
+	border-bottom: 1px solid #fff;
+	margin: 0 15px;
+	}
+#globalNav ul{list-style: none;margin:0;padding:0;}
+
+.primernivel{
+	display: block;
+	float: left;
+	text-align: center;
+	vertical-align: middle;	
+	margin: 0 0px 0 0;
+	padding: 0;
+	height: 43px;
+	width: 16.6%;
+	background:  url("images/chs/separata_navglobal.gif") no-repeat bottom left;	
+	}	
+.sinregistro li.primernivel{width: 16.6%!important;}
+#globalLink li ul {position: absolute; top:43px; background: #0050AA; border: 1px solid #fff; border-top: 0; width: 22.2em; left: -990em; margin: 0;padding:0px!important; text-align: left!important; z-index: 1000;}
+*:first-child+html #globalLink li ul{margin:0 0 0 -7.7%!important;}
+*:first-child+html #globalLink.sinregistro li ul{margin:0 0 0 -9.5%!important;}
+#globalLink li ul li {width: 20.2em; margin:0; padding:0; text-align: left!important;background: #0050AA;list-style-image:none; display: block;width: 100%}
+* html #globalLink li ul li {margin:0px; padding:0; display: block;width: 100%}
+#globalLink li ul li a {color: #fff; font-weight: bold; text-decoration:none; padding:10px; background: #0050AA;padding-left: 12px; border-top: 1px solid #fff; display: block;width: 100%}
+#globalLink li ul li a:hover {background:#c4e1ff; color: #036; text-decoration:underline; display: block;width: 100%}
+#globalLink li:hover ul ul, #globalLink li.sfhover ul ul {left: -990em;}
+#globalLink li:hover ul, #globalLink li li:hover ul, #globalLink li.sfhover ul, #globalLink li li.sfhover ul {left: auto;}
+#globalLink a{display: block;}
+#globalLink img{display: block;}
+a.glink:link, a.glink:visited{
+	display: block;
+	font-size: 11px;
+	color:#fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center!important;
+	vertical-align: middle;
+	width: auto;
+	margin: 0;
+	padding:19px 6px 0px 6px;
+	height: 24px;
+	}
+a.glink:hover{color:#fff;text-decoration: underline;background: url("images/chs/fondomenuOver.gif");}
+
+a.glinkOn:link, a.glinkOn:visited{
+	display: block;
+	font-size: 11px;
+	color:#000;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center!important;
+	vertical-align: middle;
+	width: 93%!important;
+	height: 24px; 
+	margin: 0 5px 0 0;
+	padding:19px 6px 0px 6px;
+	background:url("images/chs/menuSelected.gif") top left;
+	}
+a.glinkOn:hover{color:#004EAD;}
+#globalLink .primernivel .seleccionado{background:url("images/chs/menuSelectedResto.gif") no-repeat top right!important; display: block;}
+.primernivel li a.glinkOn:link, .primernivel li a.glinkOn:visited{color: #000!important; text-decoration: underline!important;text-align: left!important;  font-weight: bold;  padding:10px!important; margin:0px!important;height: auto!important;background:#c4e1ff!important; color: #036!important;padding-left: 12px; border-top: 1px solid #fff; display: block;width: 100%;}
+.primernivel li a.glinkOn:hover{color:#333!important;}
+
+
+
+
+.nivelPequenyo{
+	display: block;
+	float: left;
+	text-align: center;
+	vertical-align: middle;	
+	margin: 0 0px 0 0;
+	padding: 0;
+	height: 43px;
+	width: 12.5%;
+	background:  url("images/chs/separata_navglobal.gif") no-repeat bottom left;	
+	}	
+.sinregistro li.nivelPequenyo{width: 12.5%!important;}
+#globalLink .nivelPequenyo .seleccionado{background:url("images/chs/menuSelectedResto.gif") no-repeat top right!important; display: block;}
+.nivelPequenyo li a.glinkOn:link, .nivelPequenyo li a.glinkOn:visited{color: #000!important; text-decoration: underline!important;text-align: left!important;  font-weight: bold;  padding:10px!important; margin:0px!important;height: auto!important;background:#c4e1ff!important; color: #036!important;padding-left: 12px; border-top: 1px solid #fff; display: block;width: 100%;}
+.nivelPequenyo li a.glinkOn:hover{color:#333!important;}
+
+
+#globalNav{}
+

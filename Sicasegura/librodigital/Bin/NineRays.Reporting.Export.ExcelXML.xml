@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>~Rays.Reporting.Export.ExcelXML</name>
+  </assembly>
+  <members>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextBoxExcelXMLAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter.GetText(NineRays.Reporting.DOM.TextControl)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.Save(System.String)"><summary>Saves excel file to specified file.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Adapters.AdvancedTextExcelXMLAdapter"><summary>Represents adapter for the AdvancedText control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.GetFactory"><summary>Returns Excel filter factory.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.ReportControlExcelXMLAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates new instance of the ReportControlExcelXMLAdapter.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter"><summary>Represents adapter for text control.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.Cell.MergeAcross"><summary>Gets and sets number of merged cells.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.ExcelXMLAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates new instance of the ExcelXMLAdapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.Save(System.IO.Stream)"><summary>Saves excel file to stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilterFactory.CreateFilter"><summary>Creates excel export filter instance.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilterFactory.Factory"><summary>Gets the default instance of the ExcelXMLExportFilterFactory class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.CellStyle"><summary>Represent style of the excel cell.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.AdvancedTextExcelXMLAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates a new instance of AdvancedTextExcelXMLAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilterFactory.GetFilterFileExtension"><summary>Returns default file extension.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.Angle"><summary>Gets and sets angle.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.Item(System.Int32,System.Int32)"><summary>Gets cell with the specified indexes.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.CellStyle.Equals(System.Object)"><summary>Overrides default Equals implementation.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Returns text contained in the given control.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile"><summary>Represents excel file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.#ctor(System.ComponentModel.IContainer)"><summary>Initializes a new instance of the PDFExportFilter class with the specified container.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.Border"><summary>Gets and sets border.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.Font"><summary>Gets and sets font.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter.Render(NineRays.Reporting.Export.ExcelXML.ExcelXMLFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExcelXML.Adapters.ExcelXMLAdapter.Render(NineRays.Reporting.Export.ExcelXML.ExcelXMLFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.CellStyle.#ctor(System.Drawing.Font,System.Drawing.ContentAlignment,NineRays.Basics.Drawing.Border,System.Int32,System.Drawing.Color,System.Drawing.Color)"><summary>Creates new instance of the CellStyle class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Adapters.TextBoxExcelXMLAdapter"><summary>Represents adapter for the TextBox class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.CellStyle.GetHashCode"><summary>Overrides default GetHashCode implementation.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilterFactory.GetFilterFormat"><summary>Returns filter format name.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter"><summary>Represents excel export filter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.Export(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to the specified stream.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.TextColor"><summary>Gets and sets text color.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.EndMatrix"><summary>Closes global matrix.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.String)"><summary>Exports given document to specified file.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.Adapters.ExcelXMLAdapter.Control"><summary>Gets ReportControl associated with adapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.GetRange(System.Drawing.RectangleF)"><summary>Returns cells range corresponded to the given rectangle.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.Cell.CellStyle"><summary>Gets and sets cell style.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.ReportControlExcelXMLAdapter.Render(NineRays.Reporting.Export.ExcelXML.ExcelXMLFile)"><summary>Converts ReportControl to excel cell.</summary></member>
+    <member name="F:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.Adapters"><summary>Represents collection of adapters types.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.Cell.Text"><summary>Gets and sets cell text.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.CreateAdapter(NineRays.Reporting.DOM.ReportControl)"><summary>Creates new adapter instance.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.AddRect(System.Drawing.RectangleF)"><summary>Adds rectangle to the global matrix.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextBoxExcelXMLAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates new instance of the TextBoxExcelXMLAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.#ctor(System.String)"><summary>Creates new instance of the ExcelXMLFile.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.#ctor"><summary>Initializes a new instance of the PDFExportFilter class.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.TextAlign"><summary>Gets and sets text aligment.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Cell.#ctor"><summary>Creates a new instance of Cell class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.CreateCellStyle(System.Drawing.Font,System.Drawing.ContentAlignment,NineRays.Basics.Drawing.Border,System.Int32,System.Drawing.Color,System.Drawing.Color)"><summary>Returns new or existing instance of the CellStyle class with the given parameters.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLFile.EndPage(System.Single)"><summary>Ends current page.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.Cell.MergeDown"><summary>Gets and sets number of merged cells.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports given document to the specified stream.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Adapters.ExcelXMLAdapter"><summary>Represents adapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.FindAdapterType(System.Type)"><summary>Returns adapters type associated with the given control type.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.ExcelXMLAdapter.Render(NineRays.Reporting.Export.ExcelXML.ExcelXMLFile)"><summary>Converts ReportControl to excel cells.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilter.RegisterAdapter(System.Type,System.Type)"><summary>Registers new adapter type.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.AdvancedTextExcelXMLAdapter.GetText(NineRays.Reporting.DOM.TextControl)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter.GetText(NineRays.Reporting.DOM.TextControl)" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.ExcelXMLExportFilterFactory"><summary>Represents excel filter factory.</summary></member>
+    <member name="P:NineRays.Reporting.Export.ExcelXML.CellStyle.FillColor"><summary>Gets and sets fill color.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Adapters.ReportControlExcelXMLAdapter"><summary>Represents adapter for ReportControl class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.ExcelXML.Adapters.TextControlExcelXMLAdapter.#ctor(NineRays.Reporting.DOM.ReportControl)"><summary>Creates a new instance of TextControlExcelXMLAdapter class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.ExcelXML.Cell"><summary>Represents excel cell.</summary></member>
+  </members>
+</doc>

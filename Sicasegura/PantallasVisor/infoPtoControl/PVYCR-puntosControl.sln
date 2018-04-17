@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost/PVYCR-puntosControl/", "http://localhost/PVYCR-puntosControl", "{4CBFC6AA-7D8E-4832-8B8F-95757F27D6B7}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/Segura/PVYCR-puntosControl.root/PVYCR-puntosControl", HULAAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		Debug.AspNetCompiler.VirtualPath = "/PVYCR-puntosControl"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\PVYCR-puntosControl\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PVYCR-puntosControl\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/PVYCR-puntosControl"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\PVYCR-puntosControl\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\PVYCR-puntosControl\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\PVYCR-puntosControl\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/PVYCR-puntosControl
+		SccLocalPath1 = .
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CBFC6AA-7D8E-4832-8B8F-95757F27D6B7}.Debug|.NET.ActiveCfg = Debug|.NET
+		{4CBFC6AA-7D8E-4832-8B8F-95757F27D6B7}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

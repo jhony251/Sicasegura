@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="DataSource" Class="datosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=172.17.8.207\SAP5SQL2005;Persist Security Info=True;User ID=gfluvial" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TCauces_PVY" Member="TCauces_PVY">
+    <Type Name="TCauces_PVY">
+      <Column Name="CodigoCauce" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DenominacionCauce" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PVYCR_DatosAcequias_NIVUS" Member="PVYCR_DatosAcequias_NIVUS">
+    <Type Name="PVYCR_DatosAcequias_NIVUS">
+      <Column Name="CodigoPVYCR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Calado_M" Type="System.Decimal" DbType="Decimal(14,3)" CanBeNull="true" />
+      <Column Name="Caudal_M3S" Type="System.Decimal" DbType="Decimal(14,3)" CanBeNull="true" />
+      <Column Name="Velocidad_MS" Type="System.Decimal" DbType="Decimal(14,3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPuntos_PVY" Member="TPuntos_PVY">
+    <Type Name="TPuntos_PVY">
+      <Column Name="CodigoPVYCR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCauce" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DenominacionPunto" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TipoSensor" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Acceso" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="X_UTM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Y_UTM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PorcentajeRegable" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="B" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="B2" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="H" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="Ti" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Td" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Diametro_mm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FactorFlotador" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="TipoPunto" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="CodigoDataLogger" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="UsadoEnParteOficial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PKS" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PKA" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="RIO" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Longitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DN_PK" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DN_X" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DN_Y" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="TablaAcequias">
+    <Type Name="TablaAcequias">
+      <Column Name="CodigoPVYCR" Type="System.String" CanBeNull="true" />
+      <Column Name="idElementoMedida" Type="System.String" CanBeNull="true" />
+      <Column Name="Cod_Fuente_Dato" Type="System.String" CanBeNull="true" />
+      <Column Name="Fecha_Medida" Type="System.String" CanBeNull="true" />
+      <Column Name="Escala_M" Type="System.String" CanBeNull="true" />
+      <Column Name="Calado_M" Type="System.String" CanBeNull="true" />
+      <Column Name="TipoObtencionCaudal" Type="System.String" CanBeNull="true" />
+      <Column Name="RegimenCurva" Type="System.String" CanBeNull="true" />
+      <Column Name="Caudal_M3S" Type="System.String" CanBeNull="true" />
+      <Column Name="DUDA_CALIDAD" Type="System.String" CanBeNull="true" />
+      <Column Name="DescFuenteDato" Type="System.String" CanBeNull="true" />
+      <Column Name="Diferencial" Type="System.String" CanBeNull="true" />
+      <Column Name="Diferencial_acum" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="TablaListado">
+    <Type Name="TablaListado">
+      <Column Name="Rama" Type="System.String" CanBeNull="true" />
+      <Column Name="DescTipoElem" Type="System.String" CanBeNull="true" />
+      <Column Name="Punto" Type="System.String" CanBeNull="false" />
+      <Column Name="Fecha_Medida" Type="System.String" CanBeNull="false" />
+      <Column Name="Fecha_MedidaF" Type="System.String" CanBeNull="false" />
+      <Column Name="Var1Titulo" Type="System.String" CanBeNull="false" />
+      <Column Name="Var1Valor" Type="System.String" CanBeNull="true" />
+      <Column Name="Var2Titulo" Type="System.String" CanBeNull="false" />
+      <Column Name="Var2Valor" Type="System.String" CanBeNull="true" />
+      <Column Name="Var3Titulo" Type="System.String" CanBeNull="false" />
+      <Column Name="Var3Valor" Type="System.String" CanBeNull="true" />
+      <Column Name="Var4Titulo" Type="System.String" CanBeNull="true" />
+      <Column Name="Var4Valor" Type="System.String" CanBeNull="true" />
+      <Column Name="Var4Visible" Type="System.String" CanBeNull="true" />
+      <Column Name="Var5Titulo" Type="System.String" CanBeNull="true" />
+      <Column Name="Var5Valor" Type="System.String" CanBeNull="true" />
+      <Column Name="Var5Visible" Type="System.String" CanBeNull="true" />
+      <Column Name="Filtro1" Type="System.String" CanBeNull="true" />
+      <Column Name="Filtro2" Type="System.String" CanBeNull="true" />
+      <Column Name="numLecturas" Type="System.String" CanBeNull="true" />
+      <Column Name="ElementoMedida" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="TiposVariables">
+    <Type Name="TiposVariables">
+      <Column Member="TipoVariable" Type="System.String" CanBeNull="false" />
+      <Column Member="Variable" Type="System.String" CanBeNull="false" />
+      <Column Member="Valor" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

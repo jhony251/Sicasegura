@@ -1,0 +1,605 @@
+
+/* 
+
+Css Chart created by Alen Grakalic
+Brought to you by Css Globe (cssglobe.com)
+
+*/
+ul.xAxis{margin:10px 0 0 27px;padding:0;float:left;clear:left;display:inline;width:240px; font-size: 9px;}
+ul.yAxis{margin:0px 0 0 0;padding:0;display:inline;float:left; font-size: 9px;}
+ul.xAxis li{float:left; list-style:none;width:38px;text-align:center; }
+ul.yAxis li{
+	list-style:none;
+	margin-top:33px;
+	text-align:right;
+	float:left;
+	clear:left;
+}
+dl#csschart, dl#csschart dt, dl#csschart dd{
+	margin:0;
+	padding:0;
+	float: left;
+	
+	} 	
+dl#csschart{
+	background:url("/export/system/modules/es.chsegura.www/resources/bg_chart.gif") no-repeat 0 bottom ;
+	width:240px;
+	height:263px;
+	padding-left:29px;
+	float:left;
+	
+	 font-size: 9px;
+	
+	} 
+dl#csschart dt{
+	display:none;
+	}
+dl#csschart dd{
+	position:relative;
+	float:left;
+	display:inline;
+	width:38px;
+	height:240px;
+	margin-top:22px;	
+	
+	} 
+dl#csschart span{
+	position:absolute;
+	display:block;
+	width:38px;	
+	bottom:0;
+	left:0;	
+	z-index:1;
+	color:#555;
+	text-decoration:none;
+	float: left!important;
+	} 		
+dl#csschart span b{
+	display:block;
+	font-weight:bold;
+	font-style:normal;
+	float:left;
+	line-height:200%;
+	/*color:#fff;*/
+	
+	position:absolute;
+	top:5px;
+	left:-3000px;
+	text-align:center;
+	width:23px;
+	} 		
+
+/* default column styling */		
+
+	dl#csschart span{
+		height:50%;
+		background:url("/export/system/modules/es.chsegura.www/resources/bar.png") repeat-y;
+		
+		} 
+
+
+dl#csschart .sub{
+	margin-left:-38px!important;
+	z-index:2;
+	float: left;
+	
+	
+	
+}
+dl#csschart .sub span{
+	background:url("/export/system/modules/es.chsegura.www/resources/subbar.png") repeat-y;
+	float: left;
+}
+
+/* // column types */	
+
+/* percentages */
+
+	dl#csschart .p1 span{height:1px}
+	dl#csschart .p2 span{height:1px}
+	dl#csschart .p3 span{height:2px}
+	dl#csschart .p4 span{height:2px}
+	dl#csschart .p5 span{height:3px}
+	dl#csschart .p6 span{height:3px}
+	dl#csschart .p7 span{height:4px}
+	dl#csschart .p8 span{height:4px}
+	dl#csschart .p9 span{height:5px}
+	dl#csschart .p10 span{height:5px}
+	dl#csschart .p11 span{height:6px}
+	dl#csschart .p12 span{height:6px}
+	dl#csschart .p13 span{height:7px}
+	dl#csschart .p14 span{height:7px}
+	dl#csschart .p15 span{height:8px}
+	dl#csschart .p16 span{height:8px}
+	dl#csschart .p17 span{height:9px}
+	dl#csschart .p18 span{height:9px}
+	dl#csschart .p19 span{height:10px}
+	dl#csschart .p20 span{height:10px}
+	dl#csschart .p21 span{height:11px}
+	dl#csschart .p22 span{height:11px}
+	dl#csschart .p23 span{height:12px}
+	dl#csschart .p24 span{height:12px}
+	dl#csschart .p25 span{height:13px}
+	dl#csschart .p26 span{height:13px}
+	dl#csschart .p27 span{height:14px}
+	dl#csschart .p28 span{height:14px}
+	dl#csschart .p29 span{height:15px}
+	dl#csschart .p30 span{height:15px}
+	dl#csschart .p31 span{height:16px}
+	dl#csschart .p32 span{height:16px}
+	dl#csschart .p33 span{height:17px}
+	dl#csschart .p34 span{height:17px}
+	dl#csschart .p35 span{height:18px}
+	dl#csschart .p36 span{height:18px}
+	dl#csschart .p37 span{height:19px}
+	dl#csschart .p38 span{height:19px}
+	dl#csschart .p39 span{height:20px}
+	dl#csschart .p40 span{height:20px}
+	dl#csschart .p41 span{height:21px}
+	dl#csschart .p42 span{height:21px}
+	dl#csschart .p43 span{height:22px}
+	dl#csschart .p44 span{height:22px}
+	dl#csschart .p45 span{height:23px}
+	dl#csschart .p46 span{height:23px}
+	dl#csschart .p47 span{height:24px}
+	dl#csschart .p48 span{height:24px}
+	dl#csschart .p49 span{height:25px}
+	dl#csschart .p50 span{height:25px}
+	dl#csschart .p51 span{height:26px}
+	dl#csschart .p52 span{height:26px}
+	dl#csschart .p53 span{height:27px}
+	dl#csschart .p54 span{height:27px}
+	dl#csschart .p55 span{height:28px}
+	dl#csschart .p56 span{height:28px}
+	dl#csschart .p57 span{height:29px}
+	dl#csschart .p58 span{height:29px}
+	dl#csschart .p59 span{height:30px}
+	dl#csschart .p60 span{height:30px}
+	dl#csschart .p61 span{height:31px}
+	dl#csschart .p62 span{height:31px}
+	dl#csschart .p63 span{height:32px}
+	dl#csschart .p64 span{height:32px}
+	dl#csschart .p65 span{height:33px}
+	dl#csschart .p66 span{height:33px}
+	dl#csschart .p67 span{height:34px}
+	dl#csschart .p68 span{height:34px}
+	dl#csschart .p69 span{height:35px}
+	dl#csschart .p70 span{height:35px}
+	dl#csschart .p71 span{height:36px}
+	dl#csschart .p72 span{height:36px}
+	dl#csschart .p73 span{height:37px}
+	dl#csschart .p74 span{height:37px}
+	dl#csschart .p75 span{height:38px}
+	dl#csschart .p76 span{height:38px}
+	dl#csschart .p77 span{height:39px}
+	dl#csschart .p78 span{height:39px}
+	dl#csschart .p79 span{height:40px}
+	dl#csschart .p80 span{height:40px}
+	dl#csschart .p81 span{height:41px}
+	dl#csschart .p82 span{height:41px}
+	dl#csschart .p83 span{height:42px}
+	dl#csschart .p84 span{height:42px}
+	dl#csschart .p85 span{height:43px}
+	dl#csschart .p86 span{height:43px}
+	dl#csschart .p87 span{height:44px}
+	dl#csschart .p88 span{height:44px}
+	dl#csschart .p89 span{height:45px}
+	dl#csschart .p90 span{height:45px}
+	dl#csschart .p91 span{height:46px}
+	dl#csschart .p92 span{height:46px}
+	dl#csschart .p93 span{height:47px}
+	dl#csschart .p94 span{height:47px}
+	dl#csschart .p95 span{height:48px}
+	dl#csschart .p96 span{height:48px}
+	dl#csschart .p97 span{height:49px}
+	dl#csschart .p98 span{height:49px}
+	dl#csschart .p99 span{height:50px}
+	dl#csschart .p100 span{height:50px}
+	dl#csschart .p101 span{height:51px}
+	dl#csschart .p102 span{height:51px}
+	dl#csschart .p103 span{height:52px}
+	dl#csschart .p104 span{height:52px}
+	dl#csschart .p105 span{height:53px}
+	dl#csschart .p106 span{height:53px}
+	dl#csschart .p107 span{height:54px}
+	dl#csschart .p108 span{height:54px}
+	dl#csschart .p109 span{height:55px}
+	dl#csschart .p110 span{height:55px}
+	dl#csschart .p111 span{height:56px}
+	dl#csschart .p112 span{height:56px}
+	dl#csschart .p113 span{height:57px}
+	dl#csschart .p114 span{height:57px}
+	dl#csschart .p115 span{height:58px}
+	dl#csschart .p116 span{height:58px}
+	dl#csschart .p117 span{height:59px}
+	dl#csschart .p118 span{height:59px}
+	dl#csschart .p119 span{height:60px}
+	dl#csschart .p120 span{height:60px}
+	dl#csschart .p121 span{height:61px}
+	dl#csschart .p122 span{height:61px}
+	dl#csschart .p123 span{height:62px}
+	dl#csschart .p124 span{height:62px}
+	dl#csschart .p125 span{height:63px}
+	dl#csschart .p126 span{height:63px}
+	dl#csschart .p127 span{height:64px}
+	dl#csschart .p128 span{height:64px}
+	dl#csschart .p129 span{height:65px}
+	dl#csschart .p130 span{height:65px}
+	dl#csschart .p131 span{height:66px}
+	dl#csschart .p132 span{height:66px}
+	dl#csschart .p133 span{height:67px}
+	dl#csschart .p134 span{height:67px}
+	dl#csschart .p135 span{height:68px}
+	dl#csschart .p136 span{height:68px}
+	dl#csschart .p137 span{height:69px}
+	dl#csschart .p138 span{height:69px}
+	dl#csschart .p139 span{height:70px}
+	dl#csschart .p140 span{height:70px}
+	dl#csschart .p141 span{height:71px}
+	dl#csschart .p142 span{height:71px}
+	dl#csschart .p143 span{height:72px}
+	dl#csschart .p144 span{height:72px}
+	dl#csschart .p145 span{height:73px}
+	dl#csschart .p146 span{height:73px}
+	dl#csschart .p147 span{height:74px}
+	dl#csschart .p148 span{height:74px}
+	dl#csschart .p149 span{height:75px}
+	dl#csschart .p150 span{height:75px}
+	dl#csschart .p151 span{height:76px}
+	dl#csschart .p152 span{height:76px}
+	dl#csschart .p153 span{height:77px}
+	dl#csschart .p154 span{height:77px}
+	dl#csschart .p155 span{height:78px}
+	dl#csschart .p156 span{height:78px}
+	dl#csschart .p157 span{height:79px}
+	dl#csschart .p158 span{height:79px}
+	dl#csschart .p159 span{height:80px}
+	dl#csschart .p160 span{height:80px}
+	dl#csschart .p161 span{height:81px}
+	dl#csschart .p162 span{height:81px}
+	dl#csschart .p163 span{height:82px}
+	dl#csschart .p164 span{height:82px}
+	dl#csschart .p165 span{height:83px}
+	dl#csschart .p166 span{height:83px}
+	dl#csschart .p167 span{height:84px}
+	dl#csschart .p168 span{height:84px}
+	dl#csschart .p169 span{height:85px}
+	dl#csschart .p170 span{height:85px}
+	dl#csschart .p171 span{height:86px}
+	dl#csschart .p172 span{height:86px}
+	dl#csschart .p173 span{height:87px}
+	dl#csschart .p174 span{height:87px}
+	dl#csschart .p175 span{height:88px}
+	dl#csschart .p176 span{height:88px}
+	dl#csschart .p177 span{height:89px}
+	dl#csschart .p178 span{height:89px}
+	dl#csschart .p179 span{height:90px}
+	dl#csschart .p180 span{height:90px}
+	dl#csschart .p181 span{height:91px}
+	dl#csschart .p182 span{height:91px}
+	dl#csschart .p183 span{height:92px}
+	dl#csschart .p184 span{height:92px}
+	dl#csschart .p185 span{height:93px}
+	dl#csschart .p186 span{height:93px}
+	dl#csschart .p187 span{height:94px}
+	dl#csschart .p188 span{height:94px}
+	dl#csschart .p189 span{height:95px}
+	dl#csschart .p190 span{height:95px}
+	dl#csschart .p191 span{height:96px}
+	dl#csschart .p192 span{height:96px}
+	dl#csschart .p193 span{height:97px}
+	dl#csschart .p194 span{height:97px}
+	dl#csschart .p195 span{height:98px}
+	dl#csschart .p196 span{height:98px}
+	dl#csschart .p197 span{height:99px}
+	dl#csschart .p198 span{height:99px}
+	dl#csschart .p199 span{height:100px}
+	dl#csschart .p200 span{height:100px}
+	dl#csschart .p201 span{height:101px}
+	dl#csschart .p202 span{height:101px}
+	dl#csschart .p203 span{height:102px}
+	dl#csschart .p204 span{height:102px}
+	dl#csschart .p205 span{height:103px}
+	dl#csschart .p206 span{height:103px}
+	dl#csschart .p207 span{height:104px}
+	dl#csschart .p208 span{height:104px}
+	dl#csschart .p209 span{height:105px}
+	dl#csschart .p210 span{height:105px}
+	dl#csschart .p211 span{height:106px}
+	dl#csschart .p212 span{height:106px}
+	dl#csschart .p213 span{height:107px}
+	dl#csschart .p214 span{height:107px}
+	dl#csschart .p215 span{height:108px}
+	dl#csschart .p216 span{height:108px}
+	dl#csschart .p217 span{height:109px}
+	dl#csschart .p218 span{height:109px}
+	dl#csschart .p219 span{height:110px}
+	dl#csschart .p220 span{height:110px}
+	dl#csschart .p221 span{height:111px}
+	dl#csschart .p222 span{height:111px}
+	dl#csschart .p223 span{height:112px}
+	dl#csschart .p224 span{height:112px}
+	dl#csschart .p225 span{height:113px}
+	dl#csschart .p226 span{height:113px}
+	dl#csschart .p227 span{height:114px}
+	dl#csschart .p228 span{height:114px}
+	dl#csschart .p229 span{height:115px}
+	dl#csschart .p230 span{height:115px}
+	dl#csschart .p231 span{height:116px}
+	dl#csschart .p232 span{height:116px}
+	dl#csschart .p233 span{height:117px}
+	dl#csschart .p234 span{height:117px}
+	dl#csschart .p235 span{height:118px}
+	dl#csschart .p236 span{height:118px}
+	dl#csschart .p237 span{height:119px}
+	dl#csschart .p238 span{height:119px}
+	dl#csschart .p239 span{height:120px}
+	dl#csschart .p240 span{height:120px}
+	dl#csschart .p241 span{height:121px}
+	dl#csschart .p242 span{height:121px}
+	dl#csschart .p243 span{height:122px}
+	dl#csschart .p244 span{height:122px}
+	dl#csschart .p245 span{height:123px}
+	dl#csschart .p246 span{height:123px}
+	dl#csschart .p247 span{height:124px}
+	dl#csschart .p248 span{height:124px}
+	dl#csschart .p249 span{height:125px}
+	dl#csschart .p250 span{height:125px}
+	dl#csschart .p251 span{height:126px}
+	dl#csschart .p252 span{height:126px}
+	dl#csschart .p253 span{height:127px}
+	dl#csschart .p254 span{height:127px}
+	dl#csschart .p255 span{height:128px}
+	dl#csschart .p256 span{height:128px}
+	dl#csschart .p257 span{height:129px}
+	dl#csschart .p258 span{height:129px}
+	dl#csschart .p259 span{height:130px}
+	dl#csschart .p260 span{height:130px}
+	dl#csschart .p261 span{height:131px}
+	dl#csschart .p262 span{height:131px}
+	dl#csschart .p263 span{height:132px}
+	dl#csschart .p264 span{height:132px}
+	dl#csschart .p265 span{height:133px}
+	dl#csschart .p266 span{height:133px}
+	dl#csschart .p267 span{height:134px}
+	dl#csschart .p268 span{height:134px}
+	dl#csschart .p269 span{height:135px}
+	dl#csschart .p270 span{height:135px}
+	dl#csschart .p271 span{height:136px}
+	dl#csschart .p272 span{height:136px}
+	dl#csschart .p273 span{height:137px}
+	dl#csschart .p274 span{height:137px}
+	dl#csschart .p275 span{height:138px}
+	dl#csschart .p276 span{height:138px}
+	dl#csschart .p277 span{height:139px}
+	dl#csschart .p278 span{height:139px}
+	dl#csschart .p279 span{height:140px}
+	dl#csschart .p280 span{height:140px}
+	dl#csschart .p281 span{height:141px}
+	dl#csschart .p282 span{height:141px}
+	dl#csschart .p283 span{height:142px}
+	dl#csschart .p284 span{height:142px}
+	dl#csschart .p285 span{height:143px}
+	dl#csschart .p286 span{height:143px}
+	dl#csschart .p287 span{height:144px}
+	dl#csschart .p288 span{height:144px}
+	dl#csschart .p289 span{height:145px}
+	dl#csschart .p290 span{height:145px}
+	dl#csschart .p291 span{height:146px}
+	dl#csschart .p292 span{height:146px}
+	dl#csschart .p293 span{height:147px}
+	dl#csschart .p294 span{height:147px}
+	dl#csschart .p295 span{height:148px}
+	dl#csschart .p296 span{height:148px}
+	dl#csschart .p297 span{height:149px}
+	dl#csschart .p298 span{height:149px}
+	dl#csschart .p299 span{height:150px}
+	dl#csschart .p300 span{height:150px}
+	dl#csschart .p301 span{height:151px}
+	dl#csschart .p302 span{height:151px}
+	dl#csschart .p303 span{height:152px}
+	dl#csschart .p304 span{height:152px}
+	dl#csschart .p305 span{height:153px}
+	dl#csschart .p306 span{height:153px}
+	dl#csschart .p307 span{height:154px}
+	dl#csschart .p308 span{height:154px}
+	dl#csschart .p309 span{height:155px}
+	dl#csschart .p310 span{height:155px}
+	dl#csschart .p311 span{height:156px}
+	dl#csschart .p312 span{height:156px}
+	dl#csschart .p313 span{height:157px}
+	dl#csschart .p314 span{height:157px}
+	dl#csschart .p315 span{height:158px}
+	dl#csschart .p316 span{height:158px}
+	dl#csschart .p317 span{height:159px}
+	dl#csschart .p318 span{height:159px}
+	dl#csschart .p319 span{height:160px}
+	dl#csschart .p320 span{height:160px}
+	dl#csschart .p321 span{height:161px}
+	dl#csschart .p322 span{height:161px}
+	dl#csschart .p323 span{height:162px}
+	dl#csschart .p324 span{height:162px}
+	dl#csschart .p325 span{height:163px}
+	dl#csschart .p326 span{height:163px}
+	dl#csschart .p327 span{height:164px}
+	dl#csschart .p328 span{height:164px}
+	dl#csschart .p329 span{height:165px}
+	dl#csschart .p330 span{height:165px}
+	dl#csschart .p331 span{height:166px}
+	dl#csschart .p332 span{height:166px}
+	dl#csschart .p333 span{height:167px}
+	dl#csschart .p334 span{height:167px}
+	dl#csschart .p335 span{height:168px}
+	dl#csschart .p336 span{height:168px}
+	dl#csschart .p337 span{height:169px}
+	dl#csschart .p338 span{height:169px}
+	dl#csschart .p339 span{height:170px}
+	dl#csschart .p340 span{height:170px}
+	dl#csschart .p341 span{height:171px}
+	dl#csschart .p342 span{height:171px}
+	dl#csschart .p343 span{height:172px}
+	dl#csschart .p344 span{height:172px}
+	dl#csschart .p345 span{height:173px}
+	dl#csschart .p346 span{height:173px}
+	dl#csschart .p347 span{height:174px}
+	dl#csschart .p348 span{height:174px}
+	dl#csschart .p349 span{height:175px}
+	dl#csschart .p350 span{height:175px}
+	dl#csschart .p351 span{height:176px}
+	dl#csschart .p352 span{height:176px}
+	dl#csschart .p353 span{height:177px}
+	dl#csschart .p354 span{height:177px}
+	dl#csschart .p355 span{height:178px}
+	dl#csschart .p356 span{height:178px}
+	dl#csschart .p357 span{height:179px}
+	dl#csschart .p358 span{height:179px}
+	dl#csschart .p359 span{height:180px}
+	dl#csschart .p360 span{height:180px}
+	dl#csschart .p361 span{height:181px}
+	dl#csschart .p362 span{height:181px}
+	dl#csschart .p363 span{height:182px}
+	dl#csschart .p364 span{height:182px}
+	dl#csschart .p365 span{height:183px}
+	dl#csschart .p366 span{height:183px}
+	dl#csschart .p367 span{height:184px}
+	dl#csschart .p368 span{height:184px}
+	dl#csschart .p369 span{height:185px}
+	dl#csschart .p370 span{height:185px}
+	dl#csschart .p371 span{height:186px}
+	dl#csschart .p372 span{height:186px}
+	dl#csschart .p373 span{height:187px}
+	dl#csschart .p374 span{height:187px}
+	dl#csschart .p375 span{height:188px}
+	dl#csschart .p376 span{height:188px}
+	dl#csschart .p377 span{height:189px}
+	dl#csschart .p378 span{height:189px}
+	dl#csschart .p379 span{height:190px}
+	dl#csschart .p380 span{height:190px}
+	dl#csschart .p381 span{height:191px}
+	dl#csschart .p382 span{height:191px}
+	dl#csschart .p383 span{height:192px}
+	dl#csschart .p384 span{height:192px}
+	dl#csschart .p385 span{height:193px}
+	dl#csschart .p386 span{height:193px}
+	dl#csschart .p387 span{height:194px}
+	dl#csschart .p388 span{height:194px}
+	dl#csschart .p389 span{height:195px}
+	dl#csschart .p390 span{height:195px}
+	dl#csschart .p391 span{height:196px}
+	dl#csschart .p392 span{height:196px}
+	dl#csschart .p393 span{height:197px}
+	dl#csschart .p394 span{height:197px}
+	dl#csschart .p395 span{height:198px}
+	dl#csschart .p396 span{height:198px}
+	dl#csschart .p397 span{height:199px}
+	dl#csschart .p398 span{height:199px}
+	dl#csschart .p399 span{height:200px}
+	dl#csschart .p400 span{height:200px}
+	dl#csschart .p401 span{height:201px}
+	dl#csschart .p402 span{height:201px}
+	dl#csschart .p403 span{height:202px}
+	dl#csschart .p404 span{height:202px}
+	dl#csschart .p405 span{height:203px}
+	dl#csschart .p406 span{height:203px}
+	dl#csschart .p407 span{height:204px}
+	dl#csschart .p408 span{height:204px}
+	dl#csschart .p409 span{height:205px}
+	dl#csschart .p410 span{height:205px}
+	dl#csschart .p411 span{height:206px}
+	dl#csschart .p412 span{height:206px}
+	dl#csschart .p413 span{height:207px}
+	dl#csschart .p414 span{height:207px}
+	dl#csschart .p415 span{height:208px}
+	dl#csschart .p416 span{height:208px}
+	dl#csschart .p417 span{height:209px}
+	dl#csschart .p418 span{height:209px}
+	dl#csschart .p419 span{height:210px}
+	dl#csschart .p420 span{height:210px}
+	dl#csschart .p421 span{height:211px}
+	dl#csschart .p422 span{height:211px}
+	dl#csschart .p423 span{height:212px}
+	dl#csschart .p424 span{height:212px}
+	dl#csschart .p425 span{height:213px}
+	dl#csschart .p426 span{height:213px}
+	dl#csschart .p427 span{height:214px}
+	dl#csschart .p428 span{height:214px}
+	dl#csschart .p429 span{height:215px}
+	dl#csschart .p430 span{height:215px}
+	dl#csschart .p431 span{height:216px}
+	dl#csschart .p432 span{height:216px}
+	dl#csschart .p433 span{height:217px}
+	dl#csschart .p434 span{height:217px}
+	dl#csschart .p435 span{height:218px}
+	dl#csschart .p436 span{height:218px}
+	dl#csschart .p437 span{height:219px}
+	dl#csschart .p438 span{height:219px}
+	dl#csschart .p439 span{height:220px}
+	dl#csschart .p440 span{height:220px}
+	dl#csschart .p441 span{height:221px}
+	dl#csschart .p442 span{height:221px}
+	dl#csschart .p443 span{height:222px}
+	dl#csschart .p444 span{height:222px}
+	dl#csschart .p445 span{height:223px}
+	dl#csschart .p446 span{height:223px}
+	dl#csschart .p447 span{height:224px}
+	dl#csschart .p448 span{height:224px}
+	dl#csschart .p449 span{height:225px}
+	dl#csschart .p450 span{height:225px}
+	dl#csschart .p451 span{height:226px}
+	dl#csschart .p452 span{height:226px}
+	dl#csschart .p453 span{height:227px}
+	dl#csschart .p454 span{height:227px}
+	dl#csschart .p455 span{height:228px}
+	dl#csschart .p456 span{height:228px}
+	dl#csschart .p457 span{height:229px}
+	dl#csschart .p458 span{height:229px}
+	dl#csschart .p459 span{height:230px}
+	dl#csschart .p460 span{height:230px}
+	dl#csschart .p461 span{height:231px}
+	dl#csschart .p462 span{height:231px}
+	dl#csschart .p463 span{height:232px}
+	dl#csschart .p464 span{height:232px}
+	dl#csschart .p465 span{height:233px}
+	dl#csschart .p466 span{height:233px}
+	dl#csschart .p467 span{height:234px}
+	dl#csschart .p468 span{height:234px}
+	dl#csschart .p469 span{height:235px}
+	dl#csschart .p470 span{height:235px}
+	dl#csschart .p471 span{height:236px}
+	dl#csschart .p472 span{height:236px}
+	dl#csschart .p473 span{height:237px}
+	dl#csschart .p474 span{height:237px}
+	dl#csschart .p475 span{height:238px}
+	dl#csschart .p476 span{height:238px}
+	dl#csschart .p477 span{height:239px}
+	dl#csschart .p478 span{height:239px}
+	dl#csschart .p479 span{height:240px}
+	dl#csschart .p480 span{height:240px}
+	dl#csschart .p481 span{height:241px}
+	dl#csschart .p482 span{height:241px}
+	dl#csschart .p483 span{height:242px}
+	dl#csschart .p484 span{height:242px}
+	dl#csschart .p485 span{height:243px}
+	dl#csschart .p486 span{height:243px}
+	dl#csschart .p487 span{height:244px}
+	dl#csschart .p488 span{height:244px}
+	dl#csschart .p489 span{height:245px}
+	dl#csschart .p490 span{height:245px}
+	dl#csschart .p491 span{height:246px}
+	dl#csschart .p492 span{height:246px}
+	dl#csschart .p493 span{height:247px}
+	dl#csschart .p494 span{height:247px}
+	dl#csschart .p495 span{height:248px}
+	dl#csschart .p496 span{height:248px}
+	dl#csschart .p497 span{height:249px}
+	dl#csschart .p498 span{height:249px}
+	dl#csschart .p499 span{height:250px}
+	dl#csschart .p500 span{height:250px}
+
+/* // percentages */				
+	
+	
+	
+	
+	
+	

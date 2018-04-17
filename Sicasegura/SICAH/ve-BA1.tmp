@@ -1,0 +1,413 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="caucepunt.aspx.vb" Inherits="SICAH_caucepunt" %>
+<%@ Register TagPrefix="uc" TagName="paginacion" Src="~/Controls/paginacion.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Guardería Fluvial</title>
+  <link rel="stylesheet" href="..\styles.css">
+
+  <script language="javascript" src="..\js/utilesListados.js"></script>
+
+  <script language="javascript">
+var ventanaDoc;
+  </script>
+
+  <meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+  <meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+  <meta name="vs_defaultClientScript" content="JavaScript">
+  <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+</head>
+<body bgcolor="#EEEAD2">
+  <form id="Form1" method="post" runat="server">
+    <table cellspacing="2" align="center" width="100%" style="border: 1px solid #666666;
+      background-color: white">
+      <tr>
+        <td>
+          <table cellspacing="0" cellpadding="1" width="100%">
+            <asp:Label ID="lblCabecera" runat="server"></asp:Label><asp:Label ID="lblPestanyas" runat="server"></asp:Label>
+            <tr>
+              <td>
+               <table align="center" width="100%" cellspacing="0" cellpadding="0" style="border: 1px solid #444444">
+                <!-- Celda Menú - Contenido -->
+                <tr>
+                   <!-- Celda1 menú árbol-->
+                    <td style="padding-left:20px; padding-right:20px;" valign=top>
+                      <!-- Panel arbol -->                      
+                      <asp:Panel ID=pnlArbol Runat=server Visible=true Width=420px ScrollBars=Auto BorderStyle=Inset Height=650px >
+                      <asp:TreeView ID="treeView1" runat="server">
+                        <LevelStyles>
+                          <asp:TreeNodeStyle Font-Bold="true" ForeColor="#003C00" Font-Underline="False" />
+                          <asp:TreeNodeStyle Font-Bold="true" ForeColor="Darkgreen" />
+                          <asp:TreeNodeStyle ForeColor="Darkgreen" />
+                        </LevelStyles>
+                        <NodeStyle ForeColor="green" />
+                      </asp:TreeView>
+                      </asp:Panel>
+                    <!-- Fin Panel arbol-->
+                    </td>
+                    <td style="background-image:url(../images/dot2.gif);width:3px"></td>
+                    <!-- Fin celda1 contenido arbol-->
+                    <!-- Celda2 contenido-->
+                    <td style="padding-left:20px; padding-right:20px;" valign=top >
+                        <!-- Panel energia -->    
+                        <asp:Panel ID=pnlEnergia Runat=server Visible=false Width=720px  Height=650px>
+                            <table >
+                            <asp:Label ID="lblidElemento" runat="server" Visible=false></asp:Label>
+                            <tr>
+                                <td colspan=14 align="right"><a>Filtrar Por Código Fuente Dato E Intervalo de Fecha Medida</a></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:#cccccc; border:1px solid #666666" colspan=14>
+                                <table align="right" width=100%>
+                                <tr>
+                                   <td nowrap>Cod. Fuente Dato:
+                                    <asp:TextBox ID="txtFiltrarCodFuenteDatoE" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                    </td>
+                                    <td nowrap> Fecha Desde: 
+                                      <asp:TextBox ID="txtFiltroFechaIniE" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFIE runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaIniE Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    <td nowrap> Hasta: 
+                                      <asp:TextBox ID="txtFiltroFechaFinE" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFFE runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaFinE Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    
+                                    <td colspan=10>
+                                    <asp:Button ID="btnFiltroAceptarE" runat="server" text="Filtrar" CssClass="boton" />
+                                    <asp:Button ID="btnFiltroCancelarE" runat="server" Text="Limpiar" CssClass="boton" />
+                                    <asp:Button ID="btnCancelarE" runat="server" Text="Cancelar" CssClass="boton" />
+                                    </td>
+                                
+                                </tr>
+                                <tr>
+                                    <td colspan="14" style="color:#555555">&nbsp;</td>
+                                </tr>
+                                </table>
+                                </td>
+                            </tr>
+                            </table>
+                            <table width=100%>                                               
+                                <asp:Repeater ID=rptEnergia runat=server>  
+                                    <HeaderTemplate>
+                                        <tr>
+                                            <td class="tituloSec" colspan=14>DATOS MOTORES: <%#obtenerNomElemento()%>&nbsp; &nbsp;&nbsp;Volúmen Acumulado : <%#obtenerVolumenElectricoAcumulado()%></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="AnyoHidrologico" colspan=14><%#obtenerAnyoHidrologico()%></td>
+                                        </tr>
+                                        <tr>
+                                        <td class="encabListado">Código PVYCR</td>
+                                        <td class="encabListado">Cod. Fuente Dato</td>
+                                        <td class="encabListado">Fecha Medida</td>
+                                        <td class="encabListado">Lectura I</td>
+                                        <td class="encabListado">Lectura II</td>
+                                        <td class="encabListado">Lectura III</td>
+                                        <td class="encabListado">Total (Kwh)</td>
+                                        <td class="encabListado">Total (Kvar)</td>
+                                        <td class="encabListado">Funciona</td>
+                                        <td class="encabListado">Justificación</td>
+                                        <td class="encabListado">Inc. Eléctrica</td>
+                                        <td class="encabListado">Consumo Elec.Adi.</td>
+                                        <td class="encabListado">Reinicio Lec. Elec.</td>
+                                        <td class="encabListado">Observaciones</td>
+                                        </tr>
+                                    </HeaderTemplate>                                                      
+                                    <ItemTemplate>
+                                        <tr <%# checkFila()%>>
+                                            <td><%#Container.DataItem("codigoPVYCR")%></td>
+                                            <td><%#Container.DataItem("Cod_fuente_dato")%></td>
+                                            <td><%#Container.DataItem("fecha_Medida")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "LecturaI", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "LecturaII", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "LecturaIII", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "Total_Kwh", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "Total_Kvar", "{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("Funciona")%></td>
+                                            <td><%#Container.DataItem("Justificacion")%></td>
+                                            <td><%#Container.DataItem("descIncElec")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "ConsumoElectricoAdicional", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem,"ReinicioLecturaElectrica", "{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("Observaciones")%></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                 <!-- Número de páginas -->
+                               <tr>
+                                  
+                                  <td style="background-color:#D4D0C8; border:0px solid #D4D0C8" colspan=14>               
+                                  <uc:paginacion ID="ucPaginacionE" runat="server" />        
+                                  </td>
+                              </tr>
+                               <!-- Fin Número de páginas -->                  
+                            </table>
+                        </asp:Panel> 
+                        <!-- Fin Panel listar Energia' -->
+                        <!--Panel listar Acequias -->
+                        <asp:Panel ID=pnlAcequias Runat=server Visible=false Width=720px  Height=650px>
+                            <table width=100%>
+                            <tr>
+                                <td align="right"><a>Filtrar Por Código Fuente Dato E Intervalo de Fecha Medida</a></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:#cccccc; border:1px solid #666666">
+                                <table align="right" width=100%>
+                                <tr>
+                                    <td nowrap> Cod.Fuente Dato: 
+                                      <asp:TextBox ID="txtFiltrarCodFuenteDato" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                    </td>                                
+                                    <td nowrap> Fecha Desde: 
+                                      <asp:TextBox ID="txtfiltroFechaIni" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvfechaini runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaIni Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    <td nowrap> Hasta: 
+                                      <asp:TextBox ID="txtFiltroFechaFin" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvfechafin runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaFin Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+
+                                    <td nowrap>
+                                    <asp:Button ID="btnFiltroAceptarA" runat="server" text="Filtrar" CssClass="boton" />
+                                    <asp:Button ID="btnFiltroCancelarA" runat="server" Text="Limpiar" CssClass="boton" />
+                                    <asp:Button ID="btnCancelarA" runat="server" Text="Cancelar" CssClass="boton" />
+                                    </td>
+                                
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="color:#555555">&nbsp;</td>
+                                </tr>
+                                </table>
+                                </td>
+                            </tr>
+                            </table>
+                            <table width=100%>                                               
+                                <asp:Repeater ID=rptAcequias runat=server>  
+                                    <HeaderTemplate>
+                                        <tr>
+                                           <td class="tituloSec" colspan=8>DATOS ACEQUIAS: <%#obtenerNomElemento()%></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="AnyoHidrologico" colspan=8><%#obtenerAnyoHidrologico()%></td>
+                                        </tr>
+                                        <tr>                                        
+                                        <td class="encabListado">codigo PVYCR</td>
+                                        <td class="encabListado">Fecha Medida</td>
+                                        <td class="encabListado">T. Obt. Caudal</td>
+                                        <td class="encabListado">Cod.Fuente Dato</td>
+                                        <td class="encabListado">Escala</td>
+                                        <td class="encabListado">Calado</td>
+                                        <td class="encabListado">Régimen Curva</td>
+                                        <td class="encabListado">Nº. Parada</td>
+                                        <td class="encabListado">Caudal (m3/s)</td>
+                                        <td class="encabListado">Duda Calidad</td>
+                                        <td class="encabListado">Observaciones</td>
+                                        </tr>
+                                    </HeaderTemplate>                                                      
+                                    <ItemTemplate>
+                                        <tr <%# checkFila()%>>
+                                            <td><%#Container.DataItem("codigoPVYCR")%></td>
+                                            <td><%#Container.DataItem("Fecha_Medida")%></td>
+                                            <td><%#Container.DataItem("TipoObtencionCaudal")%></td>
+                                            <td><%#Container.DataItem("Cod_Fuente_Dato")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "Escala_M", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "Calado_M","{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("RegimenCurva")%></td>
+                                            <td><%#Container.DataItem("NumeroParada")%></td>
+                                            <td><%#Container.DataItem("Caudal_M3S")%></td>
+                                            <td><%#Container.DataItem("Duda_Calidad")%></td>
+                                            <td><%#Container.DataItem("Observaciones")%></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                 <!-- Número de páginas -->
+                               <tr>
+                                  
+                                  <td style="background-color:#D4D0C8; border:0px solid #D4D0C8" colspan=11>               
+                                  <uc:paginacion ID="ucPaginacionA" runat="server" />        
+                                  </td>
+                              </tr>
+                               <!-- Fin Número de páginas -->                  
+                            </table>
+                        </asp:Panel> 
+                        <!-- Fin Panel listar Acequias' -->                                            
+                        <!-- Panel Volumen -->    
+                        <asp:Panel ID=pnlVolumen Runat=server Visible=false Width=720px  Height=650px>
+                            <table width=100%>
+                            <asp:Label ID="lblidelementoV" runat="server" Visible=false></asp:Label>
+                            <tr>
+                                <td align="right"><a>Filtrar Por Código Fuente Dato E Intervalo de Fecha Medida</a></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:#cccccc; border:1px solid #666666">
+                                <table align="right">
+                                <tr>
+                                    <td nowrap>Cod. Fuente Dato:
+                                    <asp:TextBox ID="txtFiltrarCodFuenteDatoV" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                    </td>
+                                    <td nowrap> Fecha Desde: 
+                                      <asp:TextBox ID="txtFiltroFechaIniV" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFIV runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaIniV Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    <td nowrap> Hasta: 
+                                      <asp:TextBox ID="txtFiltroFechaFinV" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFFV runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaFinV Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    
+                                    <td>
+                                    <asp:Button ID="btnFiltroAceptarV" runat="server" text="Filtrar" CssClass="boton" />
+                                    <asp:Button ID="btnFiltroCancelarV" runat="server" Text="Limpiar" CssClass="boton" />
+                                    <asp:Button ID="btnCancelarV" runat="server" Text="Cancelar" CssClass="boton" />
+                                    </td>
+                                
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="color:#555555">&nbsp;</td>
+                                </tr>
+                                </table>
+                                </td>
+                            </tr>
+                            </table>
+                            <table width=100%>                                               
+                                <asp:Repeater ID=rptVolumen runat=server>  
+                                    <HeaderTemplate>
+                                        <tr>
+                                            <td class="tituloSec" colspan=5>DATOS ALIMENTACIÓN: <%#obtenerNomElemento()%></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="AnyoHidrologico" colspan=8><%#obtenerAnyoHidrologico()%> &nbsp; &nbsp;&nbsp;Volúmen Acumulado : <%#obtenerVolumenAcumulado() %></td>
+                                        </tr>
+                                        <tr>
+                                        <td class="encabListado">Código PVYCR</td>
+                                        <td class="encabListado">Cod. Fuente Dato</td>
+                                        <td class="encabListado">Fecha Medida</td>
+                                        <td class="encabListado">Lectura Contador</td>
+                                        <td class="encabListado">Funciona</td>
+                                        <td class="encabListado">Justificación</td>
+                                        <td class="encabListado">Inc. Volumétrica</td>
+                                        <td class="encabListado">Consumo Vol.Adi.</td>
+                                        <td class="encabListado">Reinicio Lec. Vol.</td>
+                                        <td class="encabListado">Observaciones</td>
+                                        </tr>
+                                    </HeaderTemplate>                                                      
+                                    <ItemTemplate>
+                                        <tr <%# checkFila()%>>
+                                            <td nowrap><%#Container.DataItem("codigoPVYCR")%></td>
+                                            <td><%#Container.DataItem("Cod_fuente_dato")%></td>
+                                            <td nowrap><%#Container.DataItem("fecha_Medida")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "LecturaContador_M3", "{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("Funciona")%></td>
+                                            <td><%#Container.DataItem("Justificacion")%></td>
+                                            <td><%#Container.DataItem("descIncVol")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "ConsumoVolumetricoAdicional", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem,"ReinicioLecturaVolumetrica", "{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("Observaciones")%></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                 <!-- Número de páginas -->
+                               <tr>
+                                  
+                                  <td style="background-color:#D4D0C8; border:0px solid #D4D0C8" colspan=14>               
+                                  <uc:paginacion ID="ucPaginacionV" runat="server" />        
+                                  </td>
+                              </tr>
+                               <!-- Fin Número de páginas -->                  
+                            </table>
+                        </asp:Panel> 
+                        <!-- Fin Panel listar Volumen' -->
+                        <!-- Panel Horometros -->    
+                        <asp:Panel ID=pnlHorometros Runat=server Visible=false Width=720px  Height=650px >
+                            <table width=100%>
+                            <asp:Label ID="lblidelementoH" runat="server" Visible=false></asp:Label>
+                            <tr>
+                                <td align="right"><a>Filtrar Por Código Fuente Dato E Intervalo de Fecha Medida</a></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color:#cccccc; border:1px solid #666666">
+                                <table align="right">
+                                <tr>
+                                    <td nowrap>Cod. Fuente Dato:
+                                    <asp:TextBox ID="txtFiltrarCodFuenteDatoH" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                    </td>
+                                    <td nowrap> Fecha Desde: 
+                                      <asp:TextBox ID="txtFiltroFechaIniH" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFIH runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaIniH Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    <td nowrap> Hasta: 
+                                      <asp:TextBox ID="txtFiltroFechaFinH" runat="server" CssClass="texto" Width=75px></asp:TextBox>
+                                      <asp:CompareValidator ID=cvFFH runat=server Text=* ErrorMessage="Fecha no válida" ControlToValidate=txtFiltroFechaFinH Operator=DataTypeCheck Type=date></asp:CompareValidator>
+                                    </td>
+                                    
+                                    <td>
+                                    <asp:Button ID="btnFiltroAceptarH" runat="server" text="Filtrar" CssClass="boton" />
+                                    <asp:Button ID="btnFiltroCancelarH" runat="server" Text="Limpiar" CssClass="boton" />
+                                    <asp:Button ID="btnCancelarH" runat="server" Text="Cancelar" CssClass="boton" />
+                                    </td>
+                                
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="color:#555555">&nbsp;</td>
+                                </tr>
+                                </table>
+                                </td>
+                            </tr>
+                            </table>
+                            <table width=100%>                                               
+                                <asp:Repeater ID=rptHorometros runat=server>  
+                                    <HeaderTemplate>
+                                        <tr>
+                                            <td class="tituloSec" colspan=5>DATOS HORÓMETROS: <%#obtenerNomElemento()%></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="AnyoHidrologico" colspan=8><%#obtenerAnyoHidrologico()%> </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="encabListado">Código PVYCR</td>
+                                        <td class="encabListado">Cod. Fuente Dato</td>
+                                        <td class="encabListado">Fecha Medida</td>
+                                        <td class="encabListado">Horas Intervalo</td>                                        
+                                        <td class="encabListado">Funciona</td>
+                                        <td class="encabListado">Inc. Volumétrica</td>
+                                        <td class="encabListado">Consumo Vol.Adi.</td>
+                                        <td class="encabListado">Reinicio Lec. Vol.</td>
+                                        <td class="encabListado">Observaciones</td>
+                                        </tr>
+                                    </HeaderTemplate>                                                      
+                                    <ItemTemplate>
+                                        <tr <%# checkFila()%>>
+                                            <td nowrap><%#Container.DataItem("codigoPVYCR")%></td>
+                                            <td><%#Container.DataItem("Cod_fuente_dato")%></td>
+                                            <td><%#Container.DataItem("fecha_medida")%></td>
+                                            <td><%#Container.DataItem("HorasIntervalo")%></td>                                            
+                                            <td><%#Container.DataItem("Funciona")%></td>
+                                            <td><%#Container.DataItem("descIncVol")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem, "ConsumoVolumetricoAdicional", "{0:#,##0.##}")%></td>
+                                            <td><%#DataBinder.Eval(Container.DataItem,"ReinicioLecturaVolumetrica", "{0:#,##0.##}")%></td>
+                                            <td><%#Container.DataItem("Observaciones")%></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                 <!-- Número de páginas -->
+                               <tr>
+                                  
+                                  <td style="background-color:#D4D0C8; border:0px solid #D4D0C8" colspan=14>               
+                                  <uc:paginacion ID="ucPaginacionH" runat="server" />        
+                                  </td>
+                              </tr>
+                               <!-- Fin Número de páginas -->                  
+                            </table>
+                        </asp:Panel> 
+                        <!-- Fin Panel listar horometros' -->                        
+                    </td>
+                    <!-- Fin Celda2 contenido-->
+                  </tr>
+                  <!-- Fin Celda Menú contenido-->
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,542 @@
+﻿body 
+{
+	font-family:Calibri,Verdana,Arial,Sans-Serif;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	overflow:hidden;
+}
+.divGeneric
+{	width: 100%;
+	height: 100%;
+}
+
+/*Estilo div overviewmap*/
+#root {
+	position:absolute;	
+	padding-top:5px; padding-left:10px;
+	height:55px; width:255px;
+	background-color: #C19E8A; border:1px solid #C29015; color:#FFD800;
+	font:bold 11px tahoma, arial, helvetica, sans-serif;
+	line-height:15px;	
+}
+
+/**/
+#loading-mask{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:20000;
+    background-color: Gray;
+    filter: alpha(opacity=30);
+}
+
+#loading{
+    position:absolute;
+    left:40%;
+    top:42%;
+    padding:2px;
+    z-index:20001;
+    height:auto;
+    background-color: #C29015;
+}
+
+#loading a {
+    color:#225588;
+}
+        
+        
+#loading .loading-indicator{
+	background:white;
+    color:#444;
+    font:bold 13px tahoma,arial,helvetica;
+    padding:10px;
+    margin:0;
+    height:auto;
+}
+
+#loading-msg {
+	font: normal 10px arial,tahoma,sans-serif;
+	color:#C29015;
+}
+
+/*Estilos del arbol incial para el elemento seleccionado*/
+.clstreeBusquedas .x-tree-selected{
+  background:#C69A33; 
+  
+}
+
+
+ 
+/*Estilos para los iconos de los arboles*/
+.InicioTree .x-tree-node-icon{
+    background-image:url(../imagenes/murcianica.png);
+    width: 25px;height: 25px;
+}
+.ComarcasTree .x-tree-node-icon{
+    background-image:url(../imagenes/comarcas.png);
+    width: 25px;height: 25px;
+}
+.MunicipiosTree .x-tree-node-icon{
+    background-image:url(../imagenes/Escudo.Gif);
+    width: 20px;height: 20px;
+}
+
+.CRTree .x-tree-node-icon{
+    background-image:url(../imagenes/CRs.png);
+    width: 15px;height: 15px;
+}
+
+.ExpedientesTree .x-tree-node-icon{
+    background-image:url(../imagenes/expediente.png);
+    width: 25px;height: 25px;
+}
+
+.BombeosTree .x-tree-node-icon{
+    background-image:url(../imagenes/Bomba20.png);
+    width: 25px;height: 25px;
+}
+
+.CabezalesTree .x-tree-node-icon{
+    background-image:url(../imagenes/cabezal20.png);
+    width: 25px;height: 25px;
+}
+
+.ConduccionesTree .x-tree-node-icon{
+    background-image:url(../imagenes/conduccion20.png);
+    width: 25px;height: 25px;
+}
+
+.RegulacionTree .x-tree-node-icon{
+    background-image:url(../imagenes/treeRegulacion.png);
+    width: 25px;
+	height: 25px;
+}
+
+.TomasParcelaTree .x-tree-node-icon{
+    background-image:url(../imagenes/hidrante20.png);
+    width: 25px;height: 25px;
+}
+.HidranteTree .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/hidrante.png);
+    width: 25px;height: 22px;
+}
+.ArquetaTree .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/arqueta.png);
+    width: 25px;height: 22px;
+}
+.EENNTree .x-tree-node-icon
+{
+	background-image:url(../imagenes/eenn.png);
+    width: 25px;height: 25px;
+}
+.VacioTree .x-tree-node-icon{/*Necesario para los que no tienen icono*/
+    width: 0px;height: 0px;
+}
+
+
+.expandir .x-btn-text-icon{
+    background:url(../imagenes/expediente.png);
+}
+/*Botones de toolbar principal*/
+.icon-visor
+{
+background:url(../imagenes/murcianica.png) 0 no-repeat !important;
+}
+.icon-consulta
+{
+background:url(../imagenes/expediente.png) 0 no-repeat !important;
+}
+.icon-reiniciar
+{
+background:url(../imagenes/comarcas.png) 0 no-repeat !important;    
+}
+.btn-negrita button {
+  font-weight: bold;
+}
+/*Botones de toolbar de resultados de consulta*/
+.icon-pdf
+{
+background:url(../imagenes/botones/pdf.png) 0 no-repeat !important;
+}
+.icon-zoomA
+{
+background:url(../imagenes/botones/zoomA.png) 0 no-repeat !important;
+}
+.icon-asociados
+{
+background:url(../imagenes/botones/asociados.png) 0 no-repeat !important;
+}
+.icon-Informe€
+{
+background:url(../imagenes/botones/informe€.png) 0 no-repeat !important;
+}
+.icon-volver
+{
+background:url(../imagenes/botones/undo24.png) 0 no-repeat !important;
+}
+.lanzarconsulta
+{
+background:url(../imagenes/botones/consulta.png) 0 no-repeat !important;
+}
+.icon-rtdos
+{
+background:url(../imagenes/botones/verResultados.png) 0 no-repeat !important;
+}
+.reiniciofiltros
+{
+background:url(../imagenes/botones/reiniciofiltros.png) 0 no-repeat !important;
+}
+/*Icono ventana edicion*/
+.aceptar
+{
+background:url(../imagenes/botones/aceptar.png) 0 no-repeat !important;
+}
+.aceptarReducido
+{
+background:url(../imagenes/botones/aceptarReducido.png) 0 no-repeat !important;
+}
+.cancelar
+{
+background:url(../imagenes/botones/cancelar.png) 0 no-repeat !important;
+}
+.importa_shp
+{
+background:url(../imagenes/botones/shape.png) 0 no-repeat !important;
+}
+.editar
+{
+background:url(../imagenes/botones/edit.png) 0 no-repeat !important;
+}
+.editar_add
+{
+background:url(../imagenes/botones/edit_add.png) 0 no-repeat !important;
+}
+.icon-user-add
+{
+background:url(../imagenes/botones/add_grid.png) 0 no-repeat !important;
+}
+.icon-user-delete
+{
+background:url(../imagenes/botones/cancel_grid.png) 0 no-repeat !important;
+}
+.icon-asociados28
+{
+background:url(../imagenes/botones/asociados28.png) 0 no-repeat !important;
+}
+/*Icono ventana info*/
+.icon-InformeInfo
+{
+background:url(../imagenes/expediente.png) 0 no-repeat !important;
+}
+.icon-login
+{
+background:url(../imagenes/botones/login.png) 0 no-repeat !important;
+}
+.icon-logout
+{
+background:url(../imagenes/botones/logout.png) 0 no-repeat !important;
+}
+
+
+/* Estilo para el arbol de capas */
+.treeCapaCR .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeCapaCRs.png);
+    width: 20px;height: 20px;
+}
+.treeCapaEspecifica .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeCapaEspecifica.png);
+    width: 20px;height: 20px;
+}
+.treeZonaProteccion .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeZonaProteccion.png);
+    width: 20px;height: 20px;
+}
+.CapaTree .x-tree-node-icon{
+    background-image:url(../imagenes/capa.png);
+    width: 0px;height: 0px;
+}
+/*Estilo para arbol de leyenda*/
+.treeLeyendaNegrita .x-tree-node-icon
+{
+	background-image:url(../imagenes/capa.png);
+    width: 0px;height: 0px;
+}
+.treeLeyendaNegrita
+{
+	font-weight:bold;
+}
+.contornosTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/contornosCRs.png);
+    width: 20px;height: 20px;
+}
+.contornosTreeCHSLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/contornosCRsCHS.png);
+    width: 20px;height: 20px;
+}
+
+.modernizableTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/modernizableSIGPAC.png);
+    width: 20px;height: 20px;
+}
+.modernizableTreeCHSLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/modernizableSIGPACCHS.png);
+    width: 20px;height: 20px;
+}
+.cubricionTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/cubricion.png);
+    width: 20px;height: 20px;
+}
+.regulacionTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/regulacion_interna.png);
+    width: 20px;height: 20px;
+}
+.redprimariaTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/red_primaria.png);
+    width: 20px;height: 20px;
+}
+.redsecundariaTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/red_secundaria.png);
+    width: 20px;height: 20px;
+}
+.redterciariaTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/red_terciaria.png);
+    width: 20px;height: 20px;
+}
+.condppordeterminarTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/conduccion_pordeterminar.png);
+    width: 20px;height: 20px;
+}
+.red_distribucionTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/red_distribucion.png);
+    width: 20px;height: 20px;
+}
+.hidranteTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/hidrante.png);
+    width: 20px;height: 22px;
+}
+.arquetaTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/arqueta.png);
+    width: 20px;height: 22px;
+}
+.hist_regulacionTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/hist_regulacion.png);
+    width: 20px;height: 22px;
+}
+.hist_conduccionTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/hist_conduccion.png);
+    width: 20px;height: 22px;
+}
+.hist_bombasTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/hist_bombeo.png);
+    width: 20px;height: 22px;
+}
+.hist_captacionesTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/his_captacion.png);
+    width: 20px;height: 22px;
+}
+.ZonasDesfavTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/zonas_desfavorecidas.png);
+    width: 20px;height: 20px;
+}
+.LICTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/lic.png);
+    width: 20px;height: 20px;
+}
+.ZEPATreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/zepa.png);
+    width: 20px;height: 20px;
+}
+.HabitatsTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/Habitats.png);
+    width: 20px;height: 20px;
+}
+.EmbalsesTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/embalses.png);
+    width: 20px;height: 20px;
+}
+.RedHidrograficaTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/red_hidrografica.png);
+    width: 20px;height: 20px;
+}
+.HumedalesTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/humedales.png);
+    width: 20px;height: 20px;
+}
+.MontesTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/montes.png);
+    width: 20px;height: 20px;
+}
+.VegActualTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/vegactual.png);
+    width: 20px;height: 20px;
+}
+.VegPotencialTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/vegpotencial.png);
+    width: 20px;height: 20px;
+}
+.NO3TreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/no3.png);
+    width: 20px;height: 20px;
+}
+.NidosTreeLey .x-tree-node-icon{
+    background-image:url(../imagenes/leyenda/nidos.png);
+    width: 20px;height: 20px;
+}
+                   
+/*Estilos para la botonera del visor SIG*/
+.reinicio {
+    background-image: url(../imagenes/herramientas/reinicio.png) !important;    
+}
+.zoomIn {
+    background-image: url(../imagenes/herramientas/ZoomIn.png) !important;
+}
+.zoomOut {
+    background-image: url(../imagenes/herramientas/ZoomOut.png) !important;
+}
+.zoomExtentMurcia {
+    background-image: url(../imagenes/herramientas/ZoomMurcia.png) !important;
+}
+.zoomPrevio {
+    background-image: url(../imagenes/herramientas/ZoomPrevio.png) !important;
+}
+.zoomNext {
+    background-image: url(../imagenes/herramientas/ZoomNext.png) !important;
+}
+.pan {
+    background-image: url(../imagenes/herramientas/Pan.png) !important;
+}
+
+.measure {
+    background-image: url(../imagenes/herramientas/Medir.png) !important;
+}
+.measureArea {
+    background-image: url(../imagenes/herramientas/Area.png) !important;
+}
+.Info {
+    background-image: url(../imagenes/herramientas/Info.png) !important;
+}   
+.leyenda {
+    background-image: url(../imagenes/herramientas/leyenda.png) !important;
+}
+.hover {
+    background-image: url(../imagenes/herramientas/comment.png) !important;
+}
+/*Cambio de estilo de elementos OpenLayers*/
+
+div.olControlOverviewMapElement {    
+    background: none;          
+}
+/*div.olControlOverviewMapContainer {
+    position: absolute;
+    left: 150px;
+    right: 0px;
+    background:none;    
+}
+*/
+
+div.olMap {  
+ background-color:#E0E0E0;  
+ }
+  
+/*
+ div.olControlOverviewMapExtentRectangle 
+ {	border-color:Green; }
+*/
+
+
+/*Estilos del ColumnTree de resultados*/
+.columnTreeHeader .x-panel-header {
+  visibility:hidden; 
+}
+
+.columnTreeHeader .x-tree-selected {
+  background:#C69A33;  
+}
+
+.cabeceraTree .x-tree-node-icon{/*Necesario para los que no tienen icono*/
+    width: 0px;height: 0px;
+}
+
+.cabeceraTree .x-tree-col-text, .x-tree-hd-text
+{
+	color:#660000 !important; 	
+	font-size:10px;
+	text-align:center;		
+}
+/*Estilos de nodo documentos asociados*/
+.docs_asociadosTree .x-tree-node-icon{
+    background-image:url(../imagenes/asociadosTree.png);
+    width: 25px;height: 25px;
+}
+
+/* Nuevo estilo creado para cambiar los títulos del resultado del filtro para la infraestrura
+de expedientes */
+.cabeceraTreeAux .x-tree-node-icon
+{
+	width: 0px; height: 0px;
+}
+.cabeceraTreeAux .x-tree-col-text, .x-tree-hd-text
+{
+	color:#3300CC;
+	font-size:10px;
+	text-align:center;
+	/*text-align:right;*/
+}
+
+.treeRtdCR .x-tree-col-text, .x-tree-hd-text{
+	text-align:right;
+}
+
+.treeRtdExp .x-tree-col-text, .x-tree-hd-text{
+	text-align:right;
+}
+
+.cabeceraTree span{
+	color:#660000!important;
+	font:10px;	
+}
+
+
+/*Estilo para remarcar textfield en rojo*/
+.txtfieldRojo 
+{
+	color:blue;/*El color lo podemos poner creando un estilo en el propio objeto con la propiedad style*/ 
+	/*font-style:italic;*/
+	border:2px solid;
+	border-color:Orange;
+	/*font-weight:bold;*/
+}
+
+.treeRtdCR .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeRtdCR.png);
+    width: 20px;height: 20px;
+}
+.treeRtdExp .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeRtdExp.png);
+    width: 20px;height: 20px;
+}
+.treeRtdGlobal .x-tree-node-icon
+{
+	background-image:url(../imagenes/treeRtdCR.png);
+    width: 0px;height: 0px;
+}
+.treeRtdGlobal .x-tree-col-text, .x-tree-hd-text{
+	text-align:center;
+}
+
+
+.x-tool-myicon
+{
+    background-image: url(../imagenes/botones/undo16.png);
+}
+.x-tool-myicon24
+{
+    background-image: url(../imagenes/undo24.png);
+}

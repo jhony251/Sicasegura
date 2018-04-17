@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>NineRays.Reporting.Export.RTF</name>
+  </assembly>
+  <members>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.EndHyperlink(NineRays.Reporting.DOM.ReportControl)"><summary>Writes the end of hyperlink.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Round(System.Single)"><summary>Converts control unit into RTF unit.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.FindAdapter(System.Type)"><summary>Returns RtfAdapter instance corresponding to the given control type.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.String)"><summary>Exports the given document to the specified file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Renders control into Rich Text format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.RTFExportFilterFactory"><summary>Creates RtfExportFilter instances.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.AdvancedTextRTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.TextBoxRTFAdapter"><summary>Represent adapter for the TextBox control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.Render(NineRays.Reporting.DOM.PageCollection)"><summary>Begins pages rendering into buffer.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.PictureRTFAdapter"><summary>Represent adapter for the Picture control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.TextBoxRTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="P:NineRays.Reporting.Export.RTF.RTFExportFilter.Accuracy"><summary>Gets and sets filter accuracy.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.Save(System.IO.Stream)"><summary>Saves image of rtf file to specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.TextBoxRTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.#ctor"><summary>Creates a new instance of RTFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.Save(System.String)"><summary>Saves image of rtf file to specified file.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.PictureRTFAdapter.#ctor"><summary>Creates a new instance of PictureRTFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateAlignmentString(System.Drawing.ContentAlignment)"><summary>Returns alignment in the Rich Text format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.AdvancedTextRTFAdapter.#ctor"><summary>Creates a new instance of AdvancedTextRTFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Creates string from content of control.</summary></member>
+    <member name="P:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.Factory"><summary>Gets default instance of the RtfExportFilterFactory class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter.WriteMargins(System.IO.StreamWriter,NineRays.Reporting.DOM.Margins,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Writes margins in the Rich Text format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.#ctor"><summary>Creates a new instance of RTFFile class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.CreateFilter"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.CreateFilter" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.ExportDocument(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports the given document to the specified stream.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFSavePicture(NineRays.Reporting.DOM.Picture)"><summary>Prepares image into Rich Text format.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter"><summary>Represent adapter for the box control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.RegisterAdapter(System.Type,NineRays.Reporting.Export.RTF.Adapters.RTFAdapter)"><summary>Registers a new adapter.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.Render(NineRays.Reporting.DOM.PageCollection,NineRays.Reporting.Export.Tracing.TableTracer.RenderControlCallback)"><summary>Begins pages rendering into buffer. Callback-method, that define whether controls will be rendered, is used.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.ShowDialog"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.ShowDialog" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.BeginHyperlink(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Writes the beginning of hyperlink.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.ConvertString(System.String)"><summary>Prepares text into Rich Text format.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter"><summary>Represent adapter for report control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.GetFilterFormat"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFormat" />.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.RTFFile"><summary>Represents an image of rtf file in buffer.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.TextControlRTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.PictureRTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.CreateRTFString(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.PictureRTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="P:NineRays.Reporting.Export.RTF.RTFFile.Title"><summary>Gets or sets title of the result rtf file.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.TextControlRTFAdapter"><summary>Represent adapter for the text control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter.WriteBorder(System.IO.StreamWriter,NineRays.Basics.Drawing.Border,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Writes border in the Rich Text format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.TextBoxRTFAdapter.#ctor"><summary>Creates a new instance of TextBoxRTFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.GetFilterFileExtension"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterFileExtension" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.#ctor(System.ComponentModel.IContainer)"><summary>Initializes a new instance of the RTFExportFilter class with the specified container.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.GetFilterName"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilterFactory.GetFilterName" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFFile.#ctor(System.String)"><summary>Creates a new instance of RTFFile class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.ReportControlRTFAdapter.#ctor"><summary>Creates a new instance of ReportControlRTFAdapter class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilterFactory.#ctor"><summary>Creates a new instance of RTFExportFilterFactory class.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.Export(NineRays.Reporting.DOM.Document,System.IO.Stream)"><summary>Exports the given document to the specified stream.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.RTFExportFilter"><summary>Exports Report Sharp-Shooter documents to RTF format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.WriteAlign(System.IO.StreamWriter,System.Drawing.ContentAlignment)"><summary>Writes alignment in the Rich Text format.</summary></member>
+    <member name="P:NineRays.Reporting.Export.RTF.RTFFile.Accuracy"><summary>Gets and sets filter accuracy.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.AdvancedTextRTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.#ctor"><summary>Creates a new instance of RTFExportFilter class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter"><summary>Incapsulates conversion methods for different types of report controls.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.RTFWriteControl(System.IO.StreamWriter,NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Writes control parameters in the Rich Text format.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.RTFExportFilter.GetFactory"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.ExportFilter.GetFactory" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)"><summary>Overrided. See <see cref="M:NineRays.Reporting.Export.RTF.Adapters.RTFAdapter.Render(NineRays.Reporting.DOM.ReportControl,NineRays.Reporting.Export.RTF.RTFFile)" />.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.BoxRTFAdapter.#ctor"><summary>Creates a new instance of BoxRTFAdapter class.</summary></member>
+    <member name="T:NineRays.Reporting.Export.RTF.Adapters.AdvancedTextRTFAdapter"><summary>Represent adapter for the AdvancedText control.</summary></member>
+    <member name="M:NineRays.Reporting.Export.RTF.Adapters.TextControlRTFAdapter.#ctor"><summary>Creates a new instance of TextControlRTFAdapter class.</summary></member>
+  </members>
+</doc>

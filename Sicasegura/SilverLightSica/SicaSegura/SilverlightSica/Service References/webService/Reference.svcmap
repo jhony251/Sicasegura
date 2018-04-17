@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e46d2883-6695-46df-92ca-88c41aeb41aa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SicaSegura/srvDatos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="srvDatos1.disco" MetadataType="Disco" ID="8e37d384-f28d-451c-9865-e75738c94594" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?disco" />
+    <MetadataFile FileName="srvDatos4.xsd" MetadataType="Schema" ID="6602e756-cdf3-480c-bfe9-630254251782" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?xsd=xsd3" />
+    <MetadataFile FileName="srvDatos41.xsd" MetadataType="Schema" ID="dd9c5675-007e-4e4d-84bf-75142624229f" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?xsd=xsd0" />
+    <MetadataFile FileName="srvDatos2.wsdl" MetadataType="Wsdl" ID="1c36f513-ac67-400a-bce5-d50d44b4e7c7" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="srvDatos21.wsdl" MetadataType="Wsdl" ID="c552e9e1-3c02-4a78-b2d9-646e4aa76b8f" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?wsdl" />
+    <MetadataFile FileName="srvDatos42.xsd" MetadataType="Schema" ID="2ed35dc4-b5ca-4a5b-85e5-9077002d5f44" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?xsd=xsd2" />
+    <MetadataFile FileName="srvDatos43.xsd" MetadataType="Schema" ID="6ae101a2-0f8c-43fb-842c-c366c86957e8" SourceId="1" SourceUrl="http://vushtt053.tragsa.es/SicaSegura/srvDatos.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

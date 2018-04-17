@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>NineRays.Reporting.Web</name>
+  </assembly>
+  <members>
+    <member name="F:NineRays.Reporting.Web.ViewMode.HtmlWholeReport"><summary>Show whole report in Html format.</summary></member>
+    <member name="F:NineRays.Reporting.Web.ViewMode.HtmlSinglePage"><summary>Show single page in Html format.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PreviousText"><summary>Gets and sets text for the 'Previous' link.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PagerPosition"><summary>Gets and sets pager position.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PdfLink"><summary>Gets html link to the pdf version of displayed report.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PagesText"><summary>Gets and sets string to the Pages text.</summary></member>
+    <member name="M:NineRays.Reporting.Web.SharpShooterWebViewer.OnInit(System.EventArgs)"><summary>Overrides inherited OnInit method.</summary></member>
+    <member name="M:NineRays.Reporting.Web.SharpShooterWebViewer.OnLoad(System.EventArgs)"><summary>Overrides inherited OnLoad method.</summary></member>
+    <member name="F:NineRays.Reporting.Web.PagerPosition.Bottom"><summary>At bottom.</summary></member>
+    <member name="T:NineRays.Reporting.Web.PagerPosition"><summary>Position of the pager.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PdfText"><summary>Gets and sets text for the 'View as PDF' link.</summary></member>
+    <member name="F:NineRays.Reporting.Web.ViewMode.WindowsForms"><summary>Place Windows Forms Viewer inside page.</summary></member>
+    <member name="M:NineRays.Reporting.Web.SharpShooterWebViewer.OnPreRender(System.EventArgs)"><summary>Overrides inherited OnPreRender method.</summary></member>
+    <member name="M:NineRays.Reporting.Web.SharpShooterWebViewer.RenderContents(System.Web.UI.HtmlTextWriter)"><summary>Render this control to the output parameter specified.</summary><param name="output">The HTML writer to write out to.</param></member>
+    <member name="F:NineRays.Reporting.Web.PagerPosition.None"><summary>Don't show pager.</summary></member>
+    <member name="T:NineRays.Reporting.Web.ViewMode"><summary>Viewer Mode.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.ImageFormat"><summary>Gets and sets Image Format for html report converter.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.CachedReportName"><summary>Gets and sets id for cache item which contains report.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.ViewMode"><summary>Gets and sets viewer mode.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.NextText"><summary>Gets and sets text for the 'Next' link.</summary></member>
+    <member name="T:NineRays.Reporting.Web.SharpShooterWebViewer"><summary>ASP.NET Viewer Web Control for Report Sharp-Shooter documents.</summary></member>
+    <member name="F:NineRays.Reporting.Web.PagerPosition.Both"><summary>At both top and bottom.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PageIndex"><summary>Gets and sets number of the currently displayed page.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.Source"><summary>Gets and sets the source for the report document.</summary></member>
+    <member name="M:NineRays.Reporting.Web.SharpShooterWebViewer.ResetCachedDocument"><summary>Clears report cache.</summary></member>
+    <member name="F:NineRays.Reporting.Web.PagerPosition.Top"><summary>At top.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PagerCssClass"><summary>Gets and sets Css class for pager component.</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.CacheTimeOut"><summary>Gets and sets cache timeout (how long report sholud be keeped in cache).</summary></member>
+    <member name="P:NineRays.Reporting.Web.SharpShooterWebViewer.PageText"><summary>Gets and sets string template for the Page text.</summary><remarks>Use {0} to display current page and {1} to display total pages count.</remarks></member>
+  </members>
+</doc>

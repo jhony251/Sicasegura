@@ -1,0 +1,105 @@
+<%@ Page Language="VB" AutoEventWireup="true" %>
+<%@ Register Assembly="System.Web.Silverlight" Namespace="System.Web.UI.SilverlightControls" TagPrefix="asp" %>
+
+<%@ Import Namespace="System.Drawing" %>
+<%@ Import Namespace="System.Drawing.Drawing2D" %>
+<%@ Import Namespace="GuarderiaFluvial" %>
+<%@ Import Namespace="GuarderiaFluvial.JavaScript" %>
+
+<script runat="server">
+  
+
+    Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
+        Response.CacheControl = "no-cache"
+        'If Not IsPostBack Then
+        'If Session("usuarioReg") = Nothing Then
+        'Response.Redirect("UsuarioNoRegistrado.aspx")
+        'Exit Sub
+        'End If
+        
+        'lblCabecera.Text = genHTML.cabecera(Page)
+        lblPestanyas.Text = genHTML.pestanyasMenu(7, "../", Page, Session("idperfil"), Session("usuarioReg"))
+        
+        'End If
+    End Sub
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0"/>
+    <meta name="CODE_LANGUAGE" content="Visual Basic 7.0"/>
+    <meta name="vs_defaultClientScript" content="JavaScript"/>
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"/>    
+   
+    <title>SICA - Sistema Integrado de Control de Aprovechamientos</title>
+    <link rel="stylesheet" href="../styles.css"/>
+    <script type="text/javascript" language="javascript" src="../js/utilesListados.js"></script>
+    <script type="text/javascript" src="../js/utilesMenus.js"></script>  
+    
+    <!--
+    <script type="text/javascript" src="/js/Silverlight.js"></script>
+    
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            var errMsg = "Error no controlado en la aplicación de Silverlight " + appSource + "\n";
+
+            errMsg += "Código: " + iErrorCode + "    \n";
+            errMsg += "Categoría: " + errorType + "       \n";
+            errMsg += "Mensaje: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "Archivo: " + args.xamlFile + "     \n";
+                errMsg += "Línea: " + args.lineNumber + "     \n";
+                errMsg += "Posición: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "Línea: " + args.lineNumber + "     \n";
+                    errMsg += "Posición: " + args.charPosition + "     \n";
+                }
+                errMsg += "Nombre de método: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+    </script>
+-->
+</head>
+
+<body bgcolor="#EEEAD2" style="font-size: 10pt; font-family: Verdana; text-decoration: none">
+<form id="form1" runat="server">              
+<span id="dsp4"></span>
+<div id='errorLocation' style="font-size: small;color: Gray;"></div>
+    <table cellspacing="2" align="center" width="100%"  style="border: 1px solid #666666; background-color: white; height:100%">
+    <tr><td>
+        <table cellspacing="0" cellpadding="1" width="100%" border="0">
+        <tr><td>
+            <asp:Label ID="lblCabecera" runat="server"></asp:Label>
+            <asp:Label ID="lblPestanyas" runat="server"></asp:Label>
+        </td></tr>
+        </table>
+   
+    </td></tr>
+    <tr>
+        <td style="height:100%">
+        <!--iframe width="100%" height="100%" style="border:0px"  src="http://localhost:2304/telegestion.aspx"></iframe-->
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div  style="height:100%;">
+            <asp:Silverlight ID="Xaml1" runat="server" Source="~/ClientBin/SilverlightSica.xap" MinimumVersion="2.0.31005.0" Width="100%" Height="100%" InitParameters="tipoGrafico=telegestion" />
+        </div>
+    </td></tr>
+    </table>
+</form>
+</body>
+</html>
+
+
