@@ -63,7 +63,7 @@ namespace SicaSegura
                 }
 
                 /* Calculo de totales por tramos
-                 * Recorremos la columna de nuevo acumulando los valores que hemos escrito antes y escribiéndolos en los huevos que han quedado en blanco
+                 * Recorremos la columna de nuevo acumulando los valores que hemos escrito antes y escribiéndolos en los huecos que han quedado en blanco
                 */
                 int indice = 0;
                 int row = 4;
