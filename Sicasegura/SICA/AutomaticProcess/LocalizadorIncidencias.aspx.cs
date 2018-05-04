@@ -16,12 +16,12 @@ public partial class SICA_AutomaticProcess_LocalizadorIncidencias : System.Web.U
         SicaSegura.SICA_DB DB = new SicaSegura.SICA_DB();
         
         DataTable tablaElementosMedida = new DataTable();
-        DataTable tablaResultadoSQL = new DataTable();
-        //DataTableReader elementosMedida = new DataTableReader();
-        //DataTableReader resultadosSQL = new DataTableReader();
+        DataTable tablaResultadoSQL = new DataTable();        
         double lecturaPrevia;
         double lecturaActual;
         String linea;
+        String fechaInicio = "2016-10-01";
+        String fechaFinal = "2017-09-30";
                 // Hay que tener en cuenta el formato en que SQL nos retorna los valores por si es necesario
         // añadir estructuras de control que permitan guardar los valores de las tablas en formato útil.
         string SQL=  "SELECT DISTINCT CodigoPVYCR AS SICA, idElementoMedida AS EM " +
@@ -40,7 +40,7 @@ public partial class SICA_AutomaticProcess_LocalizadorIncidencias : System.Web.U
                             " WHERE 	CodigoPVYCR='" + Codigosica + "' AND " +
                                     " idElementoMedida='" + EM + "' AND lecturacontador_m3 is not null AND" +
                                     " (Cod_Fuente_Dato='01' OR Cod_Fuente_Dato='05' OR Cod_Fuente_Dato='10' OR Cod_Fuente_Dato='13') AND " +
-                                    " (CONVERT(CHAR(10), Fecha_Medida, 120) >= '2017-10-01') " +
+                                    " (CONVERT(CHAR(10), Fecha_Medida, 120) >= '" + fechaInicio + "' ) AND (CONVERT(CHAR(10), Fecha_Medida, 120) <= '" + fechaFinal + "' )" +
                             " ORDER BY Fecha_Medida";
             tablaResultadoSQL = DB.GetDataSIGVECTOR(SQL);
             if (tablaResultadoSQL.Rows.Count > 0)
